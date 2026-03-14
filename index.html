@@ -1,0 +1,2056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annweshan Career Counseling Centre | Your Future, Our Guidance</title>
+    <meta name="description" content="Expert career counseling by Mr. Deba Jyoti Neog in Duliajan, Assam. 12+ years experience. Career assessment, aptitude testing, college guidance for students.">
+    <meta name="keywords" content="career counseling Duliajan, career counselor Assam, aptitude test, career guidance, Annweshan, Deba Jyoti Neog">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2a4a7f;
+            --secondary: #e6a817;
+            --secondary-light: #f0c040;
+            --accent: #2d9cdb;
+            --bg: #f7f9fc;
+            --bg-dark: #0f1b2d;
+            --text: #2d3748;
+            --text-light: #718096;
+            --white: #ffffff;
+            --shadow: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-hover: 0 20px 60px rgba(0,0,0,0.15);
+            --radius: 16px;
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== PRELOADER ===== */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .preloader-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.05); }
+        }
+
+        /* ===== ANNOUNCEMENT BAR ===== */
+        .announcement-bar {
+            background: linear-gradient(135deg, var(--secondary), #f0c040);
+            color: var(--primary);
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .announcement-bar a {
+            color: var(--primary);
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        .announcement-bar .close-announcement {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .announcement-bar.hidden {
+            display: none;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--primary);
+        }
+
+        .logo-text span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.92rem;
+            transition: var(--transition);
+            color: var(--text);
+        }
+
+        .nav-links a:hover {
+            background: var(--bg);
+            color: var(--primary);
+        }
+
+        .nav-links .assessment-link {
+            background: linear-gradient(135deg, var(--secondary), #f0c040);
+            color: var(--primary) !important;
+            font-weight: 700;
+            padding: 8px 18px;
+            border-radius: 25px;
+            animation: glowPulse 2s infinite;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 5px rgba(230, 168, 23, 0.3); }
+            50% { box-shadow: 0 0 20px rgba(230, 168, 23, 0.6); }
+        }
+
+        .nav-links .assessment-link:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #f0c040, var(--secondary));
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white !important;
+            padding: 10px 22px !important;
+            border-radius: 25px !important;
+            font-weight: 600 !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(26, 54, 93, 0.4);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, #0f1b2d 0%, #1a365d 50%, #1e4976 100%);
+            padding: 100px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(230,168,23,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(45,156,219,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(230, 168, 23, 0.15);
+            border: 1px solid rgba(230, 168, 23, 0.3);
+            padding: 8px 20px;
+            border-radius: 50px;
+            color: var(--secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--secondary), #f0c040);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.8;
+            margin-bottom: 35px;
+            max-width: 540px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary), #f0c040);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(230, 168, 23, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-assessment {
+            background: linear-gradient(135deg, #e6a817, #f0c040);
+            color: var(--primary);
+            animation: glowPulse 2s infinite;
+        }
+
+        .btn-assessment:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(230, 168, 23, 0.5);
+        }
+
+        .hero-image {
+            flex: 0.8;
+            position: relative;
+        }
+
+        .hero-image-placeholder {
+            width: 350px;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(45,156,219,0.2), rgba(230,168,23,0.2));
+            border-radius: 30px;
+            border: 3px solid rgba(255,255,255,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.6);
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-image-placeholder i {
+            font-size: 5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .hero-float-card {
+            position: absolute;
+            background: white;
+            border-radius: 15px;
+            padding: 15px 20px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero-float-card.card-1 {
+            top: 20px;
+            right: -20px;
+        }
+
+        .hero-float-card.card-2 {
+            bottom: 40px;
+            left: -30px;
+            animation-delay: 1.5s;
+        }
+
+        .hero-float-card .float-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .float-icon.blue { background: linear-gradient(135deg, var(--accent), #5bb8f0); }
+        .float-icon.gold { background: linear-gradient(135deg, var(--secondary), #f0c040); }
+
+        .hero-float-card .float-text h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+
+        .hero-float-card .float-text p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* ===== SECTION STYLES ===== */
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 6px 20px;
+            background: rgba(26, 54, 93, 0.08);
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== ABOUT PREVIEW ===== */
+        .about-preview {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image-placeholder {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .about-image-placeholder i {
+            font-size: 6rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .about-exp-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 20px 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .about-exp-badge h3 {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .about-exp-badge p {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .about-content h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .about-content .highlight {
+            color: var(--secondary);
+        }
+
+        .about-content p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .credential-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: var(--bg);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .credential-badge i {
+            color: var(--secondary);
+        }
+
+        /* ===== SERVICES ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 35px 30px;
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, rgba(26,54,93,0.08), rgba(45,156,219,0.08));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .service-link {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+
+        .service-link:hover {
+            gap: 10px;
+            color: var(--primary);
+        }
+
+        /* ===== ASSESSMENT BANNER ===== */
+        .assessment-banner {
+            background: linear-gradient(135deg, #1a365d 0%, #0f2744 50%, #1a365d 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .assessment-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e6a817' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .assessment-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .assessment-left h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .assessment-left h2 span {
+            color: var(--secondary);
+        }
+
+        .assessment-left p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .assessment-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .assessment-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255,255,255,0.85);
+            font-size: 0.95rem;
+        }
+
+        .assessment-feature i {
+            color: var(--secondary);
+            font-size: 1rem;
+        }
+
+        .assessment-right {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .assessment-right i.main-icon {
+            font-size: 4rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .assessment-right h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .assessment-right p {
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .btn-assessment-large {
+            background: linear-gradient(135deg, var(--secondary), #f0c040);
+            color: var(--primary);
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-assessment-large:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(230, 168, 23, 0.4);
+        }
+
+        /* ===== HOW IT WORKS ===== */
+        .how-it-works {
+            background: white;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            position: relative;
+        }
+
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 15%;
+            right: 15%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent), var(--secondary));
+            opacity: 0.3;
+        }
+
+        .step-card {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 8px 25px rgba(26, 54, 93, 0.3);
+        }
+
+        .step-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .step-card p {
+            color: var(--text-light);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        /* ===== STATS ===== */
+        .stats {
+            background: linear-gradient(135deg, var(--primary), #0f2744);
+            padding: 70px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat-card:last-child {
+            border-right: none;
+        }
+
+        .stat-card i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .stat-card p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
+            margin-top: 5px;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 35px;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .testimonial-stars {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .testimonial-text {
+            color: var(--text);
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .testimonial-role {
+            color: var(--text-light);
+            font-size: 0.82rem;
+        }
+
+        /* ===== WHY CHOOSE ===== */
+        .why-choose {
+            background: white;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .why-card {
+            padding: 30px;
+            border-radius: var(--radius);
+            background: var(--bg);
+            transition: var(--transition);
+        }
+
+        .why-card:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .why-card:hover * {
+            color: white !important;
+        }
+
+        .why-card:hover .why-icon {
+            background: rgba(255,255,255,0.15);
+        }
+
+        .why-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(26,54,93,0.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--accent);
+            margin-bottom: 18px;
+            transition: var(--transition);
+        }
+
+        .why-card h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+            transition: var(--transition);
+        }
+
+        .why-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        /* ===== CTA BANNER ===== */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--secondary), #d49a10, var(--secondary));
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%231a365d' fill-opacity='0.06'%3E%3Cpath d='M20 20h20v20H20zM0 0h20v20H0z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .cta-banner .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-banner h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .cta-banner p {
+            font-size: 1.15rem;
+            color: rgba(26,54,93,0.7);
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn-dark {
+            background: var(--primary);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-dark:hover {
+            background: #0f2744;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26,54,93,0.3);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #0a1628;
+            color: rgba(255,255,255,0.7);
+            padding: 70px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.6rem;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .footer-brand h3 span {
+            color: var(--secondary);
+        }
+
+        .footer-brand .tagline {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .footer-contact i {
+            color: var(--secondary);
+            margin-top: 3px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom span {
+            color: var(--secondary);
+        }
+
+        /* ===== WHATSAPP BUTTON ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 25px rgba(37, 211, 102, 0.4);
+            z-index: 9998;
+            transition: var(--transition);
+            animation: whatsappPulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 35px rgba(37, 211, 102, 0.5);
+        }
+
+        @keyframes whatsappPulse {
+            0%, 100% { box-shadow: 0 5px 25px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 5px 25px rgba(37, 211, 102, 0.7), 0 0 0 15px rgba(37, 211, 102, 0.1); }
+        }
+
+        /* ===== CALL BUTTON (Mobile) ===== */
+        .call-float {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 25px rgba(26, 54, 93, 0.4);
+            z-index: 9998;
+            transition: var(--transition);
+        }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-top {
+            position: fixed;
+            bottom: 95px;
+            right: 25px;
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            z-index: 9997;
+            cursor: pointer;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            border: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* ===== POPUP MODAL ===== */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 99999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .popup-overlay.active {
+            display: flex;
+        }
+
+        .popup-box {
+            background: white;
+            border-radius: 20px;
+            padding: 45px;
+            max-width: 450px;
+            width: 90%;
+            position: relative;
+            text-align: center;
+            animation: popIn 0.4s ease;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 35px;
+            height: 35px;
+            background: var(--bg);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .popup-close:hover {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+        .popup-box i.popup-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .popup-box h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .popup-box p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .popup-box .btn {
+            width: 100%;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero .container { flex-direction: column; text-align: center; }
+            .hero p { margin: 0 auto 35px; }
+            .hero-buttons { justify-content: center; }
+            .hero-image { display: none; }
+            .about-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .assessment-content { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .stat-card { border-right: none; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 80px 30px 30px;
+                gap: 5px;
+                box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+                transition: var(--transition);
+                z-index: 9998;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                width: 100%;
+                padding: 12px 16px;
+            }
+
+            .hamburger {
+                display: flex;
+                z-index: 9999;
+            }
+
+            .hero { padding: 70px 0 90px; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .section { padding: 60px 0; }
+            .section-header h2 { font-size: 1.8rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .steps-grid { grid-template-columns: 1fr; gap: 25px; }
+            .steps-grid::before { display: none; }
+            .assessment-features { grid-template-columns: 1fr; }
+            .assessment-left h2 { font-size: 1.8rem; }
+            .cta-banner h2 { font-size: 1.8rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+            .call-float { display: flex; }
+            .about-exp-badge { right: 10px; bottom: -10px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.7rem; }
+            .announcement-bar { font-size: 0.8rem; padding: 8px 40px 8px 15px; }
+            .stat-number { font-size: 2rem; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-right {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-left {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-text">ANNWESHAN</div>
+    </div>
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="announcement-bar" id="announcementBar">
+        🎉 NEW: Take your Career Assessment Online! 
+        <a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer">Click here →</a>
+        <button class="close-announcement" onclick="closeAnnouncement()">✕</button>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-compass"></i></div>
+                <div class="logo-text">ANNWE<span>SHAN</span></div>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="quiz.html">Career Quiz</a></li>
+                <li><a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer" class="assessment-link"><i class="fas fa-chart-bar"></i> Take an Assessment</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="nav-cta">Book Free Consultation</a></li>
+            </ul>
+
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-award"></i> 12+ Years of Trusted Career Guidance
+                </div>
+                <h1>Shape Your Future With <span>Expert Career Guidance</span></h1>
+                <p>Empowering students and professionals in Assam with scientifically-backed career counseling. Discover your true potential with personalized guidance from Mr. Deba Jyoti Neog.</p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn btn-primary">
+                        <i class="fas fa-calendar-check"></i> Book Free Session
+                    </a>
+                    <a href="quiz.html" class="btn btn-outline">
+                        <i class="fas fa-brain"></i> Take Career Quiz
+                    </a>
+                    <a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer" class="btn btn-assessment">
+                        <i class="fas fa-chart-bar"></i> Take Assessment
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+<img src="deba.jpg" alt="Mr. Deba Jyoti Neog - Career Counselor Duliajan Assam" style="width:350px;height:400px;object-fit:cover;object-position:top;border-radius:30px;border:3px solid rgba(255,255,255,0.15);">
+                <div class="hero-float-card card-1">
+                    <div class="float-icon blue"><i class="fas fa-user-graduate"></i></div>
+                    <div class="float-text">
+                        <h4>2000+</h4>
+                        <p>Students Guided</p>
+                    </div>
+                </div>
+                <div class="hero-float-card card-2">
+                    <div class="float-icon gold"><i class="fas fa-star"></i></div>
+                    <div class="float-text">
+                        <h4>95%</h4>
+                        <p>Success Rate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT PREVIEW -->
+    <section class="section about-preview">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image fade-right">
+                    <img src="deba.jpg" alt="Mr. Deba Jyoti Neog" style="width:100%;height:450px;object-fit:cover;object-position:top;border-radius:20px;">
+                    <div class="about-exp-badge">
+                        <h3>12+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+                <div class="about-content fade-left">
+                    <div class="section-badge">About Us</div>
+                    <h2>Meet Your <span class="highlight">Career Guide</span></h2>
+                    <p>Mr. Deba Jyoti Neog is a passionate career counselor from Duliajan, Assam, with over 12 years of experience in guiding students and professionals towards their ideal career paths. With qualifications in M.Sc. and B.Ed., combined with certified career counseling expertise, he has helped over 2,000 students discover their true potential.</p>
+                    <p>He believes that every student, regardless of their background or location, deserves the right career direction. His mission is to bridge the gap between students' dreams and the right career paths through scientifically-backed assessments and personalized guidance.</p>
+                    <div class="credentials">
+                        <div class="credential-badge"><i class="fas fa-graduation-cap"></i> M.Sc.</div>
+                        <div class="credential-badge"><i class="fas fa-chalkboard-teacher"></i> B.Ed.</div>
+                        <div class="credential-badge"><i class="fas fa-certificate"></i> Certified Career Counselor</div>
+                        <div class="credential-badge"><i class="fas fa-globe"></i> International Counselors' Club</div>
+                        <div class="credential-badge"><i class="fas fa-id-card"></i> NCS Member</div>
+                    </div>
+                    <a href="about.html" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Know More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-up">
+                <div class="section-badge">Our Services</div>
+                <h2>Comprehensive Career Guidance</h2>
+                <p>We offer a wide range of career counseling services tailored to your unique needs and aspirations.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-up">
+                    <div class="service-icon">🎓</div>
+                    <h3>Career Counseling for Students</h3>
+                    <p>Stream selection guidance for Class 8-12 students. Understand your interests, strengths, and choose the right path.</p>
+                    <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon">🏫</div>
+                    <h3>College & Course Selection</h3>
+                    <p>Get expert recommendations on the best colleges and courses aligned with your career goals and capabilities.</p>
+                    <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon">📊</div>
+                    <h3>Career Assessment & Aptitude</h3>
+                    <p>Scientifically validated aptitude tests, interest inventory, and personality assessment with detailed reports.</p>
+                    <a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer" class="service-link">Take Assessment <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon">📝</div>
+                    <h3>Resume & Interview Prep</h3>
+                    <p>Professional resume building, LinkedIn optimization, and mock interview sessions to boost your confidence.</p>
+                    <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon">💼</div>
+                    <h3>Career Change Guidance</h3>
+                    <p>Expert guidance for professionals looking to switch careers. Skill gap analysis and growth path planning.</p>
+                    <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon">✈️</div>
+                    <h3>Study Abroad Counseling</h3>
+                    <p>University selection, scholarship info, application guidance, and IELTS/TOEFL preparation advice.</p>
+                    <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ASSESSMENT BANNER -->
+    <section class="assessment-banner">
+        <div class="container">
+            <div class="assessment-content">
+                <div class="assessment-left fade-right">
+                    <h2>Take Your Professional <span>Career Assessment</span> Now!</h2>
+                    <p>Discover your strengths, interests, and ideal career path through our scientifically validated psychometric assessment. Get instant results and detailed analysis from anywhere, anytime.</p>
+                    <div class="assessment-features">
+                        <div class="assessment-feature"><i class="fas fa-check-circle"></i> Scientifically Validated Tests</div>
+                        <div class="assessment-feature"><i class="fas fa-check-circle"></i> Detailed Career Report</div>
+                        <div class="assessment-feature"><i class="fas fa-check-circle"></i> Personality Insights</div>
+                        <div class="assessment-feature"><i class="fas fa-check-circle"></i> Career Match Results</div>
+                        <div class="assessment-feature"><i class="fas fa-check-circle"></i> Takes Only 15-20 Minutes</div>
+                        <div class="assessment-feature"><i class="fas fa-check-circle"></i> Any Device, Anywhere</div>
+                    </div>
+                    <a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer" class="btn-assessment-large">
+                        Start Your Assessment Now <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="assessment-right fade-left">
+                    <i class="fas fa-chart-pie main-icon"></i>
+                    <h3>Psychometric Assessment</h3>
+                    <p>Powered by ISCHS Psychometrics<br>Curated by Mr. Deba Jyoti Neog</p>
+                    <a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer" class="btn-assessment-large">
+                        <i class="fas fa-play-circle"></i> Start Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section how-it-works">
+        <div class="container">
+            <div class="section-header fade-up">
+                <div class="section-badge">How It Works</div>
+                <h2>Your Career Journey Starts Here</h2>
+                <p>Three simple steps to clarity and confidence in your career decisions.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card fade-up">
+                    <div class="step-number">1</div>
+                    <h3>Take the Assessment</h3>
+                    <p>Start with our online psychometric assessment or book a free consultation call to discuss your career goals.</p>
+                </div>
+                <div class="step-card fade-up">
+                    <div class="step-number">2</div>
+                    <h3>Expert Counseling Session</h3>
+                    <p>Meet Mr. Deba Jyoti Neog for a detailed discussion about your interests, skills, and career aspirations.</p>
+                </div>
+                <div class="step-card fade-up">
+                    <div class="step-number">3</div>
+                    <h3>Get Your Career Roadmap</h3>
+                    <p>Receive a personalized career plan with actionable steps, college recommendations, and ongoing support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card fade-up">
+                    <i class="fas fa-user-graduate"></i>
+                    <div class="stat-number" data-target="2000">0</div>
+                    <p>Students Guided</p>
+                </div>
+                <div class="stat-card fade-up">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="stat-number" data-target="95">0</div>
+                    <p>Success Rate %</p>
+                </div>
+                <div class="stat-card fade-up">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="stat-number" data-target="12">0</div>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-card fade-up">
+                    <i class="fas fa-file-alt"></i>
+                    <div class="stat-number" data-target="500">0</div>
+                    <p>Career Plans Created</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-up">
+                <div class="section-badge">Testimonials</div>
+                <h2>What Our Students Say</h2>
+                <p>Real stories from students and parents whose lives were transformed through career guidance.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-up">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Mr. Neog helped my son choose the right stream after Class 10th. His scientific approach and personalized guidance gave us complete clarity. Highly recommended for every parent!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RB</div>
+                        <div>
+                            <div class="testimonial-name">Rajib Borah</div>
+                            <div class="testimonial-role">Parent, Duliajan</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-up">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"I was confused between engineering and medical after 12th. The aptitude test and counseling session at Annweshan helped me understand my true strengths. Now I'm pursuing my dream career!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">PG</div>
+                        <div>
+                            <div class="testimonial-name">Priyanka Gogoi</div>
+                            <div class="testimonial-role">Student, Dibrugarh</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-up">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"After 5 years in banking, I wanted a career change. Mr. Neog's guidance was invaluable. He helped me identify transferable skills and plan my transition smoothly. Thank you, Annweshan!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AH</div>
+                        <div>
+                            <div class="testimonial-name">Ankur Hazarika</div>
+                            <div class="testimonial-role">Professional, Tinsukia</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section why-choose">
+        <div class="container">
+            <div class="section-header fade-up">
+                <div class="section-badge">Why Choose Us</div>
+                <h2>Why Annweshan?</h2>
+                <p>What makes us the trusted choice for career guidance in Assam.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card fade-up">
+                    <div class="why-icon"><i class="fas fa-user-check"></i></div>
+                    <h3>Personalized Guidance</h3>
+                    <p>One-on-one sessions tailored to your unique strengths, interests, and goals.</p>
+                </div>
+                <div class="why-card fade-up">
+                    <div class="why-icon"><i class="fas fa-microscope"></i></div>
+                    <h3>Scientific Assessments</h3>
+                    <p>Validated psychometric and aptitude tests for accurate career matching.</p>
+                </div>
+                <div class="why-card fade-up">
+                    <div class="why-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>12+ Years Experience</h3>
+                    <p>Proven track record of guiding 2000+ students to successful careers.</p>
+                </div>
+                <div class="why-card fade-up">
+                    <div class="why-icon"><i class="fas fa-rupee-sign"></i></div>
+                    <h3>Affordable & Accessible</h3>
+                    <p>Quality career guidance accessible to every student in Assam and Northeast.</p>
+                </div>
+                <div class="why-card fade-up">
+                    <div class="why-icon"><i class="fas fa-laptop-house"></i></div>
+                    <h3>Online & Offline</h3>
+                    <p>Choose in-person sessions at Duliajan or convenient online video sessions.</p>
+                </div>
+                <div class="why-card fade-up">
+                    <div class="why-icon"><i class="fas fa-headset"></i></div>
+                    <h3>Follow-up Support</h3>
+                    <p>We don't stop at guidance. Continuous support until you achieve your goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2 class="fade-up">Don't Let Career Confusion Hold You Back!</h2>
+            <p class="fade-up">Book your free 15-minute consultation today or take our online assessment.</p>
+            <div class="cta-buttons fade-up">
+                <a href="contact.html" class="btn-dark"><i class="fas fa-calendar-check"></i> Book Free Session</a>
+                <a href="tel:+919435749779" class="btn-white"><i class="fas fa-phone"></i> Call +91 9435749779</a>
+                <a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer" class="btn-dark"><i class="fas fa-chart-bar"></i> Take Assessment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>ANNWE<span>SHAN</span></h3>
+                    <p class="tagline">"Your Future, Our Guidance"</p>
+                    <p>Empowering students and professionals in Assam with expert career counseling since 12+ years. Every dream deserves the right direction.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/919435749779" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="quiz.html"><i class="fas fa-chevron-right"></i> Career Quiz</a></li>
+                        <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Career Counseling</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Aptitude Testing</a></li>
+                        <li><a href="https://psychometrics.ischs.in/annweshan" target="_blank"><i class="fas fa-chevron-right"></i> Online Assessment</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Resume Building</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Interview Prep</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Study Abroad</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> <span>21 No. Bamhukuta, Duliajan, Assam</span></li>
+                        <li><i class="fas fa-phone"></i> <span><a href="tel:+919435749779">+91 9435749779</a></span></li>
+                        <li><i class="fas fa-envelope"></i> <span><a href="mailto:annweshancareer@gmail.com">annweshancareer@gmail.com</a></span></li>
+                        <li><i class="fas fa-clock"></i> <span>All working days<br>10:00 AM - 7:00 PM</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 <span>Annweshan Career Counseling Centre</span>. All Rights Reserved.</p>
+                <p>Counseling available in English, Hindi & Assamese</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/919435749779?text=Hello%20Sir%2C%20I%20am%20interested%20in%20career%20counseling%20at%20Annweshan." target="_blank" rel="noopener noreferrer" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- CALL FLOAT (Mobile) -->
+    <a href="tel:+919435749779" class="call-float">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+
+    <!-- SCROLL TO TOP -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- POPUP MODAL -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-box">
+            <button class="popup-close" onclick="closePopup()">✕</button>
+            <i class="fas fa-bullseye popup-icon"></i>
+            <h3>Discover Your Ideal Career!</h3>
+            <p>Take our FREE professional psychometric assessment and find the career meant for you.</p>
+            <a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: linear-gradient(135deg, var(--secondary), #f0c040); color: var(--primary);">
+                <i class="fas fa-chart-bar"></i> Take Free Assessment
+            </a>
+            <a href="contact.html" class="btn btn-outline" style="color: var(--primary); border-color: var(--primary);">
+                <i class="fas fa-calendar"></i> Book Free Session
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // ===== PRELOADER =====
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('hidden');
+            }, 1500);
+        });
+
+        // ===== ANNOUNCEMENT BAR =====
+        function closeAnnouncement() {
+            document.getElementById('announcementBar').classList.add('hidden');
+        }
+
+        // ===== MOBILE MENU =====
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+            document.getElementById('hamburger').classList.toggle('active');
+        }
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+                document.getElementById('hamburger').classList.remove('active');
+            });
+        });
+
+        // ===== SCROLL TO TOP =====
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ===== STATS COUNTER =====
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.ceil(current) + '+';
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target + '+';
+                    }
+                };
+                updateCounter();
+            });
+        }
+
+        // ===== SCROLL ANIMATIONS =====
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+
+                    // Trigger counter animation when stats section is visible
+                    if (entry.target.closest('.stats')) {
+                        animateCounters();
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up, .fade-right, .fade-left').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Observe stats section
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            statsObserver.observe(statsSection);
+        }
+
+        // ===== POPUP (After 45 seconds) =====
+        if (!localStorage.getItem('annweshan_popup_closed')) {
+            setTimeout(() => {
+                document.getElementById('popupOverlay').classList.add('active');
+            }, 45000);
+        }
+
+        function closePopup() {
+            document.getElementById('popupOverlay').classList.remove('active');
+            localStorage.setItem('annweshan_popup_closed', 'true');
+        }
+
+        // Close popup on overlay click
+        document.getElementById('popupOverlay').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('popupOverlay')) {
+                closePopup();
+            }
+        });
+
+        // ===== NAVBAR SHADOW ON SCROLL =====
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.pageYOffset > 50) {
+                navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.12)';
+            } else {
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+            }
+        });
+
+        // Add staggered animation delay to cards
+        document.querySelectorAll('.services-grid .service-card').forEach((card, i) => {
+            card.style.transitionDelay = `${i * 0.1}s`;
+        });
+
+        document.querySelectorAll('.why-grid .why-card').forEach((card, i) => {
+            card.style.transitionDelay = `${i * 0.1}s`;
+        });
+
+        document.querySelectorAll('.testimonials-grid .testimonial-card').forEach((card, i) => {
+            card.style.transitionDelay = `${i * 0.15}s`;
+        });
+    </script>
+
+</body>
+</html>

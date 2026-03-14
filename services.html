@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Annweshan Career Counseling Centre | Duliajan, Assam</title>
+    <meta name="description" content="Career counseling services: aptitude testing, psychometric assessment, college guidance, resume building, interview prep, study abroad counseling. Duliajan, Assam.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2a4a7f;
+            --secondary: #e6a817;
+            --secondary-light: #f0c040;
+            --accent: #2d9cdb;
+            --bg: #f7f9fc;
+            --text: #2d3748;
+            --text-light: #718096;
+            --white: #ffffff;
+            --shadow: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-hover: 0 20px 60px rgba(0,0,0,0.15);
+            --radius: 16px;
+            --transition: all 0.3s ease;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); overflow-x: hidden; }
+        h1,h2,h3,h4,h5,h6 { font-family: 'Poppins', sans-serif; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 10px; }
+        .logo-icon {
+            width: 45px; height: 45px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 1.3rem;
+        }
+        .logo-text { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--primary); }
+        .logo-text span { color: var(--secondary); }
+        .nav-links { display: flex; align-items: center; gap: 5px; list-style: none; }
+        .nav-links a {
+            padding: 8px 16px; border-radius: 8px; font-weight: 500;
+            font-size: 0.92rem; transition: var(--transition); color: var(--text);
+        }
+        .nav-links a:hover { background: var(--bg); color: var(--primary); }
+        .nav-links a.active { background: var(--bg); color: var(--primary); font-weight: 600; }
+        .nav-links .assessment-link {
+            background: linear-gradient(135deg, var(--secondary), #f0c040);
+            color: var(--primary) !important; font-weight: 700;
+            padding: 8px 18px; border-radius: 25px; animation: glowPulse 2s infinite;
+        }
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 5px rgba(230,168,23,0.3); }
+            50% { box-shadow: 0 0 20px rgba(230,168,23,0.6); }
+        }
+        .nav-links .assessment-link:hover { transform: scale(1.05); }
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white !important; padding: 10px 22px !important;
+            border-radius: 25px !important; font-weight: 600 !important;
+        }
+        .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(26,54,93,0.4); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 5px; }
+        .hamburger span { width: 28px; height: 3px; background: var(--primary); border-radius: 3px; transition: var(--transition); }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+        /* ===== PAGE HERO ===== */
+        .page-hero {
+            background: linear-gradient(135deg, #0f1b2d 0%, #1a365d 50%, #1e4976 100%);
+            padding: 80px 0; text-align: center; position: relative; overflow: hidden;
+        }
+        .page-hero::before {
+            content: ''; position: absolute; top: -50%; right: -20%;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(230,168,23,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .page-hero .container { position: relative; z-index: 2; }
+        .breadcrumb { display: flex; justify-content: center; gap: 10px; margin-bottom: 15px; font-size: 0.9rem; }
+        .breadcrumb a { color: rgba(255,255,255,0.6); transition: var(--transition); }
+        .breadcrumb a:hover { color: var(--secondary); }
+        .breadcrumb span { color: var(--secondary); }
+        .page-hero h1 { font-size: 3rem; font-weight: 800; color: white; margin-bottom: 15px; }
+        .page-hero h1 span {
+            background: linear-gradient(135deg, var(--secondary), #f0c040);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .page-hero p { color: rgba(255,255,255,0.7); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        /* ===== SECTIONS ===== */
+        .section { padding: 90px 0; }
+        .section-badge {
+            display: inline-block; padding: 6px 20px;
+            background: rgba(26,54,93,0.08); color: var(--primary);
+            border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 15px;
+        }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; font-weight: 700; color: var(--primary); margin-bottom: 15px; }
+        .section-header p { font-size: 1.1rem; color: var(--text-light); max-width: 600px; margin: 0 auto; }
+
+        /* ===== SERVICES GRID ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 40px 35px;
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            gap: 25px;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 5px; height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            transform: scaleY(0);
+            transition: var(--transition);
+            transform-origin: top;
+        }
+
+        .service-card:hover::before { transform: scaleY(1); }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-card.highlighted {
+            border: 2px solid var(--secondary);
+            background: linear-gradient(135deg, rgba(230,168,23,0.03), rgba(240,192,64,0.05));
+        }
+
+        .service-card.highlighted::before {
+            background: linear-gradient(to bottom, var(--secondary), #f0c040);
+            transform: scaleY(1);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--secondary), #f0c040);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .service-icon-large {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+            background: linear-gradient(135deg, rgba(26,54,93,0.08), rgba(45,156,219,0.08));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+        }
+
+        .service-card.highlighted .service-icon-large {
+            background: linear-gradient(135deg, rgba(230,168,23,0.15), rgba(240,192,64,0.15));
+        }
+
+        .service-info h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .service-info .service-for {
+            display: inline-block;
+            padding: 3px 12px;
+            background: rgba(45,156,219,0.1);
+            color: var(--accent);
+            border-radius: 15px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .service-info p {
+            color: var(--text-light);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .service-features li {
+            padding: 4px 0;
+            color: var(--text);
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-features li i {
+            color: var(--secondary);
+            font-size: 0.75rem;
+        }
+
+        .service-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg);
+            color: var(--primary);
+        }
+
+        .service-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .service-btn.gold {
+            background: linear-gradient(135deg, var(--secondary), #f0c040);
+            color: var(--primary);
+        }
+
+        .service-btn.gold:hover {
+            box-shadow: 0 8px 25px rgba(230,168,23,0.4);
+            transform: translateY(-2px);
+        }
+
+        /* ===== ASSESSMENT SPOTLIGHT ===== */
+        .assessment-spotlight {
+            background: linear-gradient(135deg, #1a365d 0%, #0f2744 100%);
+            padding: 90px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .assessment-spotlight::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e6a817' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .spotlight-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .spotlight-left h2 { font-size: 2.5rem; color: white; margin-bottom: 15px; }
+        .spotlight-left h2 span { color: var(--secondary); }
+        .spotlight-left > p { color: rgba(255,255,255,0.7); font-size: 1.05rem; line-height: 1.8; margin-bottom: 30px; }
+
+        .spotlight-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .spotlight-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255,255,255,0.85);
+            font-size: 0.95rem;
+        }
+
+        .spotlight-feature i { color: var(--secondary); }
+
+        .btn-large {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--secondary), #f0c040);
+            color: var(--primary);
+        }
+
+        .btn-large:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(230,168,23,0.4);
+        }
+
+        .spotlight-right {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px;
+            padding: 45px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .spotlight-right i.main-icon { font-size: 4rem; color: var(--secondary); margin-bottom: 20px; }
+        .spotlight-right h3 { color: white; font-size: 1.5rem; margin-bottom: 10px; }
+        .spotlight-right p { color: rgba(255,255,255,0.6); margin-bottom: 25px; font-size: 0.95rem; line-height: 1.6; }
+
+        /* ===== WHO IS THIS FOR (TABS) ===== */
+        .tabs-section { background: white; }
+
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 12px 28px;
+            border: 2px solid rgba(0,0,0,0.1);
+            border-radius: 50px;
+            background: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.92rem;
+            color: var(--text);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tab-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-color: transparent;
+        }
+
+        .tab-content { display: none; animation: fadeIn 0.4s ease; }
+        .tab-content.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+        .tab-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .tab-info h3 { font-size: 1.6rem; color: var(--primary); margin-bottom: 15px; }
+        .tab-info p { color: var(--text-light); line-height: 1.8; margin-bottom: 20px; }
+
+        .tab-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .tab-list li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .tab-list li i { color: var(--secondary); }
+
+        .tab-image {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 20px;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .tab-image i { font-size: 5rem; color: var(--secondary); margin-bottom: 15px; }
+
+        /* ===== PROCESS ===== */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            position: relative;
+        }
+
+        .process-grid::before {
+            content: '';
+            position: absolute;
+            top: 45px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent), var(--primary), var(--accent), var(--secondary));
+            opacity: 0.3;
+        }
+
+        .process-card {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-num {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 5px 20px rgba(26,54,93,0.3);
+        }
+
+        .process-card h4 { font-size: 0.95rem; color: var(--primary); margin-bottom: 8px; }
+        .process-card p { color: var(--text-light); font-size: 0.82rem; line-height: 1.5; }
+
+        /* ===== PRICING ===== */
+        .pricing-section { background: white; }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .pricing-card {
+            border-radius: var(--radius);
+            padding: 40px 35px;
+            background: var(--bg);
+            border: 2px solid transparent;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .pricing-card.popular {
+            background: linear-gradient(135deg, #0f1b2d, #1a365d);
+            color: white;
+            border-color: var(--secondary);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.popular:hover {
+            transform: scale(1.05) translateY(-8px);
+        }
+
+        .pricing-popular-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 6px 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 0 14px 0 15px;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .pricing-card .price {
+            font-size: 2.8rem;
+            font-weight: 800;
+            font-family: 'Poppins', sans-serif;
+            margin: 15px 0;
+        }
+
+        .pricing-card .price small {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .pricing-card:not(.popular) h3 { color: var(--primary); }
+        .pricing-card:not(.popular) .price { color: var(--primary); }
+
+        .pricing-card.popular .price { color: var(--secondary); }
+
+        .pricing-features {
+            list-style: none;
+            margin: 25px 0 30px;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .pricing-card:not(.popular) .pricing-features li {
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            color: var(--text);
+        }
+
+        .pricing-features li i {
+            color: var(--secondary);
+            font-size: 0.85rem;
+        }
+
+        .pricing-features li.highlight-feature {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .pricing-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .pricing-card:not(.popular) .pricing-btn {
+            background: var(--primary);
+            color: white;
+        }
+
+        .pricing-card:not(.popular) .pricing-btn:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .pricing-card.popular .pricing-btn {
+            background: linear-gradient(135deg, var(--secondary), #f0c040);
+            color: var(--primary);
+        }
+
+        .pricing-card.popular .pricing-btn:hover {
+            box-shadow: 0 8px 25px rgba(230,168,23,0.4);
+            transform: translateY(-2px);
+        }
+
+        .pricing-note {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(230,168,23,0.08), rgba(240,192,64,0.05));
+            border-radius: var(--radius);
+            border: 1px dashed var(--secondary);
+        }
+
+        .pricing-note p {
+            color: var(--text);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .pricing-note a {
+            color: var(--primary);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .pricing-note a:hover { color: var(--accent); gap: 10px; }
+
+        /* ===== FAQ ===== */
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover { box-shadow: 0 5px 20px rgba(0,0,0,0.06); }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--primary);
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover { color: var(--accent); }
+
+        .faq-question i {
+            font-size: 0.9rem;
+            transition: var(--transition);
+            color: var(--secondary);
+        }
+
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-answer-inner {
+            padding: 0 25px 20px;
+            color: var(--text-light);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer { max-height: 300px; }
+
+        /* ===== CTA ===== */
+        .services-cta {
+            background: linear-gradient(135deg, var(--secondary), #d49a10, var(--secondary));
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-cta::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%231a365d' fill-opacity='0.06'%3E%3Cpath d='M20 20h20v20H20zM0 0h20v20H0z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .services-cta .container { position: relative; z-index: 2; }
+        .services-cta h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+        .services-cta p { font-size: 1.1rem; color: rgba(26,54,93,0.7); margin-bottom: 30px; }
+
+        .cta-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
+
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 30px; border-radius: 50px; font-weight: 600;
+            font-size: 0.95rem; transition: var(--transition); cursor: pointer;
+            border: none; font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-dark { background: var(--primary); color: white; }
+        .btn-dark:hover { background: #0f2744; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(26,54,93,0.3); }
+        .btn-white { background: white; color: var(--primary); }
+        .btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .btn-green { background: #25d366; color: white; }
+        .btn-green:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(37,211,102,0.4); }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #0a1628;
+            color: rgba(255,255,255,0.7);
+            padding: 70px 0 30px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 40px; margin-bottom: 50px;
+        }
+        .footer-brand h3 { font-size: 1.6rem; color: white; margin-bottom: 8px; }
+        .footer-brand h3 span { color: var(--secondary); }
+        .footer-brand .tagline { color: var(--secondary); font-size: 0.9rem; font-weight: 500; margin-bottom: 15px; }
+        .footer-brand p { font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px; }
+        .footer-social { display: flex; gap: 10px; }
+        .footer-social a {
+            width: 40px; height: 40px; background: rgba(255,255,255,0.08);
+            border-radius: 10px; display: flex; align-items: center;
+            justify-content: center; color: white; transition: var(--transition);
+        }
+        .footer-social a:hover { background: var(--secondary); color: var(--primary); transform: translateY(-3px); }
+        .footer h4 { color: white; font-size: 1.1rem; margin-bottom: 20px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a {
+            color: rgba(255,255,255,0.6); font-size: 0.9rem;
+            transition: var(--transition); display: inline-flex;
+            align-items: center; gap: 6px;
+        }
+        .footer-links a:hover { color: var(--secondary); padding-left: 5px; }
+        .footer-contact li {
+            display: flex; align-items: flex-start;
+            gap: 12px; margin-bottom: 15px; font-size: 0.9rem;
+        }
+        .footer-contact i { color: var(--secondary); margin-top: 3px; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 25px; display: flex;
+            justify-content: space-between; align-items: center; font-size: 0.85rem;
+        }
+        .footer-bottom span { color: var(--secondary); }
+
+        /* ===== FLOATING BUTTONS ===== */
+        .whatsapp-float {
+            position: fixed; bottom: 25px; right: 25px;
+            width: 60px; height: 60px; background: #25d366;
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; color: white; font-size: 1.8rem;
+            box-shadow: 0 5px 25px rgba(37,211,102,0.4);
+            z-index: 9998; transition: var(--transition);
+            animation: whatsappPulse 2s infinite;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        @keyframes whatsappPulse {
+            0%, 100% { box-shadow: 0 5px 25px rgba(37,211,102,0.4); }
+            50% { box-shadow: 0 5px 25px rgba(37,211,102,0.7), 0 0 0 15px rgba(37,211,102,0.1); }
+        }
+        .call-float {
+            position: fixed; bottom: 25px; left: 25px;
+            width: 60px; height: 60px; background: var(--primary);
+            border-radius: 50%; display: none; align-items: center;
+            justify-content: center; color: white; font-size: 1.5rem;
+            box-shadow: 0 5px 25px rgba(26,54,93,0.4); z-index: 9998;
+        }
+        .scroll-top {
+            position: fixed; bottom: 95px; right: 25px;
+            width: 45px; height: 45px; background: var(--primary);
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; color: white; font-size: 1.1rem;
+            z-index: 9997; cursor: pointer; transition: var(--transition);
+            opacity: 0; visibility: hidden; border: none;
+        }
+        .scroll-top.visible { opacity: 1; visibility: visible; }
+        .scroll-top:hover { background: var(--accent); transform: translateY(-3px); }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .fade-right { opacity: 0; transform: translateX(-40px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-right.visible { opacity: 1; transform: translateX(0); }
+        .fade-left { opacity: 0; transform: translateX(40px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-left.visible { opacity: 1; transform: translateX(0); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: 1fr; }
+            .spotlight-content { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .pricing-card.popular { transform: scale(1); }
+            .pricing-card.popular:hover { transform: translateY(-8px); }
+            .process-grid { grid-template-columns: repeat(3, 1fr); }
+            .process-grid::before { display: none; }
+            .tab-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed; top: 0; right: -100%; width: 280px;
+                height: 100vh; background: white; flex-direction: column;
+                padding: 80px 30px 30px; gap: 5px;
+                box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+                transition: var(--transition); z-index: 9998;
+            }
+            .nav-links.active { right: 0; }
+            .nav-links a { width: 100%; padding: 12px 16px; }
+            .hamburger { display: flex; z-index: 9999; }
+            .page-hero { padding: 60px 0; }
+            .page-hero h1 { font-size: 2rem; }
+            .section { padding: 60px 0; }
+            .section-header h2 { font-size: 1.8rem; }
+            .service-card { flex-direction: column; }
+            .process-grid { grid-template-columns: repeat(2, 1fr); }
+            .spotlight-features { grid-template-columns: 1fr; }
+            .spotlight-left h2 { font-size: 1.8rem; }
+            .tabs-nav { gap: 5px; }
+            .tab-btn { padding: 8px 18px; font-size: 0.82rem; }
+            .services-cta h2 { font-size: 1.8rem; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+            .call-float { display: flex; }
+        }
+
+        @media (max-width: 480px) {
+            .page-hero h1 { font-size: 1.7rem; }
+            .process-grid { grid-template-columns: 1fr; }
+            .pricing-card { padding: 30px 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-compass"></i></div>
+                <div class="logo-text">ANNWE<span>SHAN</span></div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="quiz.html">Career Quiz</a></li>
+                <li><a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer" class="assessment-link"><i class="fas fa-chart-bar"></i> Take an Assessment</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="nav-cta">Book Free Consultation</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <span>/</span> <span>Our Services</span>
+            </div>
+            <h1>Our <span>Services</span></h1>
+            <p>Comprehensive career guidance solutions tailored to your unique needs, goals, and aspirations.</p>
+        </div>
+    </section>
+
+    <!-- SERVICES GRID -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-up">
+                <div class="section-badge">What We Offer</div>
+                <h2>Our Career Counseling Services</h2>
+                <p>From stream selection to career transitions — we guide you at every step of your career journey.</p>
+            </div>
+
+            <div class="services-grid">
+
+                <!-- Service 1 -->
+                <div class="service-card fade-up">
+                    <div class="service-icon-large">🎓</div>
+                    <div class="service-info">
+                        <h3>Career Counseling for School Students</h3>
+                        <span class="service-for">For Class 8th - 12th</span>
+                        <p>Confused about Science, Commerce, or Arts? We help students discover their natural strengths and choose the right stream and subjects for a successful future.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Stream selection guidance (Science/Commerce/Arts)</li>
+                            <li><i class="fas fa-check-circle"></i> Subject combination advice</li>
+                            <li><i class="fas fa-check-circle"></i> Interest & strength mapping</li>
+                            <li><i class="fas fa-check-circle"></i> Future career path discussion</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn"><i class="fas fa-calendar-check"></i> Book This Service</a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card fade-up">
+                    <div class="service-icon-large">🏫</div>
+                    <div class="service-info">
+                        <h3>College & Course Selection</h3>
+                        <span class="service-for">For Class 12th Pass & Graduates</span>
+                        <p>Get expert recommendations on the best colleges and courses that align with your career goals, budget, and location preferences.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Best college recommendations</li>
+                            <li><i class="fas fa-check-circle"></i> Course comparison & guidance</li>
+                            <li><i class="fas fa-check-circle"></i> Entrance exam planning</li>
+                            <li><i class="fas fa-check-circle"></i> Admission process support</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn"><i class="fas fa-calendar-check"></i> Book This Service</a>
+                    </div>
+                </div>
+
+                <!-- Service 3 - HIGHLIGHTED -->
+                <div class="service-card highlighted fade-up">
+                    <div class="popular-badge">⭐ Popular</div>
+                    <div class="service-icon-large">📊</div>
+                    <div class="service-info">
+                        <h3>Online Psychometric Assessment</h3>
+                        <span class="service-for">For All Age Groups • Available Online</span>
+                        <p>Take our scientifically validated psychometric assessment from anywhere, anytime. Get instant detailed reports with personality insights and career match results.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Scientifically validated tests</li>
+                            <li><i class="fas fa-check-circle"></i> Instant detailed career report</li>
+                            <li><i class="fas fa-check-circle"></i> Personality & aptitude analysis</li>
+                            <li><i class="fas fa-check-circle"></i> Take from any device, anywhere</li>
+                        </ul>
+                        <a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer" class="service-btn gold"><i class="fas fa-external-link-alt"></i> Take Assessment Now →</a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card fade-up">
+                    <div class="service-icon-large">🧠</div>
+                    <div class="service-info">
+                        <h3>Career Assessment & Aptitude Testing</h3>
+                        <span class="service-for">In-Person at Duliajan</span>
+                        <p>In-depth one-on-one aptitude testing and career assessment sessions at our centre. Includes RIASEC, personality profiling, and detailed career matching.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> In-person scientifically backed tests</li>
+                            <li><i class="fas fa-check-circle"></i> Interest inventory analysis</li>
+                            <li><i class="fas fa-check-circle"></i> Personality type assessment (MBTI/Holland)</li>
+                            <li><i class="fas fa-check-circle"></i> Detailed report with career matches</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn"><i class="fas fa-calendar-check"></i> Book This Service</a>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card fade-up">
+                    <div class="service-icon-large">📝</div>
+                    <div class="service-info">
+                        <h3>Resume Building & Interview Prep</h3>
+                        <span class="service-for">For Job Seekers & Professionals</span>
+                        <p>Professional resume creation, LinkedIn profile optimization, and mock interview sessions to help you land your dream job with confidence.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Professional resume creation</li>
+                            <li><i class="fas fa-check-circle"></i> LinkedIn profile optimization</li>
+                            <li><i class="fas fa-check-circle"></i> Mock interview sessions</li>
+                            <li><i class="fas fa-check-circle"></i> Communication & presentation tips</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn"><i class="fas fa-calendar-check"></i> Book This Service</a>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card fade-up">
+                    <div class="service-icon-large">💼</div>
+                    <div class="service-info">
+                        <h3>Career Change Guidance</h3>
+                        <span class="service-for">For Working Professionals</span>
+                        <p>Thinking of switching careers? We help you analyze your transferable skills, identify new opportunities, and plan a smooth career transition.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Career switch feasibility analysis</li>
+                            <li><i class="fas fa-check-circle"></i> Skill gap identification</li>
+                            <li><i class="fas fa-check-circle"></i> Industry trend guidance</li>
+                            <li><i class="fas fa-check-circle"></i> Growth path planning</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn"><i class="fas fa-calendar-check"></i> Book This Service</a>
+                    </div>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="service-card fade-up">
+                    <div class="service-icon-large">✈️</div>
+                    <div class="service-info">
+                        <h3>Study Abroad Counseling</h3>
+                        <span class="service-for">For Students Planning to Study Abroad</span>
+                        <p>Dreaming of studying overseas? Get complete guidance on country selection, universities, scholarships, applications, and test preparation.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Country & university selection</li>
+                            <li><i class="fas fa-check-circle"></i> Scholarship information</li>
+                            <li><i class="fas fa-check-circle"></i> Application process guidance</li>
+                            <li><i class="fas fa-check-circle"></i> IELTS/TOEFL preparation advice</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn"><i class="fas fa-calendar-check"></i> Book This Service</a>
+                    </div>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="service-card fade-up">
+                    <div class="service-icon-large">👥</div>
+                    <div class="service-info">
+                        <h3>Workshops & Seminars</h3>
+                        <span class="service-for">For Schools, Colleges & Organizations</span>
+                        <p>We conduct interactive career awareness workshops, parent orientation programs, and career fairs for educational institutions.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> School/College career workshops</li>
+                            <li><i class="fas fa-check-circle"></i> Parent awareness programs</li>
+                            <li><i class="fas fa-check-circle"></i> Career fair organization</li>
+                            <li><i class="fas fa-check-circle"></i> Group counseling sessions</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn"><i class="fas fa-calendar-check"></i> Enquire Now</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ASSESSMENT SPOTLIGHT -->
+    <section class="assessment-spotlight">
+        <div class="container">
+            <div class="spotlight-content">
+                <div class="spotlight-left fade-right">
+                    <h2>Take Your Career Assessment <span>Online — Anytime, Anywhere!</span></h2>
+                    <p>Our scientifically validated psychometric assessment is now available online. Get instant results and discover your ideal career path from the comfort of your home. No appointment needed!</p>
+                    <div class="spotlight-features">
+                        <div class="spotlight-feature"><i class="fas fa-check-circle"></i> Takes only 15-20 minutes</div>
+                        <div class="spotlight-feature"><i class="fas fa-check-circle"></i> Scientifically validated</div>
+                        <div class="spotlight-feature"><i class="fas fa-check-circle"></i> Instant detailed report</div>
+                        <div class="spotlight-feature"><i class="fas fa-check-circle"></i> Career match results</div>
+                        <div class="spotlight-feature"><i class="fas fa-check-circle"></i> Personality insights</div>
+                        <div class="spotlight-feature"><i class="fas fa-check-circle"></i> Works on any device</div>
+                    </div>
+                    <a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer" class="btn-large">
+                        Start Your Assessment Now <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <p style="margin-top: 15px; font-size: 0.85rem; color: rgba(255,255,255,0.5);">For detailed interpretation of results, book a counseling session with Mr. Neog.</p>
+                </div>
+                <div class="spotlight-right fade-left">
+                    <i class="fas fa-chart-pie main-icon"></i>
+                    <h3>Professional Psychometric Assessment</h3>
+                    <p>Powered by ISCHS Psychometrics<br>Curated by Mr. Deba Jyoti Neog</p>
+                    <a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer" class="btn-large" style="font-size: 1rem; padding: 14px 32px;">
+                        <i class="fas fa-play-circle"></i> Start Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO IS THIS FOR (TABS) -->
+    <section class="section tabs-section">
+        <div class="container">
+            <div class="section-header fade-up">
+                <div class="section-badge">Who Is This For</div>
+                <h2>Find the Right Service for You</h2>
+                <p>Whether you're a student, parent, or professional — we have guidance tailored for you.</p>
+            </div>
+
+            <div class="tabs-nav fade-up">
+                <button class="tab-btn active" onclick="switchTab('students')">🎓 School Students</button>
+                <button class="tab-btn" onclick="switchTab('college')">🏫 College & Graduates</button>
+                <button class="tab-btn" onclick="switchTab('professionals')">💼 Professionals</button>
+                <button class="tab-btn" onclick="switchTab('parents')">👨‍👩‍👧 Parents</button>
+            </div>
+
+            <!-- Tab: Students -->
+            <div class="tab-content active" id="tab-students">
+                <div class="tab-grid">
+                    <div class="tab-info">
+                        <h3>For School Students (Class 8-12)</h3>
+                        <p>The most crucial career decisions happen during school years. Don't let confusion dictate your future — get scientific guidance backed by 12+ years of experience.</p>
+                        <ul class="tab-list">
+                            <li><i class="fas fa-check-circle"></i> Stream selection after Class 10th (Science/Commerce/Arts)</li>
+                            <li><i class="fas fa-check-circle"></i> Subject combination guidance</li>
+                            <li><i class="fas fa-check-circle"></i> Aptitude & interest assessment</li>
+                            <li><i class="fas fa-check-circle"></i> Career path roadmap</li>
+                            <li><i class="fas fa-check-circle"></i> Competitive exam awareness</li>
+                            <li><i class="fas fa-check-circle"></i> <a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-weight: 600;">Start with Online Assessment →</a></li>
+                        </ul>
+                        <a href="contact.html" class="btn" style="background: var(--primary); color: white;"><i class="fas fa-calendar-check"></i> Book Session</a>
+                    </div>
+                    <div class="tab-image">
+                        <i class="fas fa-user-graduate"></i>
+                        <p>School Students</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: College -->
+            <div class="tab-content" id="tab-college">
+                <div class="tab-grid">
+                    <div class="tab-info">
+                        <h3>For College Students & Graduates</h3>
+                        <p>Whether you're choosing a specialization, preparing for competitive exams, or looking for job opportunities — we provide clarity and direction.</p>
+                        <ul class="tab-list">
+                            <li><i class="fas fa-check-circle"></i> Higher education guidance (PG/MBA/M.Tech)</li>
+                            <li><i class="fas fa-check-circle"></i> Competitive exam strategy (UPSC/SSC/State)</li>
+                            <li><i class="fas fa-check-circle"></i> Skill development recommendations</li>
+                            <li><i class="fas fa-check-circle"></i> Job market analysis & preparation</li>
+                            <li><i class="fas fa-check-circle"></i> Study abroad options</li>
+                            <li><i class="fas fa-check-circle"></i> <a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-weight: 600;">Start with Online Assessment →</a></li>
+                        </ul>
+                        <a href="contact.html" class="btn" style="background: var(--primary); color: white;"><i class="fas fa-calendar-check"></i> Book Session</a>
+                    </div>
+                    <div class="tab-image">
+                        <i class="fas fa-graduation-cap"></i>
+                        <p>College & Graduates</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Professionals -->
+            <div class="tab-content" id="tab-professionals">
+                <div class="tab-grid">
+                    <div class="tab-info">
+                        <h3>For Working Professionals</h3>
+                        <p>Feeling stuck in your career? Want to switch industries or grow faster? Our professional career guidance helps you navigate transitions confidently.</p>
+                        <ul class="tab-list">
+                            <li><i class="fas fa-check-circle"></i> Career change guidance</li>
+                            <li><i class="fas fa-check-circle"></i> Skill gap analysis</li>
+                            <li><i class="fas fa-check-circle"></i> Resume & LinkedIn makeover</li>
+                            <li><i class="fas fa-check-circle"></i> Interview preparation</li>
+                            <li><i class="fas fa-check-circle"></i> Growth path planning</li>
+                            <li><i class="fas fa-check-circle"></i> <a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-weight: 600;">Start with Online Assessment →</a></li>
+                        </ul>
+                        <a href="contact.html" class="btn" style="background: var(--primary); color: white;"><i class="fas fa-calendar-check"></i> Book Session</a>
+                    </div>
+                    <div class="tab-image">
+                        <i class="fas fa-briefcase"></i>
+                        <p>Working Professionals</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Parents -->
+            <div class="tab-content" id="tab-parents">
+                <div class="tab-grid">
+                    <div class="tab-info">
+                        <h3>For Parents</h3>
+                        <p>As a parent, you want the best for your child. Our sessions help you understand your child's strengths and support their career journey effectively.</p>
+                        <ul class="tab-list">
+                            <li><i class="fas fa-check-circle"></i> Understand your child's aptitude & interests</li>
+                            <li><i class="fas fa-check-circle"></i> Get clarity on career options available today</li>
+                            <li><i class="fas fa-check-circle"></i> Learn how to support (not pressure) career choices</li>
+                            <li><i class="fas fa-check-circle"></i> Joint parent-student counseling sessions</li>
+                            <li><i class="fas fa-check-circle"></i> Education investment guidance</li>
+                            <li><i class="fas fa-check-circle"></i> <a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-weight: 600;">Child can start with Online Assessment →</a></li>
+                        </ul>
+                        <a href="contact.html" class="btn" style="background: var(--primary); color: white;"><i class="fas fa-calendar-check"></i> Book Session</a>
+                    </div>
+                    <div class="tab-image">
+                        <i class="fas fa-people-arrows"></i>
+                        <p>Parents & Families</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <div class="section-header fade-up">
+                <div class="section-badge">Our Process</div>
+                <h2>How It Works</h2>
+                <p>Five simple steps from confusion to career clarity.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-card fade-up">
+                    <div class="process-num">1</div>
+                    <h4>Take Online Assessment</h4>
+                    <p>Start with our free psychometric assessment online.</p>
+                </div>
+                <div class="process-card fade-up">
+                    <div class="process-num">2</div>
+                    <h4>Contact Us</h4>
+                    <p>Call, WhatsApp, or fill the booking form.</p>
+                </div>
+                <div class="process-card fade-up">
+                    <div class="process-num">3</div>
+                    <h4>Counseling Session</h4>
+                    <p>Detailed one-on-one session with Mr. Neog.</p>
+                </div>
+                <div class="process-card fade-up">
+                    <div class="process-num">4</div>
+                    <h4>Career Report</h4>
+                    <p>Receive your personalized career roadmap.</p>
+                </div>
+                <div class="process-card fade-up">
+                    <div class="process-num">5</div>
+                    <h4>Follow-up Support</h4>
+                    <p>Ongoing mentoring until you achieve goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section pricing-section">
+        <div class="container">
+            <div class="section-header fade-up">
+                <div class="section-badge">Our Packages</div>
+                <h2>Affordable Career Guidance</h2>
+                <p>Choose a package that suits your needs. Every investment in career guidance pays returns for life.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Basic -->
+                <div class="pricing-card fade-up">
+                    <h3>Basic</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">For quick career direction</p>
+                    <div class="price">₹999 <small>/ session</small></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> 1-Hour Counseling Session</li>
+                        <li><i class="fas fa-check-circle"></i> Career Direction Discussion</li>
+                        <li><i class="fas fa-check-circle"></i> Basic Career Suggestions</li>
+                        <li><i class="fas fa-check-circle"></i> Phone Follow-up (1 time)</li>
+                        <li style="color: var(--text-light);"><i class="far fa-circle"></i> No Assessment Included</li>
+                        <li style="color: var(--text-light);"><i class="far fa-circle"></i> No Detailed Report</li>
+                    </ul>
+                    <a href="contact.html" class="pricing-btn">Get Started</a>
+                </div>
+
+                <!-- Standard (Popular) -->
+                <div class="pricing-card popular fade-up">
+                    <div class="pricing-popular-badge">Most Popular</div>
+                    <h3>Standard</h3>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Complete career guidance</p>
+                    <div class="price">₹2,499 <small>/ package</small></div>
+                    <ul class="pricing-features">
+                        <li class="highlight-feature"><i class="fas fa-star"></i> Online Psychometric Assessment</li>
+                        <li><i class="fas fa-check-circle"></i> 2 Sessions (1.5 hrs each)</li>
+                        <li><i class="fas fa-check-circle"></i> Aptitude & Interest Assessment</li>
+                        <li><i class="fas fa-check-circle"></i> Detailed Career Report</li>
+                        <li><i class="fas fa-check-circle"></i> College/Course Recommendations</li>
+                        <li><i class="fas fa-check-circle"></i> 3 Follow-up Calls</li>
+                    </ul>
+                    <a href="contact.html" class="pricing-btn">Get Started</a>
+                </div>
+
+                <!-- Premium -->
+                <div class="pricing-card fade-up">
+                    <h3>Premium</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">Complete career transformation</p>
+                    <div class="price">₹4,999 <small>/ package</small></div>
+                    <ul class="pricing-features">
+                        <li class="highlight-feature" style="color: var(--secondary);"><i class="fas fa-star"></i> Complete Psychometric Assessment</li>
+                        <li><i class="fas fa-check-circle"></i> 4 Detailed Sessions</li>
+                        <li><i class="fas fa-check-circle"></i> Comprehensive Career Report</li>
+                        <li><i class="fas fa-check-circle"></i> Resume Building</li>
+                        <li><i class="fas fa-check-circle"></i> Mock Interview (1 session)</li>
+                        <li><i class="fas fa-check-circle"></i> 6 Months Follow-up Support</li>
+                        <li><i class="fas fa-check-circle"></i> Priority WhatsApp Support</li>
+                    </ul>
+                    <a href="contact.html" class="pricing-btn">Get Started</a>
+                </div>
+            </div>
+
+            <div class="pricing-note fade-up">
+                <p>💡 <strong>Not sure which package?</strong> Start with our FREE Online Assessment first!</p>
+                <a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer">
+                    Take Free Assessment Now <i class="fas fa-arrow-right"></i>
+                </a>
+                <p style="margin-top: 12px; font-size: 0.85rem; color: var(--text-light);">Prices are indicative. Contact us for customized packages: <a href="tel:+919435749779" style="color: var(--accent);">+91 9435749779</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <div class="section-header fade-up">
+                <div class="section-badge">FAQ</div>
+                <h2>Frequently Asked Questions</h2>
+                <p>Got questions? We've got answers.</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item fade-up">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        What age group can benefit from career counseling?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Career counseling is beneficial for students from Class 8th onwards up to working professionals. Ideally, students should seek guidance before choosing their stream after Class 10th or before selecting courses after Class 12th. However, it's never too late — we also guide working professionals looking for career changes.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-up">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        How long is a typical counseling session?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">A typical counseling session lasts between 1 to 1.5 hours. The first session usually involves understanding your background, interests, and concerns. Follow-up sessions focus on assessment results discussion, career planning, and action steps.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-up">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Do you offer online counseling?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Yes! We offer both in-person sessions at our Duliajan centre and online video counseling sessions. You can also take our psychometric assessment completely online at <a href="https://psychometrics.ischs.in/annweshan" target="_blank" style="color: var(--accent);">psychometrics.ischs.in/annweshan</a>. Online sessions are perfect for students outside Duliajan.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-up">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        How do I take the online psychometric assessment?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Simply visit <a href="https://psychometrics.ischs.in/annweshan" target="_blank" style="color: var(--accent);">psychometrics.ischs.in/annweshan</a> and follow the instructions. The assessment takes about 15-20 minutes. You'll get instant results. For a detailed interpretation of your results, book a follow-up counseling session with Mr. Neog.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-up">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Is the aptitude test scientifically validated?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Yes, all our assessment tools — including the online psychometric test — are scientifically validated and based on established psychological frameworks like RIASEC (Holland Code), MBTI, and DISC models. These are the same tools used by career counselors worldwide.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-up">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Can parents attend the counseling session?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Absolutely! In fact, we encourage parents to be part of the counseling process, especially for school students. Understanding the student's aptitude together helps families make informed decisions. We also conduct separate parent orientation sessions.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-up">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        What if I'm already working but want to change careers?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Career changes are absolutely possible and we specialize in helping professionals make smooth transitions. We'll analyze your transferable skills, assess your interests, understand market trends, and create a practical transition plan. Many of our clients have successfully switched careers with our guidance.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-up">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Do you provide guidance for government job preparation?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Yes, we provide guidance on government job career paths including UPSC, SSC, Banking, Railways, State PSC, and other competitive exams. We help you understand which government career suits your profile and create a preparation strategy. However, we don't offer coaching for specific exams — we focus on career direction and planning.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-up">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        How do I book a session?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">You can book a session in multiple ways:<br>📞 <strong>Call:</strong> <a href="tel:+919435749779" style="color: var(--accent);">+91 9435749779</a><br>💬 <strong>WhatsApp:</strong> <a href="https://wa.me/919435749779" target="_blank" style="color: var(--accent);">Chat on WhatsApp</a><br>📧 <strong>Email:</strong> <a href="mailto:annweshancareer@gmail.com" style="color: var(--accent);">annweshancareer@gmail.com</a><br>📝 <strong>Online:</strong> Fill the <a href="contact.html" style="color: var(--accent);">booking form on our Contact page</a><br><br>We recommend taking the <a href="https://psychometrics.ischs.in/annweshan" target="_blank" style="color: var(--accent);">online assessment</a> before your session for best results!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="services-cta">
+        <div class="container">
+            <h2 class="fade-up">Confused About Your Career? Let's Start!</h2>
+            <p class="fade-up">Take the first step today — take a free assessment, call us, or send a WhatsApp message.</p>
+            <div class="cta-buttons fade-up">
+                <a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer" class="btn-dark"><i class="fas fa-chart-bar"></i> Take Free Assessment</a>
+                <a href="tel:+919435749779" class="btn-white"><i class="fas fa-phone"></i> Call +91 9435749779</a>
+                <a href="https://wa.me/919435749779?text=Hello%20Sir%2C%20I%20want%20to%20know%20about%20your%20career%20counseling%20services." target="_blank" rel="noopener noreferrer" class="btn-green"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>ANNWE<span>SHAN</span></h3>
+                    <p class="tagline">"Your Future, Our Guidance"</p>
+                    <p>Empowering students and professionals in Assam with expert career counseling since 12+ years.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/919435749779" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="quiz.html"><i class="fas fa-chevron-right"></i> Career Quiz</a></li>
+                        <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Career Counseling</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Aptitude Testing</a></li>
+                        <li><a href="https://psychometrics.ischs.in/annweshan" target="_blank"><i class="fas fa-chevron-right"></i> Online Assessment</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Resume Building</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Interview Prep</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Study Abroad</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> <span>21 No. Bamhukuta, Duliajan, Assam</span></li>
+                        <li><i class="fas fa-phone"></i> <span><a href="tel:+919435749779">+91 9435749779</a></span></li>
+                        <li><i class="fas fa-envelope"></i> <span><a href="mailto:annweshancareer@gmail.com">annweshancareer@gmail.com</a></span></li>
+                        <li><i class="fas fa-clock"></i> <span>All working days<br>10:00 AM - 7:00 PM</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 <span>Annweshan Career Counseling Centre</span>. All Rights Reserved.</p>
+                <p>Counseling available in English, Hindi & Assamese</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING BUTTONS -->
+    <a href="https://wa.me/919435749779?text=Hello%20Sir%2C%20I%20am%20interested%20in%20career%20counseling%20at%20Annweshan." target="_blank" rel="noopener noreferrer" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+919435749779" class="call-float"><i class="fas fa-phone-alt"></i></a>
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+
+    <script>
+        // Mobile Menu
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+            document.getElementById('hamburger').classList.toggle('active');
+        }
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+                document.getElementById('hamburger').classList.remove('active');
+            });
+        });
+
+        // Scroll to Top
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) { scrollTop.classList.add('visible'); }
+            else { scrollTop.classList.remove('visible'); }
+        });
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+        // Tabs
+        function switchTab(tabName) {
+            // Remove active from all tabs
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+
+            // Activate selected
+            document.getElementById('tab-' + tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // FAQ Accordion
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+
+            // Open clicked (if wasn't active)
+            if (!isActive) { faqItem.classList.add('active'); }
+        }
+
+        // Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.fade-up, .fade-right, .fade-left').forEach(el => observer.observe(el));
+
+        // Staggered animations
+        document.querySelectorAll('.services-grid .service-card').forEach((card, i) => {
+            card.style.transitionDelay = `${i * 0.1}s`;
+        });
+        document.querySelectorAll('.pricing-grid .pricing-card').forEach((card, i) => {
+            card.style.transitionDelay = `${i * 0.15}s`;
+        });
+        document.querySelectorAll('.process-grid .process-card').forEach((card, i) => {
+            card.style.transitionDelay = `${i * 0.1}s`;
+        });
+        document.querySelectorAll('.faq-grid .faq-item').forEach((item, i) => {
+            item.style.transitionDelay = `${i * 0.08}s`;
+        });
+    </script>
+
+</body>
+</html>

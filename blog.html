@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guidance Blog - Annweshan Career Counseling Centre | Expert Tips & Advice</title>
+    <meta name="description" content="Career guidance blog by Mr. Deba Jyoti Neog. Tips on career options after 10th & 12th, college selection, interview prep, career change advice. Duliajan, Assam.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #1a365d;
+            --secondary: #e6a817;
+            --secondary-light: #f0c040;
+            --accent: #2d9cdb;
+            --bg: #f7f9fc;
+            --text: #2d3748;
+            --text-light: #718096;
+            --white: #ffffff;
+            --shadow: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-hover: 0 20px 60px rgba(0,0,0,0.15);
+            --radius: 16px;
+            --transition: all 0.3s ease;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); overflow-x: hidden; }
+        h1,h2,h3,h4,h5,h6 { font-family: 'Poppins', sans-serif; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background: rgba(255,255,255,0.95); backdrop-filter: blur(20px);
+            padding: 15px 0; position: sticky; top: 0; z-index: 9999;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 10px; }
+        .logo-icon {
+            width: 45px; height: 45px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 1.3rem;
+        }
+        .logo-text { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--primary); }
+        .logo-text span { color: var(--secondary); }
+        .nav-links { display: flex; align-items: center; gap: 5px; list-style: none; }
+        .nav-links a {
+            padding: 8px 16px; border-radius: 8px; font-weight: 500;
+            font-size: 0.92rem; transition: var(--transition); color: var(--text);
+        }
+        .nav-links a:hover { background: var(--bg); color: var(--primary); }
+        .nav-links a.active { background: var(--bg); color: var(--primary); font-weight: 600; }
+        .nav-links .assessment-link {
+            background: linear-gradient(135deg, var(--secondary), #f0c040);
+            color: var(--primary) !important; font-weight: 700;
+            padding: 8px 18px; border-radius: 25px; animation: glowPulse 2s infinite;
+        }
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 5px rgba(230,168,23,0.3); }
+            50% { box-shadow: 0 0 20px rgba(230,168,23,0.6); }
+        }
+        .nav-links .assessment-link:hover { transform: scale(1.05); }
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white !important; padding: 10px 22px !important;
+            border-radius: 25px !important; font-weight: 600 !important;
+        }
+        .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(26,54,93,0.4); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 5px; }
+        .hamburger span { width: 28px; height: 3px; background: var(--primary); border-radius: 3px; transition: var(--transition); }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+        /* ===== PAGE HERO ===== */
+        .page-hero {
+            background: linear-gradient(135deg, #0f1b2d 0%, #1a365d 50%, #1e4976 100%);
+            padding: 80px 0; text-align: center; position: relative; overflow: hidden;
+        }
+        .page-hero::before {
+            content: ''; position: absolute; top: -50%; right: -20%;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(230,168,23,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .page-hero .container { position: relative; z-index: 2; }
+        .breadcrumb { display: flex; justify-content: center; gap: 10px; margin-bottom: 15px; font-size: 0.9rem; }
+        .breadcrumb a { color: rgba(255,255,255,0.6); transition: var(--transition); }
+        .breadcrumb a:hover { color: var(--secondary); }
+        .breadcrumb span { color: var(--secondary); }
+        .page-hero h1 { font-size: 3rem; font-weight: 800; color: white; margin-bottom: 15px; }
+        .page-hero h1 span {
+            background: linear-gradient(135deg, var(--secondary), #f0c040);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .page-hero p { color: rgba(255,255,255,0.7); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        /* ===== SECTIONS ===== */
+        .section { padding: 90px 0; }
+        .section-badge {
+            display: inline-block; padding: 6px 20px;
+            background: rgba(26,54,93,0.08); color: var(--primary);
+            border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 15px;
+        }
+
+        /* ===== CATEGORY FILTER ===== */
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 50px;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            border: 2px solid rgba(0,0,0,0.08);
+            border-radius: 50px;
+            background: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: var(--text);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-color: transparent;
+        }
+
+        /* ===== FEATURED POST ===== */
+        .featured-post {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            transition: var(--transition);
+        }
+
+        .featured-post:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .featured-image {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.7);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-image::before {
+            content: '';
+            position: absolute;
+            top: -30%; right: -20%;
+            width: 250px; height: 250px;
+            background: radial-gradient(circle, rgba(230,168,23,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .featured-image i {
+            font-size: 5rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .featured-image p {
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .featured-label {
+            position: absolute;
+            top: 20px; left: 20px;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            z-index: 3;
+        }
+
+        .featured-content {
+            padding: 40px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .post-category {
+            display: inline-block;
+            padding: 4px 14px;
+            background: rgba(45,156,219,0.1);
+            color: var(--accent);
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            width: fit-content;
+        }
+
+        .featured-content h2 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .featured-content > p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .post-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .post-meta i { color: var(--secondary); }
+
+        .read-more-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            transition: var(--transition);
+            width: fit-content;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .read-more-btn:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(26,54,93,0.3);
+        }
+
+        /* ===== BLOG LAYOUT ===== */
+        .blog-layout {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .blog-card-image {
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.6);
+            position: relative;
+        }
+
+        .blog-card-image i {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+        }
+
+        .blog-card-image p {
+            font-size: 0.8rem;
+        }
+
+        .blog-card-image .card-category {
+            position: absolute;
+            top: 12px; left: 12px;
+            padding: 4px 12px;
+            background: rgba(255,255,255,0.95);
+            color: var(--accent);
+            border-radius: 15px;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        .blog-card-body {
+            padding: 22px;
+        }
+
+        .blog-card-body h3 {
+            font-size: 1.05rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            line-height: 1.4;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover .blog-card-body h3 {
+            color: var(--accent);
+        }
+
+        .blog-card-body > p {
+            color: var(--text-light);
+            font-size: 0.88rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.78rem;
+            color: var(--text-light);
+            padding-top: 15px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-meta i { color: var(--secondary); font-size: 0.7rem; }
+
+        .card-read-more {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.82rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: var(--transition);
+        }
+
+                .blog-card {
+            cursor: pointer;
+        }.card-read-more:hover {
+            gap: 8px;
+            color: var(--primary);
+        }
+
+        /* Blog card image colors */
+        .bg-1 { background: linear-gradient(135deg, #1a365d, #2d5f8a); }
+        .bg-2 { background: linear-gradient(135deg, #2d9cdb, #5bb8f0); }
+        .bg-3 { background: linear-gradient(135deg, #e6a817, #f0c040); color: var(--primary) !important; }
+        .bg-4 { background: linear-gradient(135deg, #16a34a, #22c55e); }
+        .bg-5 { background: linear-gradient(135deg, #7c3aed, #a78bfa); }
+        .bg-6 { background: linear-gradient(135deg, #dc2626, #f87171); }
+        .bg-7 { background: linear-gradient(135deg, #0891b2, #22d3ee); }
+        .bg-8 { background: linear-gradient(135deg, #c2410c, #f97316); }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-widget {
+            background: white;
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            margin-bottom: 25px;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .sidebar-widget h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--bg);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sidebar-widget h3 i { color: var(--secondary); }
+
+        /* Search */
+        .search-box {
+            display: flex;
+            gap: 8px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            border-color: var(--accent);
+        }
+
+        .search-btn {
+            width: 48px; height: 48px;
+            background: var(--primary);
+            color: white;
+            border: none; border-radius: 12px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .search-btn:hover {
+            background: var(--accent);
+        }
+
+        /* Categories */
+        .category-list {
+            list-style: none;
+        }
+
+        .category-list li {
+            margin-bottom: 6px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            color: var(--text);
+            transition: var(--transition);
+        }
+
+        .category-list a:hover {
+            background: var(--bg);
+            color: var(--primary);
+            padding-left: 20px;
+        }
+
+        .category-count {
+            background: var(--bg);
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* Popular Posts */
+        .popular-post {
+            display: flex;
+            gap: 15px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .popular-post:last-child { border-bottom: none; }
+
+        .popular-post:hover { padding-left: 5px; }
+
+        .popular-num {
+            width: 35px; height: 35px; min-width: 35px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-weight: 700; font-size: 0.85rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .popular-info h4 {
+            font-size: 0.88rem; color: var(--primary);
+            line-height: 1.4; margin-bottom: 4px;
+            transition: var(--transition);
+        }
+
+        .popular-post:hover .popular-info h4 { color: var(--accent); }
+
+        .popular-info span {
+            font-size: 0.75rem; color: var(--text-light);
+        }
+
+        /* Assessment CTA Widget */
+        .assessment-widget {
+            background: linear-gradient(135deg, var(--primary), #1e4976) !important;
+            color: white;
+            text-align: center;
+            border: none !important;
+        }
+
+        .assessment-widget h3 {
+            color: white !important;
+            border-bottom-color: rgba(255,255,255,0.1) !important;
+            justify-content: center;
+        }
+
+        .assessment-widget h3 i { color: var(--secondary) !important; }
+
+        .assessment-widget p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .assessment-widget-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 28px;
+            background: linear-gradient(135deg, var(--secondary), #f0c040);
+            color: var(--primary);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .assessment-widget-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(230,168,23,0.4);
+        }
+
+        /* Newsletter */
+        .newsletter-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            margin-bottom: 10px;
+            transition: var(--transition);
+        }
+
+        .newsletter-input:focus { border-color: var(--accent); }
+
+        .newsletter-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .newsletter-btn:hover {
+            background: var(--accent);
+        }
+
+        .newsletter-note {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        /* ===== SAMPLE ARTICLE ===== */
+        .article-section {
+            display: none;
+            padding: 60px 0;
+        }
+
+        .article-section.active { display: block; }
+
+        .article-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            padding: 50px 45px;
+            box-shadow: var(--shadow);
+        }
+
+        .article-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .article-back:hover { gap: 12px; color: var(--primary); }
+
+        .article-wrapper .post-category { margin-bottom: 12px; }
+
+        .article-wrapper h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .article-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            margin-bottom: 30px;
+        }
+
+        .author-avatar {
+            width: 50px; height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-weight: 700; font-size: 1.1rem;
+        }
+
+        .author-info h4 { font-size: 0.95rem; color: var(--primary); }
+        .author-info span { font-size: 0.82rem; color: var(--text-light); }
+
+        .article-content h2 {
+            font-size: 1.4rem; color: var(--primary);
+            margin: 30px 0 15px;
+        }
+
+        .article-content p {
+            color: var(--text);
+            font-size: 0.98rem;
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 15px 0 20px 25px;
+        }
+
+        .article-content li {
+            padding: 6px 0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text);
+        }
+
+        .key-takeaway {
+            background: linear-gradient(135deg, rgba(230,168,23,0.08), rgba(240,192,64,0.05));
+            border-left: 4px solid var(--secondary);
+            border-radius: 0 12px 12px 0;
+            padding: 25px 30px;
+            margin: 30px 0;
+        }
+
+        .key-takeaway h3 {
+            font-size: 1.1rem; color: var(--primary);
+            margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+        }
+
+        .key-takeaway ul { margin: 0 0 0 20px; }
+        .key-takeaway li { padding: 4px 0; font-size: 0.92rem; }
+
+        /* Article CTA */
+        .article-cta {
+            background: linear-gradient(135deg, var(--primary), #1e4976);
+            border-radius: var(--radius);
+            padding: 35px;
+            text-align: center;
+            margin: 35px 0;
+        }
+
+        .article-cta h3 { color: white; font-size: 1.3rem; margin-bottom: 10px; }
+        .article-cta p { color: rgba(255,255,255,0.7); font-size: 0.92rem; margin-bottom: 20px; }
+
+        .article-cta-buttons {
+            display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;
+        }
+
+        .article-cta-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 24px; border-radius: 50px;
+            font-weight: 600; font-size: 0.88rem;
+            transition: var(--transition); font-family: 'Poppins', sans-serif;
+        }
+
+        .article-cta-btn.gold {
+            background: linear-gradient(135deg, var(--secondary), #f0c040);
+            color: var(--primary);
+        }
+
+        .article-cta-btn.white {
+            background: white; color: var(--primary);
+        }
+
+        .article-cta-btn:hover { transform: translateY(-2px); }
+
+        /* Share Buttons */
+        .article-share {
+            display: flex; align-items: center; gap: 15px;
+            padding: 20px 0; border-top: 1px solid rgba(0,0,0,0.06);
+            margin-top: 30px;
+        }
+
+        .article-share span { font-weight: 600; font-size: 0.9rem; color: var(--primary); }
+
+        .share-icon {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; transition: var(--transition); cursor: pointer;
+        }
+
+        .share-icon:hover { transform: translateY(-3px); }
+        .share-icon.wa { background: #25d366; color: white; }
+        .share-icon.fb { background: #1877f2; color: white; }
+        .share-icon.tw { background: #1da1f2; color: white; }
+        .share-icon.cp { background: var(--primary); color: white; }
+
+        /* Author Bio */
+        .author-bio {
+            background: var(--bg); border-radius: var(--radius);
+            padding: 30px; display: flex; gap: 20px;
+            margin-top: 30px; align-items: center;
+        }
+
+        .author-bio-avatar {
+            width: 80px; height: 80px; min-width: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--secondary); font-size: 2.5rem;
+        }
+
+        .author-bio-info h4 { font-size: 1.1rem; color: var(--primary); margin-bottom: 4px; }
+        .author-bio-info .author-title { font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
+        .author-bio-info p { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #0a1628; color: rgba(255,255,255,0.7); padding: 70px 0 30px;
+        }
+        .footer-grid {
+            display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 40px; margin-bottom: 50px;
+        }
+        .footer-brand h3 { font-size: 1.6rem; color: white; margin-bottom: 8px; }
+        .footer-brand h3 span { color: var(--secondary); }
+        .footer-brand .tagline { color: var(--secondary); font-size: 0.9rem; font-weight: 500; margin-bottom: 15px; }
+        .footer-brand p { font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px; }
+        .footer-social { display: flex; gap: 10px; }
+        .footer-social a {
+            width: 40px; height: 40px; background: rgba(255,255,255,0.08);
+            border-radius: 10px; display: flex; align-items: center;
+            justify-content: center; color: white; transition: var(--transition);
+        }
+        .footer-social a:hover { background: var(--secondary); color: var(--primary); transform: translateY(-3px); }
+        .footer h4 { color: white; font-size: 1.1rem; margin-bottom: 20px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a {
+            color: rgba(255,255,255,0.6); font-size: 0.9rem;
+            transition: var(--transition); display: inline-flex; align-items: center; gap: 6px;
+        }
+        .footer-links a:hover { color: var(--secondary); padding-left: 5px; }
+        .footer-contact li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 15px; font-size: 0.9rem; }
+        .footer-contact i { color: var(--secondary); margin-top: 3px; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 25px; display: flex; justify-content: space-between;
+            align-items: center; font-size: 0.85rem;
+        }
+        .footer-bottom span { color: var(--secondary); }
+
+        /* ===== FLOATING BUTTONS ===== */
+        .whatsapp-float {
+            position: fixed; bottom: 25px; right: 25px;
+            width: 60px; height: 60px; background: #25d366;
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; color: white; font-size: 1.8rem;
+            box-shadow: 0 5px 25px rgba(37,211,102,0.4);
+            z-index: 9998; transition: var(--transition);
+            animation: whatsappPulse 2s infinite;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        @keyframes whatsappPulse {
+            0%, 100% { box-shadow: 0 5px 25px rgba(37,211,102,0.4); }
+            50% { box-shadow: 0 5px 25px rgba(37,211,102,0.7), 0 0 0 15px rgba(37,211,102,0.1); }
+        }
+        .call-float {
+            position: fixed; bottom: 25px; left: 25px;
+            width: 60px; height: 60px; background: var(--primary);
+            border-radius: 50%; display: none; align-items: center;
+            justify-content: center; color: white; font-size: 1.5rem;
+            box-shadow: 0 5px 25px rgba(26,54,93,0.4); z-index: 9998;
+        }
+        .scroll-top {
+            position: fixed; bottom: 95px; right: 25px;
+            width: 45px; height: 45px; background: var(--primary);
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; color: white; font-size: 1.1rem;
+            z-index: 9997; cursor: pointer; transition: var(--transition);
+            opacity: 0; visibility: hidden; border: none;
+        }
+        .scroll-top.visible { opacity: 1; visibility: visible; }
+        .scroll-top:hover { background: var(--accent); transform: translateY(-3px); }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .blog-layout { grid-template-columns: 1fr; }
+            .sidebar { position: static; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .sidebar-widget { margin-bottom: 0; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed; top: 0; right: -100%; width: 280px;
+                height: 100vh; background: white; flex-direction: column;
+                padding: 80px 30px 30px; gap: 5px;
+                box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+                transition: var(--transition); z-index: 9998;
+            }
+            .nav-links.active { right: 0; }
+            .nav-links a { width: 100%; padding: 12px 16px; }
+            .hamburger { display: flex; z-index: 9999; }
+
+            .page-hero { padding: 60px 0; }
+            .page-hero h1 { font-size: 2rem; }
+            .section { padding: 60px 0; }
+
+            .featured-post { grid-template-columns: 1fr; }
+            .featured-image { min-height: 200px; }
+            .featured-content { padding: 25px; }
+            .featured-content h2 { font-size: 1.3rem; }
+
+            .blog-grid { grid-template-columns: 1fr; }
+            .sidebar { grid-template-columns: 1fr; }
+
+            .category-filter { gap: 6px; }
+            .filter-btn { padding: 8px 16px; font-size: 0.8rem; }
+
+            .article-wrapper { padding: 30px 22px; }
+            .article-wrapper h1 { font-size: 1.5rem; }
+            .author-bio { flex-direction: column; text-align: center; }
+            .article-cta-buttons { flex-direction: column; align-items: center; }
+
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+            .call-float { display: flex; }
+        }
+
+        @media (max-width: 480px) {
+            .page-hero h1 { font-size: 1.7rem; }
+            .post-meta { flex-wrap: wrap; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-compass"></i></div>
+                <div class="logo-text">ANNWE<span>SHAN</span></div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="quiz.html">Career Quiz</a></li>
+                <li><a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer" class="assessment-link"><i class="fas fa-chart-bar"></i> Take an Assessment</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html" class="nav-cta">Book Free Consultation</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <span>/</span> <span>Blog</span>
+            </div>
+            <h1>Career Guidance <span>Blog</span></h1>
+            <p>Expert advice, tips, and insights by Mr. Deba Jyoti Neog to help you make informed career decisions.</p>
+        </div>
+    </section>
+
+    <!-- BLOG LISTING -->
+    <section class="section" id="blogListing">
+        <div class="container">
+
+            <!-- Category Filter -->
+            <div class="category-filter fade-up">
+                <button class="filter-btn active" onclick="filterPosts('all', this)">All Posts</button>
+                <button class="filter-btn" onclick="filterPosts('student', this)">🎓 Student Guide</button>
+                <button class="filter-btn" onclick="filterPosts('career', this)">💼 Career Tips</button>
+                <button class="filter-btn" onclick="filterPosts('industry', this)">📈 Industry Trends</button>
+                <button class="filter-btn" onclick="filterPosts('parent', this)">👨‍👩‍👧 Parent Guide</button>
+                <button class="filter-btn" onclick="filterPosts('success', this)">⭐ Success Stories</button>
+            </div>
+
+            <!-- Featured Post -->
+            <div class="featured-post fade-up" onclick="showArticle(0)" style="cursor: pointer;">
+                <div class="featured-image">
+                    <span class="featured-label">⭐ Featured</span>
+                    <i class="fas fa-graduation-cap"></i>
+                    <p>Featured Article</p>
+                </div>
+                <div class="featured-content">
+                    <span class="post-category">Student Guide</span>
+                    <h2>How to Choose the Right Career After Class 10th in Assam — A Complete Guide</h2>
+                    <p>Choosing between Science, Commerce, and Arts after Class 10th is one of the most important decisions in a student's life. This comprehensive guide covers everything you need to know...</p>
+                    <div class="post-meta">
+                        <span><i class="fas fa-user"></i> Mr. Deba Jyoti Neog</span>
+                        <span><i class="fas fa-calendar"></i> Jan 15, 2025</span>
+                        <span><i class="fas fa-clock"></i> 8 min read</span>
+                    </div>
+                    <span class="read-more-btn"><i class="fas fa-book-open"></i> Read Full Article</span>
+                </div>
+            </div>
+
+            <!-- Blog Grid + Sidebar -->
+            <div class="blog-layout">
+
+                <!-- Blog Posts Grid -->
+                <div class="blog-grid" id="blogGrid">
+
+                    
+                                        <!-- Post 1 -->
+                    <div class="blog-card fade-up" data-category="student" onclick="showArticle(1)">
+                        <div class="blog-card-image bg-1">
+                            <span class="card-category">Student Guide</span>
+                            <i class="fas fa-flask"></i>
+                            <p>Science Careers</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <h3>Top 10 Career Options After 12th Science in 2025</h3>
+                            <p>Beyond engineering and medical — discover exciting career paths for science students including data science, biotechnology, space science, and more.</p>
+                            <div class="card-meta">
+                                <span><i class="fas fa-calendar"></i> Jan 10, 2025</span>
+                                <span><i class="fas fa-clock"></i> 6 min</span>
+                            </div>
+                            <a class="card-read-more" style="margin-top:10px;">Read Full Article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 2 -->
+                    <div class="blog-card fade-up" data-category="industry" onclick="showArticle(2)">
+                        <div class="blog-card-image bg-2">
+                            <span class="card-category">Industry Trends</span>
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>Northeast India</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <h3>Career Opportunities in Northeast India You Must Know</h3>
+                            <p>Northeast India is booming with career opportunities in tourism, tea industry, IT, oil sector, and entrepreneurship. Find out what's right for you.</p>
+                            <div class="card-meta">
+                                <span><i class="fas fa-calendar"></i> Jan 5, 2025</span>
+                                <span><i class="fas fa-clock"></i> 7 min</span>
+                            </div>
+                            <a class="card-read-more" style="margin-top:10px;">Read Full Article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 3 -->
+                    <div class="blog-card fade-up" data-category="parent" onclick="showArticle(3)">
+                        <div class="blog-card-image bg-3">
+                            <span class="card-category">Parent Guide</span>
+                            <i class="fas fa-users"></i>
+                            <p>For Parents</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <h3>Why Every Student Needs Career Counseling Before Choosing a Stream</h3>
+                            <p>Many students choose streams based on peer pressure or family expectations. Here's why professional career counseling can make all the difference.</p>
+                            <div class="card-meta">
+                                <span><i class="fas fa-calendar"></i> Dec 28, 2024</span>
+                                <span><i class="fas fa-clock"></i> 5 min</span>
+                            </div>
+                            <a class="card-read-more" style="margin-top:10px;">Read Full Article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 4 -->
+                    <div class="blog-card fade-up" data-category="career" onclick="showArticle(4)">
+                        <div class="blog-card-image bg-4">
+                            <span class="card-category">Career Tips</span>
+                            <i class="fas fa-balance-scale"></i>
+                            <p>Job Comparison</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <h3>Government Jobs vs Private Jobs: Which Is Right for You?</h3>
+                            <p>Stability vs growth, security vs salary — the eternal debate. We break down the pros and cons to help you decide based on your personality.</p>
+                            <div class="card-meta">
+                                <span><i class="fas fa-calendar"></i> Dec 20, 2024</span>
+                                <span><i class="fas fa-clock"></i> 6 min</span>
+                            </div>
+                            <a class="card-read-more" style="margin-top:10px;">Read Full Article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 5 -->
+                    <div class="blog-card fade-up" data-category="career" onclick="showArticle(5)">
+                        <div class="blog-card-image bg-5">
+                            <span class="card-category">Career Tips</span>
+                            <i class="fas fa-brain"></i>
+                            <p>Psychometric Testing</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <h3>How Psychometric Testing Can Transform Your Career Decision</h3>
+                            <p>Discover how scientifically validated psychometric assessments reveal your true strengths, personality type, and ideal career matches.</p>
+                            <div class="card-meta">
+                                <span><i class="fas fa-calendar"></i> Dec 15, 2024</span>
+                                <span><i class="fas fa-clock"></i> 5 min</span>
+                            </div>
+                            <a class="card-read-more" style="margin-top:10px;">Read Full Article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 6 -->
+                    <div class="blog-card fade-up" data-category="student" onclick="showArticle(6)">
+                        <div class="blog-card-image bg-6">
+                            <span class="card-category">Student Guide</span>
+                            <i class="fas fa-university"></i>
+                            <p>Best Colleges</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <h3>Best Colleges in Assam for Different Career Paths</h3>
+                            <p>A comprehensive guide to the top colleges in Assam for engineering, medical, arts, commerce, law, and other professional courses.</p>
+                            <div class="card-meta">
+                                <span><i class="fas fa-calendar"></i> Dec 10, 2024</span>
+                                <span><i class="fas fa-clock"></i> 8 min</span>
+                            </div>
+                            <a class="card-read-more" style="margin-top:10px;">Read Full Article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 7 -->
+                    <div class="blog-card fade-up" data-category="student" onclick="showArticle(7)">
+                        <div class="blog-card-image bg-7">
+                            <span class="card-category">Student Guide</span>
+                            <i class="fas fa-palette"></i>
+                            <p>Arts Careers</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <h3>Career Options After 12th Arts — Don't Underestimate!</h3>
+                            <p>Arts is not a "backup" stream! Discover 15+ exciting and well-paying career paths available for Arts students including law, design, and media.</p>
+                            <div class="card-meta">
+                                <span><i class="fas fa-calendar"></i> Dec 5, 2024</span>
+                                <span><i class="fas fa-clock"></i> 6 min</span>
+                            </div>
+                            <a class="card-read-more" style="margin-top:10px;">Read Full Article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 8 -->
+                    <div class="blog-card fade-up" data-category="career" onclick="showArticle(8)">
+                        <div class="blog-card-image bg-8">
+                            <span class="card-category">Career Tips</span>
+                            <i class="fas fa-exchange-alt"></i>
+                            <p>Career Change</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <h3>5 Signs You Need a Career Change — And How to Do It</h3>
+                            <p>Feeling stuck, unmotivated, or unfulfilled? These signs indicate it might be time for a career change. Here's how to transition smoothly.</p>
+                            <div class="card-meta">
+                                <span><i class="fas fa-calendar"></i> Nov 28, 2024</span>
+                                <span><i class="fas fa-clock"></i> 5 min</span>
+                            </div>
+                            <a class="card-read-more" style="margin-top:10px;">Read Full Article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                <!-- SIDEBAR -->
+                <div class="sidebar">
+
+                    <!-- Search -->
+                    <div class="sidebar-widget">
+                        <h3><i class="fas fa-search"></i> Search</h3>
+                        <div class="search-box">
+                            <input type="text" class="search-input" placeholder="Search articles...">
+                            <button class="search-btn"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Assessment CTA -->
+                    <div class="sidebar-widget assessment-widget">
+                        <h3><i class="fas fa-chart-bar"></i> Career Assessment</h3>
+                        <p>Discover your career personality with our professional psychometric assessment. Get detailed insights and career recommendations.</p>
+                        <a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer" class="assessment-widget-btn">
+                            <i class="fas fa-play-circle"></i> Start Assessment
+                        </a>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="sidebar-widget">
+                        <h3><i class="fas fa-folder"></i> Categories</h3>
+                        <ul class="category-list">
+                            <li><a href="#" onclick="filterPosts('student', document.querySelector('.filter-btn'))"><span>🎓 Student Guide</span> <span class="category-count">4</span></a></li>
+                            <li><a href="#" onclick="filterPosts('career', document.querySelector('.filter-btn'))"><span>💼 Career Tips</span> <span class="category-count">3</span></a></li>
+                            <li><a href="#" onclick="filterPosts('industry', document.querySelector('.filter-btn'))"><span>📈 Industry Trends</span> <span class="category-count">1</span></a></li>
+                            <li><a href="#" onclick="filterPosts('parent', document.querySelector('.filter-btn'))"><span>👨‍👩‍👧 Parent Guide</span> <span class="category-count">1</span></a></li>
+                            <li><a href="#" onclick="filterPosts('success', document.querySelector('.filter-btn'))"><span>⭐ Success Stories</span> <span class="category-count">Coming</span></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Popular Posts -->
+                    <div class="sidebar-widget">
+                        <h3><i class="fas fa-fire"></i> Popular Posts</h3>
+
+                        <div class="popular-post">
+                            <div class="popular-num">1</div>
+                            <div class="popular-info">
+                                <h4>Top 10 Career Options After 12th Science</h4>
+                                <span><i class="fas fa-clock"></i> 6 min read</span>
+                            </div>
+                        </div>
+
+                        <div class="popular-post">
+                            <div class="popular-num">2</div>
+                            <div class="popular-info">
+                                <h4>How to Choose the Right Career After Class 10th</h4>
+                                <span><i class="fas fa-clock"></i> 8 min read</span>
+                            </div>
+                        </div>
+
+                        <div class="popular-post">
+                            <div class="popular-num">3</div>
+                            <div class="popular-info">
+                                <h4>Government Jobs vs Private Jobs</h4>
+                                <span><i class="fas fa-clock"></i> 6 min read</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Book Session CTA -->
+                    <div class="sidebar-widget" style="text-align: center;">
+                        <h3><i class="fas fa-calendar-check"></i> Need Personal Guidance?</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 15px;">Book a one-on-one session with Mr. Deba Jyoti Neog for personalized career planning.</p>
+                        <a href="contact.html" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--primary); color: white; border-radius: 50px; font-weight: 600; font-size: 0.88rem; transition: var(--transition); font-family: 'Poppins', sans-serif;">
+                            <i class="fas fa-calendar-check"></i> Book Free Session
+                        </a>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="sidebar-widget">
+                        <h3><i class="fas fa-envelope"></i> Newsletter</h3>
+                        <p style="color: var(--text-light); font-size: 0.88rem; margin-bottom: 15px;">Get weekly career tips from Mr. Deba Jyoti Neog delivered to your inbox.</p>
+                        <input type="email" class="newsletter-input" placeholder="Your email address">
+                        <button class="newsletter-btn" onclick="subscribeNewsletter()"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                        <p class="newsletter-note">We respect your privacy. No spam, ever.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SAMPLE ARTICLE (Shows when clicking featured post) -->
+    <section class="article-section" id="articleSection">
+        <div class="container">
+            <div class="article-wrapper">
+
+                <a class="article-back" onclick="hideArticle()">
+                    <i class="fas fa-arrow-left"></i> Back to Blog
+                </a>
+
+                <span class="post-category">Student Guide</span>
+                <h1>How to Choose the Right Career After Class 10th in Assam — A Complete Guide</h1>
+
+                <div class="article-author">
+                    <div class="author-avatar">DN</div>
+                    <div class="author-info">
+                        <h4>Mr. Deba Jyoti Neog</h4>
+                        <span>Certified Career Counselor • January 15, 2025 • 8 min read</span>
+                    </div>
+                </div>
+
+                <div class="article-content">
+                    <p>Choosing the right career path after Class 10th is one of the most significant decisions in a student's life. In Assam, where students often face limited exposure to diverse career options, making an informed choice becomes even more crucial. As a career counselor with over 12 years of experience in Duliajan, I've guided thousands of students through this critical junction.</p>
+
+                    <h2>Understanding the Three Main Streams</h2>
+                    <p>After Class 10th, students in Assam typically choose between three streams: Science, Commerce, and Arts (Humanities). Each stream opens doors to different career paths, and the right choice depends on your interests, aptitude, and long-term goals.</p>
+
+                    <h2>Science Stream — Not Just Engineering & Medical</h2>
+                    <p>Many students and parents believe Science only leads to engineering or medical careers. This couldn't be further from the truth. The Science stream offers exciting paths in:</p>
+                    <ul>
+                        <li><strong>Data Science & Artificial Intelligence</strong> — One of the fastest-growing fields globally</li>
+                        <li><strong>Biotechnology</strong> — Combining biology with technology for healthcare innovation</li>
+                        <li><strong>Environmental Science</strong> — Crucial for Northeast India's ecological preservation</li>
+                        <li><strong>Space Science & Astronomy</strong> — With ISRO expanding, more opportunities than ever</li>
+                        <li><strong>Forensic Science</strong> — A fascinating career in criminal investigation</li>
+                        <li><strong>Agriculture Science</strong> — Particularly relevant for Assam's agrarian economy</li>
+                    </ul>
+
+                    <h2>Commerce Stream — Beyond CA & Banking</h2>
+                    <p>Commerce students have a wide range of career options beyond traditional accounting and banking:</p>
+                    <ul>
+                        <li><strong>Digital Marketing</strong> — Every business needs digital marketing experts</li>
+                        <li><strong>Financial Planning</strong> — Growing demand for personal finance advisors</li>
+                        <li><strong>E-commerce & Startup Management</strong> — The entrepreneurial route</li>
+                        <li><strong>Company Secretary (CS)</strong> — Corporate governance and compliance</li>
+                        <li><strong>Actuarial Science</strong> — Risk assessment for insurance companies</li>
+                    </ul>
+
+                    <h2>Arts/Humanities — The Most Underrated Stream</h2>
+                    <p>Arts is often seen as a "backup" choice, but it offers some of the most fulfilling and well-paying careers:</p>
+                    <ul>
+                        <li><strong>Law (LLB)</strong> — One of the most respected professions</li>
+                        <li><strong>Civil Services (IAS/IPS)</strong> — The prestigious UPSC route</li>
+                        <li><strong>Journalism & Mass Communication</strong> — Media is everywhere</li>
+                        <li><strong>Psychology & Counseling</strong> — Growing mental health awareness</li>
+                        <li><strong>Fashion & Interior Design</strong> — Creative and lucrative</li>
+                        <li><strong>Foreign Languages</strong> — Translation and international careers</li>
+                    </ul>
+
+                    <h2>How to Make the Right Choice?</h2>
+                    <p>Here's my proven approach that I use at Annweshan Career Counseling Centre:</p>
+                    <ol>
+                        <li><strong>Self-Assessment:</strong> Understand your interests, strengths, and personality type through psychometric testing</li>
+                        <li><strong>Research:</strong> Learn about different careers, their scope, salary, and growth potential</li>
+                        <li><strong>Talk to Professionals:</strong> Connect with people working in careers that interest you</li>
+                        <li><strong>Consider Aptitude:</strong> Your natural abilities matter more than what's "popular"</li>
+                        <li><strong>Think Long-term:</strong> Choose a career that will still be relevant 10-20 years from now</li>
+                        <li><strong>Seek Expert Guidance:</strong> A professional career counselor can provide objective, data-driven insights</li>
+                    </ol>
+
+                    <div class="key-takeaway">
+                        <h3>💡 Key Takeaways</h3>
+                        <ul>
+                            <li>Don't choose a stream based on peer pressure or family expectations alone</li>
+                            <li>Every stream has high-paying and fulfilling career options</li>
+                            <li>Take a psychometric assessment to understand your true aptitude</li>
+                            <li>Research careers thoroughly before making a decision</li>
+                            <li>Seek professional career counseling for personalized guidance</li>
+                            <li>It's okay to be different — follow YOUR strengths, not trends</li>
+                        </ul>
+                    </div>
+
+                    <p>Remember, the "right" career is one that aligns with your natural abilities, interests, and values. There's no one-size-fits-all answer. What works for your friend or sibling may not work for you, and that's perfectly okay.</p>
+
+                    <p>If you're a student in Assam facing this decision, I encourage you to take our <a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-weight: 600;">online psychometric assessment</a> as a starting point. It will give you valuable insights into your personality type and suitable career matches.</p>
+                </div>
+
+                <!-- Article CTA -->
+                <div class="article-cta">
+                    <h3>Need Personalized Career Guidance?</h3>
+                    <p>This article provides general guidance. For a detailed, personalized career plan tailored to YOUR unique strengths and interests, let's connect!</p>
+                    <div class="article-cta-buttons">
+                        <a href="https://psychometrics.ischs.in/annweshan" target="_blank" rel="noopener noreferrer" class="article-cta-btn gold">
+                            <i class="fas fa-chart-bar"></i> Take Career Assessment
+                        </a>
+                        <a href="contact.html" class="article-cta-btn white">
+                            <i class="fas fa-calendar-check"></i> Book Free Session
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Share -->
+                <div class="article-share">
+                    <span>Share this article:</span>
+                    <a href="https://wa.me/?text=How%20to%20Choose%20the%20Right%20Career%20After%20Class%2010th%20in%20Assam%20%E2%80%94%20Read%20this%20helpful%20guide%20by%20Mr.%20Deba%20Jyoti%20Neog" target="_blank" class="share-icon wa"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="share-icon fb"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="share-icon tw"><i class="fab fa-twitter"></i></a>
+                    <button class="share-icon cp" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');"><i class="fas fa-link"></i></button>
+                </div>
+
+                <!-- Author Bio -->
+                <div class="author-bio">
+                    <div class="author-bio-avatar"><i class="fas fa-user-tie"></i></div>
+                    <div class="author-bio-info">
+                        <h4>Mr. Deba Jyoti Neog</h4>
+                        <p class="author-title">M.Sc., B.Ed. | Certified Career Counselor cum Coach</p>
+                        <p>Mr. Neog is the founder of Annweshan Career Counseling Centre, Duliajan, Assam. With 12+ years of experience, he has guided 2000+ students towards successful career paths. He is a Lifetime Member of International Counselors' Club and Member of NCS.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>ANNWE<span>SHAN</span></h3>
+                    <p class="tagline">"Your Future, Our Guidance"</p>
+                    <p>Empowering students and professionals in Assam with expert career counseling since 12+ years.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/919435749779" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="quiz.html"><i class="fas fa-chevron-right"></i> Career Quiz</a></li>
+                        <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Career Counseling</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Aptitude Testing</a></li>
+                        <li><a href="https://psychometrics.ischs.in/annweshan" target="_blank"><i class="fas fa-chevron-right"></i> Online Assessment</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Resume Building</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Interview Prep</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Study Abroad</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> <span>21 No. Bamhukuta, Duliajan, Assam</span></li>
+                        <li><i class="fas fa-phone"></i> <span><a href="tel:+919435749779">+91 9435749779</a></span></li>
+                        <li><i class="fas fa-envelope"></i> <span><a href="mailto:annweshancareer@gmail.com">annweshancareer@gmail.com</a></span></li>
+                        <li><i class="fas fa-clock"></i> <span>All working days<br>10:00 AM - 7:00 PM</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 <span>Annweshan Career Counseling Centre</span>. All Rights Reserved.</p>
+                <p>Counseling available in English, Hindi & Assamese</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING BUTTONS -->
+    <a href="https://wa.me/919435749779?text=Hello%20Sir%2C%20I%20read%20your%20blog%20and%20want%20to%20discuss%20career%20guidance." target="_blank" rel="noopener noreferrer" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+919435749779" class="call-float"><i class="fas fa-phone-alt"></i></a>
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+
+    <script>
+        const articles = [
+            {
+                category: "Student Guide",
+                title: "How to Choose the Right Career After Class 10th in Assam — A Complete Guide",
+                date: "January 15, 2025",
+                readTime: "8 min read",
+                content: `<p>Choosing the right career path after Class 10th is one of the most significant decisions in a student's life. In Assam, where students often face limited exposure to diverse career options, making an informed choice becomes even more crucial.</p>
+                <h2>Understanding the Three Main Streams</h2>
+                <p>After Class 10th, students in Assam typically choose between three streams: Science, Commerce, and Arts (Humanities). Each stream opens doors to different career paths, and the right choice depends on your interests, aptitude, and long-term goals.</p>
+                <h2>Science Stream — Not Just Engineering & Medical</h2>
+                <p>The Science stream also offers exciting paths in:</p>
+                <ul><li><strong>Data Science & AI</strong> — Fastest-growing field globally</li><li><strong>Biotechnology</strong> — Healthcare innovation</li><li><strong>Environmental Science</strong> — Crucial for Northeast India</li><li><strong>Space Science</strong> — ISRO expanding opportunities</li><li><strong>Forensic Science</strong> — Criminal investigation</li><li><strong>Agriculture Science</strong> — Relevant for Assam's economy</li></ul>
+                <h2>Commerce Stream — Beyond CA & Banking</h2>
+                <ul><li><strong>Digital Marketing</strong> — Every business needs it</li><li><strong>Financial Planning</strong> — Growing demand</li><li><strong>E-commerce & Startups</strong> — Entrepreneurial route</li><li><strong>Company Secretary</strong> — Corporate governance</li><li><strong>Actuarial Science</strong> — Risk assessment</li></ul>
+                <h2>Arts — The Most Underrated Stream</h2>
+                <ul><li><strong>Law (LLB)</strong> — Most respected profession</li><li><strong>Civil Services (IAS/IPS)</strong> — Prestigious UPSC route</li><li><strong>Journalism & Mass Communication</strong></li><li><strong>Psychology & Counseling</strong></li><li><strong>Fashion & Interior Design</strong></li></ul>
+                <h2>How to Make the Right Choice?</h2>
+                <ol><li><strong>Self-Assessment:</strong> Psychometric testing</li><li><strong>Research:</strong> Scope, salary, growth potential</li><li><strong>Talk to Professionals</strong></li><li><strong>Consider Aptitude:</strong> Natural abilities matter</li><li><strong>Think Long-term:</strong> 10-20 year relevance</li><li><strong>Seek Expert Guidance</strong></li></ol>`,
+                takeaways: ["Don't choose based on peer pressure","Every stream has high-paying options","Take a psychometric assessment","Research careers thoroughly","Seek professional counseling"]
+            },
+            {
+                category: "Student Guide",
+                title: "Top 10 Career Options After 12th Science in 2025",
+                date: "January 10, 2025",
+                readTime: "6 min read",
+                content: `<p>If you've completed 12th Science, you're in a great position. Science opens the widest range of career doors. But most students only know about engineering and medicine. Here are 10 exciting paths.</p>
+                <h2>1. Data Science & AI</h2><p>Among the highest-paid professionals globally. Starting salaries ₹6-15 LPA, going up to ₹50+ LPA with experience.</p>
+                <h2>2. Medicine (MBBS) & Specializations</h2><p>Through NEET UG, get into AIIMS, JIPMER. Specialists earn ₹20-80+ LPA.</p>
+                <h2>3. Biotechnology & Genetic Engineering</h2><p>Developing new medicines, improving crop yields. Top colleges: IITs, IISc, JNU.</p>
+                <h2>4. Cyber Security</h2><p>Every company needs cyber security experts. Salaries ₹6-50+ LPA. Start with B.Tech CS + CEH certification.</p>
+                <h2>5. Architecture (B.Arch)</h2><p>Through NATA or JEE Main Paper 2A. Experienced architects earn ₹15-40+ LPA.</p>
+                <h2>6. Pharmacy & Pharmaceutical Sciences</h2><p>India is the pharmacy of the world. B.Pharm graduates work in drug development, quality control.</p>
+                <h2>7. Aviation (Commercial Pilot)</h2><p>Captains in major airlines earn ₹30-80 LPA. Need CPL from DGCA-approved flying school.</p>
+                <h2>8. Environmental Science & Sustainability</h2><p>Climate change has made environmental careers more important than ever.</p>
+                <h2>9. Robotics & Automation</h2><p>Manufacturing, healthcare, logistics being transformed by robots.</p>
+                <h2>10. Pure Sciences Research</h2><p>Research at IISc, IISERs, IITs. Path: B.Sc → M.Sc → PhD with KVPY/INSPIRE fellowships.</p>`,
+                takeaways: ["Science offers far more than engineering and medical","Data Science, AI, Cyber Security are fastest-growing","Consider aptitude and interest, not just salary","JEE, NEET, CUET open many doors","Psychometric assessment helps identify best path"]
+            },
+            {
+                category: "Industry Trends",
+                title: "Career Opportunities in Northeast India You Must Know",
+                date: "January 5, 2025",
+                readTime: "7 min read",
+                content: `<p>Northeast India is no longer just about government jobs and tea gardens. The region is experiencing a transformation with new industries and career opportunities emerging rapidly.</p>
+                <h2>Oil & Energy Sector</h2><p>Assam has a rich oil industry history with OIL and ONGC. Engineers earn ₹10-30+ LPA.</p>
+                <h2>Tea Industry & Agribusiness</h2><p>Assam produces over 50% of India's tea. Modern management needs quality control, export, and sustainable agriculture professionals. Managers earn ₹8-25 LPA.</p>
+                <h2>Tourism & Hospitality</h2><p>Kaziranga, Meghalaya's living root bridges, Arunachal's monasteries attract global visitors. Hotel management, travel planning, eco-tourism careers are booming.</p>
+                <h2>IT & Digital Economy</h2><p>Remote work opportunities have exploded. Young NE professionals work as developers, digital marketers, content creators for global companies from their hometowns.</p>
+                <h2>Government & Civil Services</h2><p>Northeast has excellent civil services representation. UPSC, State PSC, Banking, Railways offer stable careers.</p>
+                <h2>Healthcare</h2><p>New medical colleges and healthcare facilities create demand for doctors, nurses, lab technicians across the Northeast.</p>
+                <h2>Creative Industries</h2><p>Music, art, culture careers gaining momentum. YouTube and Instagram give NE artists a global audience.</p>`,
+                takeaways: ["Northeast offers diverse opportunities beyond government jobs","Oil, tea, tourism, IT are major employers","Remote work opened global opportunities","Rich culture supports creative careers","Healthcare and education expanding rapidly"]
+            },
+            {
+                category: "Parent Guide",
+                title: "Why Every Student Needs Career Counseling Before Choosing a Stream",
+                date: "December 28, 2024",
+                readTime: "5 min read",
+                content: `<p>As parents, we want the best for our children. But when it comes to career choices, many families rely on outdated advice, peer pressure, or traditions. Professional career counseling makes a crucial difference.</p>
+                <h2>The Problem with Following the Crowd</h2><p>Students who chose Science because "all toppers take Science" or Commerce because "Papa wants CA" often face frustration and poor performance later.</p>
+                <h2>What Career Counseling Does</h2><p>It's a scientific process identifying:</p>
+                <ul><li><strong>Aptitude:</strong> What subjects come naturally</li><li><strong>Interest:</strong> What genuinely excites them</li><li><strong>Personality:</strong> Introverted/extroverted, analytical/creative</li><li><strong>Values:</strong> Money, helping others, creativity, stability</li></ul>
+                <h2>When to Seek Counseling</h2>
+                <ol><li><strong>Class 8-9:</strong> Before stream selection</li><li><strong>Class 11-12:</strong> Before choosing courses</li><li><strong>During Graduation:</strong> For specialization planning</li><li><strong>Career Change:</strong> For professionals switching careers</li></ol>
+                <h2>How Parents Can Support</h2><p>Listen without judgment, expose children to diverse options, and trust the scientific assessment process.</p>`,
+                takeaways: ["Don't let peer pressure dictate career choices","Career counseling uses scientific methods","Best time is before Class 10 stream selection","Parents should support, not pressure","Every child is unique"]
+            },
+            {
+                category: "Career Tips",
+                title: "Government Jobs vs Private Jobs: Which Is Right for You?",
+                date: "December 20, 2024",
+                readTime: "6 min read",
+                content: `<p>This is one of the most common questions at Annweshan. Parents want government jobs; students are attracted to high private sector salaries. Let's break it down objectively.</p>
+                <h2>Government Jobs — The Stability Factor</h2>
+                <ul><li>Almost impossible to lose your job</li><li>Fixed working hours with weekends off</li><li>Pension and retirement benefits</li><li>Housing, medical, travel allowances</li><li>Social respect, especially in smaller towns</li></ul>
+                <h2>Private Jobs — The Growth Factor</h2>
+                <ul><li>Higher starting salaries (especially IT, consulting)</li><li>Faster promotions based on performance</li><li>Global work environment exposure</li><li>More diverse career options</li><li>Flexibility to switch for better opportunities</li></ul>
+                <h2>Which One Is Right for YOU?</h2><p>Depends on your personality, risk appetite, and life goals. Value stability? Government. Want faster growth? Private sector.</p>
+                <h2>The Third Option — Entrepreneurship</h2><p>Starting your own business with Startup India and Mudra Loans is more accessible than ever.</p>`,
+                takeaways: ["Government = stability; Private = growth","Don't pursue government jobs just due to pressure","Private salaries can be 2-5x higher","Government exam prep requires 1-3 years","Entrepreneurship is a powerful third option"]
+            },
+            {
+                category: "Career Tips",
+                title: "How Psychometric Testing Can Transform Your Career Decision",
+                date: "December 15, 2024",
+                readTime: "5 min read",
+                content: `<p>Most students decide careers based on friends, parents, or trends. But what if there was a scientific way to discover which career truly suits you? That's what psychometric testing does.</p>
+                <h2>What Is a Psychometric Assessment?</h2><p>A scientifically designed test measuring personality traits, cognitive abilities, interests, and aptitude. No right or wrong answers — it reveals who you are.</p>
+                <h2>What Does It Measure?</h2>
+                <ul><li><strong>Personality Type:</strong> Introvert/extrovert, leader/supporter</li><li><strong>Aptitude:</strong> Verbal, numerical, spatial, mechanical reasoning</li><li><strong>Interest Areas:</strong> RIASEC model — Realistic, Investigative, Artistic, Social, Enterprising, Conventional</li><li><strong>Career Matches:</strong> Specific careers matching your profile</li></ul>
+                <h2>How It Helps</h2><p>A student pushed towards engineering discovered his true aptitude was design. A girl thinking of medicine found her personality perfect for journalism. These discoveries change lives.</p>
+                <h2>When to Take It</h2><p>Class 8-9 (before stream selection) or Class 11-12 (before college). Even professionals benefit for career changes.</p>`,
+                takeaways: ["Psychometric tests are scientific, not random quizzes","They measure personality, aptitude, interests objectively","Results match you with suited careers","Best taken before Class 10 or 12 decisions","Combined with expert counseling gives best direction"]
+            },
+            {
+                category: "Student Guide",
+                title: "Best Colleges in Assam for Different Career Paths",
+                date: "December 10, 2024",
+                readTime: "8 min read",
+                content: `<p>Assam has a rich educational heritage with excellent colleges. Here's a guide to the best institutions across disciplines.</p>
+                <h2>Engineering & Technology</h2>
+                <ul><li><strong>IIT Guwahati</strong> — Top IIT, globally ranked</li><li><strong>NIT Silchar</strong> — Strong placements</li><li><strong>Tezpur University</strong> — Good engineering programs</li><li><strong>Assam Engineering College</strong> — Oldest in NE</li><li><strong>Jorhat Engineering College</strong></li></ul>
+                <h2>Medical Sciences</h2>
+                <ul><li><strong>AIIMS Guwahati</strong> — Premier institute</li><li><strong>Gauhati Medical College</strong> — Oldest in NE</li><li><strong>Assam Medical College, Dibrugarh</strong></li><li><strong>Jorhat Medical College</strong></li><li><strong>Tezpur Medical College</strong></li></ul>
+                <h2>Arts, Humanities & Social Sciences</h2>
+                <ul><li><strong>Cotton University</strong> — Historic institution</li><li><strong>Gauhati University</strong> — Largest in NE</li><li><strong>Dibrugarh University</strong></li><li><strong>TISS Guwahati</strong> — Top for social work</li></ul>
+                <h2>Commerce & Management</h2>
+                <ul><li><strong>IIM Shillong</strong> — Nearest IIM for NE</li><li><strong>B. Borooah College</strong></li><li><strong>Handique Girls College</strong></li><li><strong>Dibrugarh University MBA</strong></li></ul>
+                <h2>Agriculture</h2>
+                <ul><li><strong>AAU Jorhat</strong> — Premier agri university of NE</li></ul>`,
+                takeaways: ["Assam has excellent colleges across all disciplines","IIT Guwahati and AIIMS Guwahati are nationally ranked","State universities offer quality education","NE students have reservation in central institutions","Research placements and infrastructure before applying"]
+            },
+            {
+                category: "Student Guide",
+                title: "Career Options After 12th Arts — Don't Underestimate!",
+                date: "December 5, 2024",
+                readTime: "6 min read",
+                content: `<p>One of the biggest myths: Arts is a "weak" stream. With 12+ years of experience, I can say Arts students access some of the most exciting, well-paying careers.</p>
+                <h2>Law — Highest-Paying Profession</h2><p>Through CLAT, enter NLUs for 5-year BA LLB. Corporate lawyers earn ₹15-80+ LPA.</p>
+                <h2>Civil Services (UPSC IAS/IPS)</h2><p>Most prestigious career, open to ANY stream. Arts students have advantage — History, Political Science are popular UPSC optionals.</p>
+                <h2>Psychology & Mental Health</h2><p>BA → MA → M.Phil Psychology. Private practice earning ₹12-30+ LPA.</p>
+                <h2>Journalism & Digital Media</h2><p>Traditional journalism to YouTube. IIMC, ACJ graduates earn ₹5-25+ LPA.</p>
+                <h2>Design — Fashion, Interior, UX/UI</h2><p>Arts students have creative advantage. NIFT, NID, UCEED. Experienced designers earn ₹12-40+ LPA.</p>
+                <h2>Teaching & Education</h2><p>University professors earn ₹10-35 LPA. Demand for quality educators always high.</p>
+                <h2>Hotel Management & Tourism</h2><p>Through NCHMCT JEE. Hotel GMs earn ₹12-30 LPA. Tourism boom creating new opportunities.</p>`,
+                takeaways: ["Arts is NOT a backup — leads to powerful careers","Law, Civil Services, Psychology are highest-paying","Arts students have creative advantage in design/media","UPSC, CLAT, NIFT are key entrance exams","Choose based on aptitude, not social perception"]
+            },
+            {
+                category: "Career Tips",
+                title: "5 Signs You Need a Career Change — And How to Do It",
+                date: "November 28, 2024",
+                readTime: "5 min read",
+                content: `<p>Career changes are common. I've helped many professionals transition to better-fitting careers. Here are 5 signs it's time for a change.</p>
+                <h2>Sign 1: Sunday Evening Dread</h2><p>Persistent anxiety about Monday morning means something is fundamentally wrong.</p>
+                <h2>Sign 2: You've Stopped Growing</h2><p>Haven't learned anything new in a year? No advancement scope? You've hit a plateau.</p>
+                <h2>Sign 3: Your Values Changed</h2><p>The career you chose at 22 may not align with who you are at 32. Values evolve.</p>
+                <h2>Sign 4: You Envy Others' Careers</h2><p>Constantly thinking "I wish I could do that" points to suppressed interests.</p>
+                <h2>Sign 5: Health Impact</h2><p>Chronic stress, sleep problems, health issues from your job? No salary is worth your health.</p>
+                <h2>How to Transition</h2>
+                <ol><li><strong>Self-Assessment:</strong> Psychometric test for current strengths</li><li><strong>Skill Gap Analysis:</strong> What skills you need</li><li><strong>Upskill Gradually:</strong> Online courses while employed</li><li><strong>Build Network:</strong> Connect with target field professionals</li><li><strong>Plan Financially:</strong> Save 6-12 months expenses</li><li><strong>Seek Expert Guidance:</strong> Career counselor for transition plan</li></ol>`,
+                takeaways: ["Career dissatisfaction is a signal, not a flaw","Dread, stagnation, health impacts are serious signs","Average person changes careers 3-5 times","Plan transition with financial preparation","Professional counseling makes transition smoother"]
+            }
+        ];
+
+        // ===== MOBILE MENU =====
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+            document.getElementById('hamburger').classList.toggle('active');
+        }
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+                document.getElementById('hamburger').classList.remove('active');
+            });
+        });
+
+        // ===== SCROLL TO TOP =====
+        window.addEventListener('scroll', () => {
+            const st = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) st.classList.add('visible');
+            else st.classList.remove('visible');
+        });
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+        // ===== CATEGORY FILTER =====
+        function filterPosts(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            const cards = document.querySelectorAll('.blog-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => { card.style.display = 'none'; }, 300);
+                }
+            });
+            document.getElementById('blogGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // ===== SHOW ARTICLE (Dynamic) =====
+        function showArticle(index) {
+            if (index === undefined) index = 0;
+            const a = articles[index];
+            let tkHTML = a.takeaways.map(t => '<li>' + t + '</li>').join('');
+
+            document.querySelector('.article-wrapper').innerHTML =
+                '<a class="article-back" onclick="hideArticle()"><i class="fas fa-arrow-left"></i> Back to Blog</a>' +
+                '<span class="post-category">' + a.category + '</span>' +
+                '<h1>' + a.title + '</h1>' +
+                '<div class="article-author"><div class="author-avatar">DN</div><div class="author-info"><h4>Mr. Deba Jyoti Neog</h4><span>Certified Career Counselor &bull; ' + a.date + ' &bull; ' + a.readTime + '</span></div></div>' +
+                '<div class="article-content">' + a.content +
+                '<div class="key-takeaway"><h3>💡 Key Takeaways</h3><ul>' + tkHTML + '</ul></div>' +
+                '<p>For personalized guidance, take our <a href="https://psychometrics.ischs.in/annweshan" target="_blank" style="color:var(--accent);font-weight:600;">online psychometric assessment</a> or book a session at Annweshan Career Counseling Centre, Duliajan.</p></div>' +
+                '<div class="article-cta"><h3>Need Personalized Career Guidance?</h3><p>For a detailed career plan tailored to YOUR strengths, let\'s connect!</p><div class="article-cta-buttons"><a href="https://psychometrics.ischs.in/annweshan" target="_blank" class="article-cta-btn gold"><i class="fas fa-chart-bar"></i> Take Assessment</a><a href="contact.html" class="article-cta-btn white"><i class="fas fa-calendar-check"></i> Book Session</a></div></div>' +
+                '<div class="article-share"><span>Share:</span><a href="https://wa.me/?text=' + encodeURIComponent(a.title + ' — by Mr. Deba Jyoti Neog') + '" target="_blank" class="share-icon wa"><i class="fab fa-whatsapp"></i></a><a href="#" class="share-icon fb"><i class="fab fa-facebook-f"></i></a><button class="share-icon cp" onclick="navigator.clipboard.writeText(window.location.href);alert(\'Link copied!\');"><i class="fas fa-link"></i></button></div>' +
+                '<div class="author-bio"><div class="author-bio-avatar"><i class="fas fa-user-tie"></i></div><div class="author-bio-info"><h4>Mr. Deba Jyoti Neog</h4><p class="author-title">M.Sc., B.Ed. | Certified Career Counselor cum Coach</p><p>Founder of Annweshan Career Counseling Centre, Duliajan, Assam. 12+ years guiding 2000+ students. Lifetime Member of International Counselors\' Club & NCS Member.</p></div></div>';
+
+            document.getElementById('blogListing').style.display = 'none';
+            document.getElementById('articleSection').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function hideArticle() {
+            document.getElementById('articleSection').classList.remove('active');
+            document.getElementById('blogListing').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ===== NEWSLETTER =====
+        function subscribeNewsletter() {
+            const input = document.querySelector('.newsletter-input');
+            if (input.value && input.value.includes('@')) {
+                alert('Thank you for subscribing! You\'ll receive weekly career tips from Mr. Deba Jyoti Neog.');
+                input.value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+
+        // ===== SCROLL ANIMATIONS =====
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+        document.querySelectorAll('.blog-grid .blog-card').forEach((card, i) => {
+            card.style.transitionDelay = `${i * 0.1}s`;
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Assessment & Library | Annweshan Career Counseling Centre</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #eff6ff;
+            --secondary: #d97706;
+            --secondary-hover: #b45309;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-body: #f3f4f6;
+            --bg-card: #ffffff;
+            --border: #e5e7eb;
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg-body); color: var(--text-dark); line-height: 1.6; }
+        a { text-decoration: none; }
+
+        /* Navigation */
+        .navbar {
+            background: var(--bg-card); padding: 1rem 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 100;
+        }
+        .brand { display: flex; flex-direction: column; }
+        .brand h1 { color: var(--primary); font-size: 1.5rem; font-weight: 800; }
+        .brand span { font-size: 0.8rem; color: var(--text-light); }
+        .nav-actions { display: flex; gap: 1rem; align-items: center; }
+
+        .btn-gold {
+            background: var(--secondary); color: white;
+            padding: 0.75rem 1.5rem; border-radius: 50px;
+            font-weight: 600; transition: var(--transition);
+            border: none; cursor: pointer;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            box-shadow: 0 4px 6px rgba(217,119,6,0.2);
+        }
+        .btn-gold:hover { background: var(--secondary-hover); transform: translateY(-2px); }
+
+        .btn-outline {
+            background: transparent; color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 0.75rem 1.5rem; border-radius: 50px;
+            font-weight: 600; cursor: pointer; transition: var(--transition);
+            display: inline-flex; align-items: center; gap: 0.5rem;
+        }
+        .btn-outline:hover { background: var(--primary); color: white; }
+
+        .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+
+        .card {
+            background: var(--bg-card); border-radius: var(--radius);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            padding: 2.5rem; margin-bottom: 2rem;
+        }
+
+        /* Intro */
+        .text-center { text-align: center; }
+        .intro-title { color: var(--primary); font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .intro-subtitle { color: var(--secondary); font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem; }
+        .intro-desc { color: var(--text-light); max-width: 700px; margin: 0 auto 2rem auto; font-size: 1.1rem; }
+
+        .note-box {
+            background: #fffbeb; border: 2px solid #fde68a;
+            border-left: 6px solid var(--secondary);
+            padding: 1.5rem; border-radius: 8px;
+            margin-bottom: 2rem; text-align: left;
+        }
+        .note-box h4 { color: #92400e; margin-bottom: 0.5rem; }
+        .note-box p { color: #b45309; margin-bottom: 1rem; font-size: 0.95rem; }
+
+        /* Career Library */
+        #career-library-section { margin-top: 4rem; padding-top: 2rem; border-top: 2px dashed var(--border); }
+        .library-header { text-align: center; margin-bottom: 3rem; }
+        .library-header h2 { color: var(--primary); font-size: 2rem; margin-bottom: 0.5rem; }
+        .library-header p { color: var(--text-light); font-size: 1.1rem; max-width: 800px; margin: 0 auto; }
+
+        .library-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .library-card {
+            background: white; border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 2rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .library-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-color: var(--primary-light);
+        }
+
+        .cluster-header {
+            display: flex; align-items: center; gap: 15px;
+            margin-bottom: 8px;
+        }
+
+        .cluster-icon {
+            background: var(--primary-light); color: var(--primary);
+            width: 55px; height: 55px; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; min-width: 55px;
+        }
+
+        .cluster-header h3 { color: var(--primary); font-size: 1.35rem; }
+
+        .cluster-desc {
+            color: var(--text-light); font-size: 0.92rem;
+            margin-bottom: 1.2rem; padding-left: 70px;
+        }
+
+        /* Career Items Grid */
+        .careers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 14px;
+            margin-bottom: 1rem;
+        }
+
+        .career-item {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .career-item:hover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+        }
+
+        .career-item.highlight {
+            border-color: #fde68a;
+            background: #fffbeb;
+        }
+
+        .career-item.highlight:hover {
+            border-color: var(--secondary);
+        }
+
+        .career-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .career-item-header h4 {
+            font-size: 0.95rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .career-item-header h4 .trending {
+            background: #dcfce7;
+            color: #166534;
+            font-size: 0.65rem;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+
+        .career-item-header .toggle-icon {
+            color: var(--text-light);
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .career-item.open .toggle-icon {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+
+        .career-item-summary {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        /* Expandable Details */
+        .career-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+        }
+
+        .career-item.open .career-details {
+            max-height: 600px;
+            padding-top: 12px;
+        }
+
+        .career-details-inner {
+            border-top: 1px solid var(--border);
+            padding-top: 12px;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.82rem;
+        }
+
+        .detail-item i {
+            color: var(--secondary);
+            font-size: 0.75rem;
+            margin-top: 4px;
+            min-width: 14px;
+        }
+
+        .detail-item strong {
+            color: var(--primary);
+            font-size: 0.75rem;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .detail-item span {
+            color: var(--text-dark);
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .salary-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #dcfce7;
+            color: #166534;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .growth-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .growth-high { background: #dcfce7; color: #166534; }
+        .growth-medium { background: #fef3c7; color: #92400e; }
+        .growth-stable { background: #e0f2fe; color: #075985; }
+
+        .detail-cta {
+            margin-top: 10px;
+        }
+
+        .detail-cta a {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.8rem;
+            color: white;
+            background: var(--secondary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .detail-cta a:hover {
+            background: var(--secondary-hover);
+        }
+
+        .library-card > a {
+            color: var(--secondary); font-weight: 600;
+            font-size: 0.9rem; display: inline-flex;
+            align-items: center; gap: 0.25rem; margin-top: 0.5rem;
+        }
+        .library-card > a:hover { color: var(--secondary-hover); }
+
+        /* Quiz Section */
+        #quiz-section { display: none; }
+        .progress-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-weight: 600; color: var(--text-light); }
+        .progress-bar-bg { width: 100%; height: 10px; background: var(--border); border-radius: 50px; overflow: hidden; margin-bottom: 2rem; }
+        .progress-bar-fill { height: 100%; background: var(--secondary); width: 0%; transition: width 0.4s ease; }
+        .question-text { font-size: 1.5rem; color: var(--primary); margin-bottom: 2rem; font-weight: 700; }
+        .options-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2rem; }
+        .option-btn {
+            background: white; border: 2px solid var(--border);
+            padding: 1.25rem; border-radius: 8px; text-align: left;
+            font-size: 1.1rem; cursor: pointer; transition: var(--transition);
+            color: var(--text-dark); display: flex; align-items: center; gap: 1rem;
+        }
+        .option-btn:hover { border-color: var(--primary); background: var(--primary-light); }
+        .option-btn.selected { border-color: var(--primary); background: var(--primary); color: white; }
+        .quiz-nav { display: flex; justify-content: space-between; margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; }
+
+        /* Results */
+        #results-section { display: none; }
+        .result-header { text-align: center; margin-bottom: 2rem; }
+        .result-type { font-size: 3rem; color: var(--primary); font-weight: 800; margin-bottom: 0.5rem; }
+        .result-badge { display: inline-block; background: var(--primary-light); color: var(--primary); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 600; margin-bottom: 1.5rem; }
+        .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
+        .result-box { background: #f8fafc; padding: 1.5rem; border-radius: var(--radius); border: 1px solid var(--border); }
+        .result-box h3 { color: var(--primary); margin-bottom: 1rem; font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem; }
+        .result-box ul { padding-left: 1.5rem; color: var(--text-dark); }
+        .result-box li { margin-bottom: 0.5rem; }
+        .chart-container { width: 100%; height: 300px; margin-bottom: 3rem; }
+
+        .cta-big {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white; padding: 2.5rem; border-radius: var(--radius);
+            text-align: center; margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(217,119,6,0.3);
+        }
+        .cta-big h2 { font-size: 1.8rem; margin-bottom: 1rem; }
+        .cta-big p { font-size: 1.1rem; margin-bottom: 1.5rem; opacity: 0.9; }
+        .cta-big .btn-white {
+            background: white; color: var(--secondary);
+            padding: 1rem 2rem; border-radius: 50px;
+            font-size: 1.1rem; font-weight: 700;
+            display: inline-block; transition: var(--transition);
+        }
+        .cta-big .btn-white:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        .cta-secondary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .cta-box { text-align: center; padding: 2rem; border: 1px solid var(--border); border-radius: var(--radius); background: white; }
+        .cta-box h3 { color: var(--primary); margin-bottom: 0.5rem; }
+        .cta-box p { color: var(--text-light); margin-bottom: 1.5rem; }
+        .btn-whatsapp { background: #25D366; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-call { background: var(--primary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; }
+
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 1rem; text-align: center; }
+            .nav-actions { flex-direction: column; width: 100%; }
+            .nav-actions a { width: 100%; justify-content: center; }
+            .results-grid, .cta-secondary-grid { grid-template-columns: 1fr; }
+            .careers-grid { grid-template-columns: 1fr; }
+            .detail-grid { grid-template-columns: 1fr; }
+            .intro-title { font-size: 2rem; }
+            .cluster-desc { padding-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="brand">
+            <h1>Annweshan</h1>
+            <span>Career Counseling Centre, Duliajan</span>
+        </div>
+        <div class="nav-actions">
+            <a href="#career-library-section" class="btn-outline">
+                <i class="fas fa-book-open"></i> Career Library
+            </a>
+            <a href="https://psychometrics.ischs.in/annweshan" target="_blank" class="btn-gold">
+                <i class="fas fa-clipboard-check"></i> Take Assessment
+            </a>
+        </div>
+    </nav>
+
+    <div class="container" id="main-content-area">
+        <div id="intro-section" class="card text-center">
+            <h1 class="intro-title">Quick Career Discovery Quiz</h1>
+            <h2 class="intro-subtitle">Take our free 5-minute basic career quiz</h2>
+            <p class="intro-desc">
+                This quiz is designed by <strong>Mr. Deba Jyoti Neog</strong> with 12+ years of career counseling experience. Answer honestly - there are no right or wrong answers!
+            </p>
+            <button onclick="startQuiz()" class="btn-gold" style="font-size: 1.2rem; padding: 1rem 2.5rem; margin-bottom: 2rem;">
+                Start Free Quiz <i class="fas fa-arrow-right"></i>
+            </button>
+            <div class="note-box">
+                <h4>📊 Want a MORE DETAILED & Professional Assessment?</h4>
+                <p>Take our scientifically validated Psychometric Assessment for comprehensive career analysis, detailed 20+ page reports, and exact course recommendations.</p>
+                <a href="https://psychometrics.ischs.in/annweshan" target="_blank" class="btn-gold" style="font-size: 0.9rem;">
+                    Take Professional Assessment &rarr;
+                </a>
+            </div>
+        </div>
+
+        <!-- ===== CAREER LIBRARY ===== -->
+        <div id="career-library-section">
+            <div class="library-header">
+                <h2>Explore the Comprehensive Career Library</h2>
+                <p>Click on any career to see detailed information — qualifications, salary, top exams, and growth outlook.</p>
+            </div>
+
+            <div class="library-grid" id="careerLibrary"></div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="color: var(--text-light); margin-bottom: 1rem;">Our scientific psychometric assessment maps your profile against <strong>160+ Career Paths and 3000+ Occupations</strong>.</p>
+                <a href="https://psychometrics.ischs.in/annweshan" target="_blank" class="btn-outline">
+                    Take the Complete Psychometric Test
+                </a>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div id="quiz-section" class="card">
+            <div class="progress-header">
+                <span id="question-counter">Question 1 of 15</span>
+                <span id="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar-bg">
+                <div id="progress-bar" class="progress-bar-fill"></div>
+            </div>
+            <h2 id="question-text" class="question-text"></h2>
+            <div id="options-container" class="options-grid"></div>
+            <div class="quiz-nav">
+                <button id="btn-prev" class="btn-outline" onclick="prevQuestion()" disabled><i class="fas fa-arrow-left"></i> Back</button>
+                <button id="btn-next" class="btn-gold" onclick="nextQuestion()" disabled>Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results-section">
+            <div class="card">
+                <div class="result-header">
+                    <p style="color: var(--text-light); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Your Primary Career Personality</p>
+                    <h1 id="result-title" class="result-type"></h1>
+                    <div id="result-badge" class="result-badge"></div>
+                    <p id="result-desc" style="font-size: 1.1rem; color: var(--text-dark); max-width: 600px; margin: 0 auto;"></p>
+                </div>
+                <div class="results-grid">
+                    <div class="result-box"><h3><i class="fas fa-briefcase"></i> Top Recommended Careers</h3><ul id="result-careers"></ul></div>
+                    <div class="result-box"><h3><i class="fas fa-star"></i> Your Strengths</h3><ul id="result-strengths"></ul></div>
+                    <div class="result-box" style="grid-column: 1 / -1;"><h3><i class="fas fa-graduation-cap"></i> Suggested Education Paths</h3><p id="result-education" style="padding-left: 1.5rem;"></p></div>
+                </div>
+                <h3 style="text-align: center; color: var(--primary); margin-bottom: 1rem;">Your Complete Profile Breakdown</h3>
+                <div class="chart-container"><canvas id="resultsChart"></canvas></div>
+            </div>
+            <div class="cta-big">
+                <h2>📊 Get Your DETAILED Professional Report</h2>
+                <p>Take our comprehensive psychometric assessment for in-depth career analysis with scientific personality profiling.</p>
+                <a href="https://psychometrics.ischs.in/annweshan" target="_blank" class="btn-white">Take Professional Assessment Now &rarr;</a>
+            </div>
+            <div class="cta-secondary-grid">
+                <div class="cta-box"><h3>Want expert interpretation?</h3><p>Book a 1-on-1 session with Mr. Deba Jyoti Neog.</p><a href="tel:+919435749779" class="btn-call"><i class="fas fa-phone"></i> Call: +91 9435749779</a></div>
+                <div class="cta-box"><h3>Share & Discuss</h3><p>Send your results via WhatsApp.</p><button onclick="shareWhatsApp()" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Share on WhatsApp</button></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===== COMPLETE CAREER DATA WITH DETAILS =====
+        const careerLibraryData = [
+            {
+                icon: "fas fa-microchip",
+                title: "Science & Engineering (PCM)",
+                desc: "Traditional and modern pathways for students with a strong foundation in Physics, Chemistry, and Mathematics.",
+                careers: [
+                    { name: "Mechanical Engineer", trending: false, highlight: false, summary: "Design, build & maintain machines, engines & mechanical systems.", qual: "B.Tech/B.E. Mechanical Engineering (4 years)", salary: "₹4-12 LPA (Entry) → ₹15-30 LPA (Senior)", exams: "JEE Main, JEE Advanced, State CETs, GATE", growth: "high", growthText: "High Demand", colleges: "IITs, NITs, BITS Pilani, VIT" },
+                    { name: "Computer Science (BTech)", trending: true, highlight: false, summary: "Build software, apps, websites & solve problems using code.", qual: "B.Tech/B.E. Computer Science (4 years)", salary: "₹5-15 LPA (Entry) → ₹20-50+ LPA (Senior)", exams: "JEE Main, JEE Advanced, BITSAT, COMEDK", growth: "high", growthText: "Very High Demand", colleges: "IITs, NITs, IIIT Hyderabad, BITS" },
+                    { name: "Civil Engineer / Architect", trending: false, highlight: false, summary: "Design buildings, bridges, roads & infrastructure projects.", qual: "B.Tech Civil / B.Arch (4-5 years)", salary: "₹3.5-10 LPA (Entry) → ₹12-25 LPA (Senior)", exams: "JEE Main, NATA (for B.Arch), State CETs", growth: "medium", growthText: "Steady Growth", colleges: "IITs, NITs, SPA Delhi, CEPT" },
+                    { name: "Electronics & Communication", trending: false, highlight: false, summary: "Work with circuits, telecom, signal processing & embedded systems.", qual: "B.Tech/B.E. ECE (4 years)", salary: "₹4-10 LPA (Entry) → ₹12-25 LPA (Senior)", exams: "JEE Main, JEE Advanced, GATE", growth: "medium", growthText: "Steady Demand", colleges: "IITs, NITs, BITS, DTU" },
+                    { name: "Data Scientist / Analyst", trending: true, highlight: true, summary: "Extract insights from data using statistics, ML & AI to drive business decisions.", qual: "B.Tech CS/IT + M.Tech/MS or Certifications", salary: "₹6-18 LPA (Entry) → ₹25-60+ LPA (Senior)", exams: "JEE Main, GATE, or PG entrance exams", growth: "high", growthText: "🔥 Fastest Growing", colleges: "IITs, IIITs, ISI Kolkata, IIMs (PG)" },
+                    { name: "Aviation Pilot (Commercial)", trending: false, highlight: false, summary: "Fly commercial aircraft, ensure passenger safety & navigation.", qual: "CPL (Commercial Pilot License) + 200 flying hours", salary: "₹8-15 LPA (Co-pilot) → ₹30-80 LPA (Captain)", exams: "DGCA CPL Exam, Airline Selection Tests", growth: "high", growthText: "Growing Demand", colleges: "Indira Gandhi Rashtriya Uran Akademi, CAE, Flying Schools" },
+                    { name: "Quantitative Finance", trending: false, highlight: false, summary: "Use math & stats for financial modelling, risk analysis & trading.", qual: "B.Tech/B.Sc Math + MBA Finance / MFE", salary: "₹8-20 LPA (Entry) → ₹30-70+ LPA (Senior)", exams: "CAT, GMAT, CFA, FRM", growth: "high", growthText: "High Demand", colleges: "IIMs, ISB, IITs (Financial Engineering)" },
+                    { name: "Financial Engineering", trending: false, highlight: true, summary: "Design complex financial products using mathematical models.", qual: "B.Tech + M.Tech Financial Engineering / MFE", salary: "₹10-25 LPA (Entry) → ₹40-80+ LPA (Senior)", exams: "GRE, GMAT, CFA", growth: "high", growthText: "Niche & High Pay", colleges: "IIT Bombay, ISB, Global MFE programs" },
+                    { name: "Robotics & Automation", trending: true, highlight: false, summary: "Design robots, automated systems & smart manufacturing solutions.", qual: "B.Tech Mechanical/ECE/CS + Robotics specialization", salary: "₹5-14 LPA (Entry) → ₹18-40 LPA (Senior)", exams: "JEE Main, GATE, GRE (for MS abroad)", growth: "high", growthText: "Rapidly Growing", colleges: "IITs, NITs, CMU, MIT (for MS)" },
+                    { name: "Astrophysics", trending: false, highlight: false, summary: "Study stars, galaxies, black holes & the physics of the universe.", qual: "B.Sc Physics → M.Sc → PhD Astrophysics", salary: "₹5-12 LPA (Research) → ₹15-30 LPA (Senior Scientist)", exams: "IIT JAM, JEST, TIFR GS, CSIR NET", growth: "stable", growthText: "Niche Field", colleges: "IISc, TIFR, IUCAA, IITs, ARIES" },
+                    { name: "Cyber Security Expert", trending: true, highlight: true, summary: "Protect computer systems, networks & data from cyber attacks.", qual: "B.Tech CS/IT + Security Certifications (CEH, CISSP)", salary: "₹6-16 LPA (Entry) → ₹25-50+ LPA (Senior)", exams: "JEE Main, GATE, CEH, CompTIA Security+", growth: "high", growthText: "🔥 Critical Demand", colleges: "IITs, NITs, IIIT Delhi, amity + Certifications" }
+                ]
+            },
+            {
+                icon: "fas fa-stethoscope",
+                title: "Medicine & Biosciences (PCB)",
+                desc: "Dedicated to diagnosing, treating, and preventing illnesses, as well as advancing life sciences and biotechnology.",
+                careers: [
+                    { name: "Medicine (MBBS/BDS)", trending: false, highlight: false, summary: "Diagnose & treat diseases, perform surgeries, save lives.", qual: "MBBS (5.5 years) / BDS (5 years) + MD/MS for specialization", salary: "₹6-12 LPA (Junior Doctor) → ₹20-80+ LPA (Specialist)", exams: "NEET UG, NEET PG, INICET", growth: "stable", growthText: "Always In Demand", colleges: "AIIMS, JIPMER, CMC Vellore, MAMC Delhi" },
+                    { name: "Biotechnology / Bioengineering", trending: true, highlight: true, summary: "Use biological systems & organisms to develop products & technologies.", qual: "B.Tech/B.Sc Biotech (4 years) + M.Tech/PhD", salary: "₹4-10 LPA (Entry) → ₹15-35 LPA (Senior/Research)", exams: "JEE Main, GATE BT, GAT-B, GRE", growth: "high", growthText: "Growing Rapidly", colleges: "IITs, IISc, JNU, ICT Mumbai" },
+                    { name: "Pharmaceutical Sciences", trending: false, highlight: false, summary: "Develop, test & manufacture drugs and medicines.", qual: "B.Pharm (4 years) / D.Pharm (2 years) + M.Pharm", salary: "₹3-8 LPA (Entry) → ₹12-30 LPA (Senior/R&D)", exams: "GPAT, NIPER JEE, State Pharmacy Entrance", growth: "high", growthText: "Steady Growth", colleges: "NIPER, ICT Mumbai, Jamia Hamdard, BITS" },
+                    { name: "Public Health & Epidemiology", trending: true, highlight: false, summary: "Study disease patterns & develop public health policies.", qual: "MBBS/B.Sc + MPH (Master of Public Health)", salary: "₹5-12 LPA (Entry) → ₹15-40 LPA (Senior/Global)", exams: "NEET, University Entrance for MPH", growth: "high", growthText: "Post-COVID Boom", colleges: "AIIMS, IIPH, TISS, Johns Hopkins (Abroad)" },
+                    { name: "Genetics and Genomics", trending: true, highlight: true, summary: "Study genes, DNA & hereditary diseases for personalized medicine.", qual: "B.Sc Genetics/Biotech → M.Sc → PhD", salary: "₹5-12 LPA (Entry) → ₹18-40 LPA (Senior Researcher)", exams: "IIT JAM, GATE, CSIR NET, GRE", growth: "high", growthText: "🔥 Future of Medicine", colleges: "IISc, CCMB Hyderabad, IITs, JNU" },
+                    { name: "Environmental & Marine Biology", trending: false, highlight: false, summary: "Study ecosystems, wildlife conservation & marine life.", qual: "B.Sc Environmental Science/Zoology → M.Sc → PhD", salary: "₹3-8 LPA (Entry) → ₹10-25 LPA (Senior Scientist)", exams: "IIT JAM, GATE, University Entrance", growth: "medium", growthText: "Growing Awareness", colleges: "WII Dehradun, IISc, IISER, NIO Goa" },
+                    { name: "Agriculture & Food Science", trending: false, highlight: false, summary: "Improve crop yield, food quality & agricultural technology.", qual: "B.Sc Agriculture (4 years) / B.Tech Food Tech", salary: "₹3-7 LPA (Entry) → ₹10-20 LPA (Senior/Research)", exams: "ICAR AIEEA, JEE Main, State Agri CET", growth: "medium", growthText: "Steady in India", colleges: "IARI Delhi, TNAU, PAU Ludhiana, NDRI" },
+                    { name: "Veterinary Sciences", trending: false, highlight: false, summary: "Diagnose & treat diseases in animals, ensure animal welfare.", qual: "BVSc & AH (5.5 years)", salary: "₹4-10 LPA (Entry) → ₹12-25 LPA (Senior/Govt)", exams: "NEET UG (for some states), State Veterinary CET", growth: "stable", growthText: "Stable Demand", colleges: "IVRI Bareilly, TANUVAS, GADVASU" },
+                    { name: "Medical Researcher", trending: true, highlight: true, summary: "Conduct clinical research, drug trials & advance medical science.", qual: "MBBS/M.Sc Life Sciences + PhD/Post-doc", salary: "₹5-15 LPA (Entry) → ₹20-50+ LPA (Senior/PI)", exams: "CSIR NET, ICMR JRF, DBT JRF, GATE", growth: "high", growthText: "Critical Field", colleges: "AIIMS, IISc, CCMB, ICMR Labs" },
+                    { name: "Toxicologist", trending: false, highlight: false, summary: "Study harmful effects of chemicals & substances on living organisms.", qual: "B.Sc Chemistry/Pharma → M.Sc Toxicology → PhD", salary: "₹4-10 LPA (Entry) → ₹12-30 LPA (Senior)", exams: "GATE, University Entrance, CSIR NET", growth: "medium", growthText: "Niche but Growing", colleges: "NIPER, JNU, Jamia Hamdard, AIIMS" }
+                ]
+            },
+            {
+                icon: "fas fa-user-nurse",
+                title: "Allied Health & Diagnostics",
+                desc: "Crucial supportive and diagnostic roles within the healthcare ecosystem that do not require an MBBS.",
+                careers: [
+                    { name: "Cardiovascular Technologist", trending: false, highlight: false, summary: "Assist doctors in diagnosing & treating heart diseases using specialized equipment.", qual: "B.Sc Cardiac Technology (3-4 years)", salary: "₹3-7 LPA (Entry) → ₹8-18 LPA (Senior)", exams: "University/Hospital Entrance Exams", growth: "high", growthText: "Growing with Heart Disease", colleges: "AIIMS, CMC Vellore, SCTIMST" },
+                    { name: "Clinical Lab Technologist", trending: false, highlight: false, summary: "Perform lab tests on blood, tissue & body fluids to diagnose diseases.", qual: "B.Sc Medical Lab Technology (3 years)", salary: "₹2.5-6 LPA (Entry) → ₹7-15 LPA (Senior)", exams: "State Health Science Entrance, University CET", growth: "stable", growthText: "Always Needed", colleges: "CMC Vellore, AIIMS, Manipal, SRM" },
+                    { name: "Diagnostic Medical Sonographer", trending: false, highlight: false, summary: "Operate ultrasound equipment to create images for medical diagnosis.", qual: "B.Sc/Diploma in Medical Sonography (2-3 years)", salary: "₹3-8 LPA (Entry) → ₹10-20 LPA (Senior)", exams: "Hospital/University Entrance Exams", growth: "high", growthText: "High Demand", colleges: "AIIMS, CMC Vellore, Apollo Schools" },
+                    { name: "Radiology Technician", trending: false, highlight: false, summary: "Operate X-ray, CT scan & MRI machines to help doctors diagnose conditions.", qual: "B.Sc Radiology/Imaging Technology (3 years)", salary: "₹3-7 LPA (Entry) → ₹8-18 LPA (Senior)", exams: "State Health CET, University Entrance", growth: "high", growthText: "Growing Demand", colleges: "AIIMS, Manipal, CMC Vellore, JIPMER" },
+                    { name: "Genetic Counselor", trending: true, highlight: true, summary: "Guide patients on genetic risks, inherited conditions & family planning.", qual: "M.Sc Genetic Counseling / M.Sc Genetics + Certification", salary: "₹4-10 LPA (Entry) → ₹12-25 LPA (Senior)", exams: "University Entrance for M.Sc programs", growth: "high", growthText: "🔥 Emerging Field", colleges: "SGPGI Lucknow, Kamineni, Manipal" },
+                    { name: "Medical Coder / Biller", trending: false, highlight: false, summary: "Translate medical records into standardized codes for billing & insurance.", qual: "B.Sc/Any Graduate + CPC/CCS Certification", salary: "₹2.5-6 LPA (Entry) → ₹8-15 LPA (Senior)", exams: "CPC (AAPC), CCS (AHIMA) Certification", growth: "high", growthText: "Outsourcing Boom", colleges: "Online Certifications, AAPC India" },
+                    { name: "Physiotherapist", trending: false, highlight: false, summary: "Help patients recover from injuries through exercises & physical therapy.", qual: "BPT - Bachelor of Physiotherapy (4.5 years)", salary: "₹3-7 LPA (Entry) → ₹10-20 LPA (Senior/Own Clinic)", exams: "State Health CET, University Entrance", growth: "high", growthText: "Growing Awareness", colleges: "CMC Vellore, AIIMS, KMC Manipal, ISIC Delhi" },
+                    { name: "Occupational Therapist", trending: false, highlight: false, summary: "Help people with disabilities perform daily activities & return to work.", qual: "BOT - Bachelor of Occupational Therapy (4.5 years)", salary: "₹3-6 LPA (Entry) → ₹8-18 LPA (Senior)", exams: "State Health CET, University Entrance", growth: "medium", growthText: "Steadily Growing", colleges: "AIIMS, CMC Vellore, MAHE Manipal" },
+                    { name: "Speech Language Pathologist", trending: false, highlight: false, summary: "Diagnose & treat speech, language & swallowing disorders.", qual: "BASLP (4 years) / B.Sc Speech Therapy", salary: "₹3-7 LPA (Entry) → ₹10-20 LPA (Senior/Own Clinic)", exams: "University Entrance Exams", growth: "high", growthText: "High Demand", colleges: "AIISH Mysore, AYJNIHH Mumbai, Ali Yavar Jung" },
+                    { name: "Health Information Manager", trending: false, highlight: false, summary: "Manage hospital data systems, patient records & health IT infrastructure.", qual: "B.Sc Health Information Management / MHA", salary: "₹3-8 LPA (Entry) → ₹10-22 LPA (Senior)", exams: "University Entrance, RHIA/RHIT Certification", growth: "high", growthText: "Digital Health Boom", colleges: "AIIMS, Manipal, Symbiosis, IIHMR" }
+                ]
+            },
+            {
+                icon: "fas fa-chart-line",
+                title: "Commerce, Finance & Management",
+                desc: "Managing wealth, corporate strategies, accounting systems, and organizational operations.",
+                careers: [
+                    { name: "Chartered Accountancy (CA)", trending: false, highlight: true, summary: "Audit accounts, file taxes, advise on financial compliance & business strategy.", qual: "CA Foundation → Intermediate → Final (4-5 years after 12th)", salary: "₹7-12 LPA (Fresher) → ₹20-50+ LPA (Partner/Senior)", exams: "CA Foundation, Intermediate & Final by ICAI", growth: "stable", growthText: "Evergreen Career", colleges: "ICAI (Self-study + Articleship)" },
+                    { name: "Company Secretary (CS)", trending: false, highlight: false, summary: "Ensure companies comply with legal & regulatory requirements.", qual: "CS Foundation → Executive → Professional (3-4 years)", salary: "₹5-10 LPA (Entry) → ₹15-35 LPA (Senior)", exams: "CSEET, CS Executive & Professional by ICSI", growth: "stable", growthText: "Steady Demand", colleges: "ICSI (Self-study + Training)" },
+                    { name: "Actuarial Science", trending: true, highlight: true, summary: "Use math & stats to assess financial risk for insurance & pension companies.", qual: "Any Graduate + Actuarial Exams (IAI/IFoA)", salary: "₹8-18 LPA (Entry) → ₹30-80+ LPA (Fellow Actuary)", exams: "IAI Actuarial Exams, IFoA (UK) Exams", growth: "high", growthText: "Very High Pay", colleges: "Self-study + IAI India / IFoA UK" },
+                    { name: "Investment Banking", trending: false, highlight: false, summary: "Help companies raise capital, manage mergers & acquisitions.", qual: "B.Com/BBA + MBA Finance from top B-school", salary: "₹10-25 LPA (Analyst) → ₹40-1Cr+ LPA (VP/Director)", exams: "CAT, GMAT, CFA", growth: "high", growthText: "Top Pay in Finance", colleges: "IIMs, ISB, XLRI, FMS Delhi" },
+                    { name: "Business Administration (BBA/MBA)", trending: false, highlight: false, summary: "Manage business operations, strategy, marketing & people.", qual: "BBA (3 years) → MBA (2 years)", salary: "₹4-8 LPA (BBA) → ₹12-30+ LPA (MBA from top)", exams: "IPMAT, SET, CAT, XAT, GMAT", growth: "high", growthText: "Always Relevant", colleges: "IIMs, XLRI, ISB, FMS, MDI, SPJIMR" },
+                    { name: "Operations & Supply Chain", trending: false, highlight: false, summary: "Manage logistics, inventory, manufacturing & delivery processes.", qual: "B.Tech/BBA + MBA Operations", salary: "₹5-12 LPA (Entry) → ₹15-35 LPA (Senior)", exams: "CAT, GATE, Company-specific hiring", growth: "high", growthText: "E-commerce Driven", colleges: "IIMs, NITIE Mumbai, ISB" },
+                    { name: "Human Resource Management", trending: false, highlight: false, summary: "Recruit, train & manage employees, build company culture.", qual: "BBA/BA + MBA HR / PGDM HR", salary: "₹4-8 LPA (Entry) → ₹15-35 LPA (HR Director)", exams: "CAT, XAT, NMAT, SNAP", growth: "stable", growthText: "Steady Demand", colleges: "XLRI, TISS, IIMs, Symbiosis" },
+                    { name: "Financial Planner / Analyst", trending: false, highlight: false, summary: "Advise individuals & companies on investments, savings & wealth management.", qual: "B.Com/BBA + CFP/CFA Certification", salary: "₹4-10 LPA (Entry) → ₹15-40 LPA (Senior Advisor)", exams: "CFP Certification, CFA, NISM", growth: "high", growthText: "Growing Wealth Market", colleges: "FPSB India (CFP), CFA Institute" },
+                    { name: "FinTech Professional", trending: true, highlight: true, summary: "Build & manage technology solutions for banking, payments & financial services.", qual: "B.Tech CS/IT or B.Com + Tech Skills + MBA", salary: "₹6-15 LPA (Entry) → ₹25-50+ LPA (Senior)", exams: "JEE Main, CAT, or Fintech Certifications", growth: "high", growthText: "🔥 Booming Sector", colleges: "IITs, IIMs, ISB + Startup Experience" },
+                    { name: "Retail Management", trending: false, highlight: false, summary: "Manage store operations, merchandise, sales & customer experience.", qual: "BBA/B.Com + MBA Retail Management", salary: "₹3-7 LPA (Entry) → ₹12-25 LPA (Regional Manager)", exams: "CAT, NMAT, SNAP, Company Hiring", growth: "medium", growthText: "Growing with Retail", colleges: "KJ Somaiya, BIMTECH, Symbiosis" }
+                ]
+            },
+            {
+                icon: "fas fa-scale-balanced",
+                title: "Humanities, Law & Policy",
+                desc: "Studying human society, law, governance, literature, psychology, and public administration.",
+                careers: [
+                    { name: "Law (BA LLB / Corporate Law)", trending: false, highlight: true, summary: "Practice law, fight cases in court, or advise corporations on legal matters.", qual: "BA LLB (5 years after 12th) or LLB (3 years after graduation)", salary: "₹5-12 LPA (Entry) → ₹20-80+ LPA (Senior Partner)", exams: "CLAT, AILET, LSAT India, MH CET Law", growth: "high", growthText: "High Demand", colleges: "NLUs (NLSIU, NALSAR, NLU Delhi), Symbiosis Law" },
+                    { name: "Civil Services (UPSC IAS/IPS)", trending: false, highlight: true, summary: "Serve as District Collector, Police Commissioner, Ambassador & top government officials.", qual: "Any Graduate degree + UPSC preparation", salary: "₹8-12 LPA (Entry) → ₹18-25 LPA + Power & Benefits", exams: "UPSC CSE (Prelims, Mains, Interview)", growth: "stable", growthText: "Most Prestigious", colleges: "Any Degree + LBSNAA (Training)" },
+                    { name: "Psychology & Counseling", trending: true, highlight: false, summary: "Help people manage mental health, emotional challenges & behavioral issues.", qual: "BA Psychology → MA Psychology → M.Phil (RCI for Clinical)", salary: "₹3-8 LPA (Entry) → ₹12-30 LPA (Senior/Private Practice)", exams: "University Entrance, CUET, RCI Registration", growth: "high", growthText: "Mental Health Awareness", colleges: "Delhi Univ, TISS, Christ, Nimhans, JNU" },
+                    { name: "Journalism & Mass Media", trending: false, highlight: false, summary: "Report news, create media content, investigate stories & inform the public.", qual: "BA Journalism / BJMC (3 years) + PG Diploma/MA", salary: "₹3-7 LPA (Entry) → ₹12-30 LPA (Senior Editor)", exams: "IIMC Entrance, CUET, Symbiosis SET, XIC Entrance", growth: "medium", growthText: "Evolving to Digital", colleges: "IIMC, Symbiosis, ACJ Chennai, XIC Mumbai" },
+                    { name: "Economics & Public Policy", trending: false, highlight: false, summary: "Analyze economic trends, advise governments & shape public policy.", qual: "BA Economics → MA Economics / MPP", salary: "₹5-12 LPA (Entry) → ₹15-40 LPA (Senior Economist)", exams: "CUET, DSE Entrance, ISI Entrance, JNU", growth: "high", growthText: "Policy Jobs Growing", colleges: "DSE, JNU, ISI, Gokhale Institute, Ashoka" },
+                    { name: "Sociology & Social Work", trending: false, highlight: false, summary: "Study society, work with communities & drive social change programs.", qual: "BA Sociology/Social Work → MSW / MA Sociology", salary: "₹3-7 LPA (Entry) → ₹10-20 LPA (Senior/NGO Director)", exams: "CUET, TISS Entrance, University Entrance", growth: "stable", growthText: "NGO & CSR Growth", colleges: "TISS, Delhi Univ, JNU, Loyola" },
+                    { name: "International Relations", trending: false, highlight: false, summary: "Study global politics, diplomacy & work with international organizations.", qual: "BA Political Science → MA International Relations", salary: "₹5-12 LPA (Entry) → ₹15-40 LPA (Diplomat/Senior)", exams: "CUET, JNU Entrance, UPSC (for Diplomats)", growth: "medium", growthText: "Niche but Growing", colleges: "JNU, Jindal, Ashoka, South Asian Univ" },
+                    { name: "Historian / Archaeologist", trending: false, highlight: false, summary: "Study past civilizations, excavate historical sites & preserve heritage.", qual: "BA History → MA History/Archaeology → PhD", salary: "₹3-7 LPA (Entry) → ₹10-20 LPA (Senior Professor/ASI)", exams: "CUET, University Entrance, UGC NET", growth: "stable", growthText: "Niche Academic Field", colleges: "JNU, Delhi Univ, BHU, Deccan College Pune" },
+                    { name: "Educator / Professor", trending: false, highlight: false, summary: "Teach at schools, colleges & universities, conduct academic research.", qual: "Any Master's Degree + B.Ed (for school) / PhD + NET (for college)", salary: "₹3-8 LPA (School) → ₹10-25 LPA (Asst Professor) → ₹15-35 LPA (Professor)", exams: "CTET, State TET, UGC NET, PhD Entrance", growth: "stable", growthText: "Always Needed", colleges: "Any University + B.Ed from NCTE recognized" }
+                ]
+            },
+            {
+                icon: "fas fa-palette",
+                title: "Art, Design & Digital Media",
+                desc: "Expressing creativity through visual arts, fashion, digital interfaces, and modern media.",
+                careers: [
+                    { name: "Fashion Designer", trending: false, highlight: false, summary: "Create clothing, accessories & footwear collections for brands or own label.", qual: "B.Des Fashion Design (4 years) / Diploma", salary: "₹3-8 LPA (Entry) → ₹12-30+ LPA (Senior/Own Brand)", exams: "NIFT Entrance, NID DAT, UCEED, CEED", growth: "medium", growthText: "Creative Industry", colleges: "NIFT, NID, Pearl Academy, FDDI" },
+                    { name: "Interior Designer", trending: false, highlight: false, summary: "Design functional & beautiful interior spaces for homes, offices & hotels.", qual: "B.Des Interior Design (4 years) / Diploma", salary: "₹3-7 LPA (Entry) → ₹10-25 LPA (Senior/Own Firm)", exams: "NIFT, NID DAT, CEED, University Entrance", growth: "high", growthText: "Real Estate Growth", colleges: "NIFT, NID, SPA Delhi, JJ School of Art" },
+                    { name: "UX / UI Designer", trending: true, highlight: true, summary: "Design user-friendly interfaces for apps, websites & digital products.", qual: "B.Des/BCA/Self-taught + Portfolio + Certifications", salary: "₹5-14 LPA (Entry) → ₹20-45 LPA (Lead/Senior)", exams: "UCEED, NID DAT, or Portfolio-based admission", growth: "high", growthText: "🔥 Every Company Needs", colleges: "NID, IDC IIT Bombay, Srishti, or Self-learning" },
+                    { name: "Graphic & Visual Communication", trending: false, highlight: false, summary: "Create visual content — logos, posters, branding & marketing materials.", qual: "B.Des / BFA / Diploma in Graphic Design", salary: "₹3-8 LPA (Entry) → ₹10-25 LPA (Senior/Art Director)", exams: "NIFT, NID DAT, UCEED, Portfolio admission", growth: "stable", growthText: "Steady Demand", colleges: "NID, NIFT, IDC IIT, Srishti" },
+                    { name: "Animation & VFX", trending: true, highlight: true, summary: "Create animated films, visual effects for movies, games & advertisements.", qual: "B.Sc Animation / B.Des / Diploma + Software skills", salary: "₹3-8 LPA (Entry) → ₹12-30 LPA (Lead Animator/VFX Supervisor)", exams: "Portfolio-based, MAAC, Arena, University Entrance", growth: "high", growthText: "🔥 OTT & Gaming Boom", colleges: "Whistling Woods, MAAC, Frameboxx, NID" },
+                    { name: "Filmmaking & Production", trending: false, highlight: false, summary: "Direct, produce & edit films, documentaries, web series & advertisements.", qual: "BA Film Studies / Diploma in Filmmaking (1-3 years)", salary: "₹2-6 LPA (Entry) → ₹10-50+ LPA (Director/Producer)", exams: "FTII JET, SRFTI Entrance, Whistling Woods", growth: "high", growthText: "OTT Explosion", colleges: "FTII Pune, SRFTI Kolkata, Whistling Woods, LV Prasad" },
+                    { name: "Digital Marketing", trending: true, highlight: false, summary: "Promote brands online through SEO, social media, ads & content marketing.", qual: "Any Graduate + Digital Marketing Certifications", salary: "₹3-8 LPA (Entry) → ₹12-30 LPA (Head of Digital)", exams: "Google Certifications, HubSpot, Meta Blueprint", growth: "high", growthText: "Every Business Needs", colleges: "MICA, Online Certifications, Google/Meta" },
+                    { name: "Advertising & PR", trending: false, highlight: false, summary: "Create ad campaigns, manage brand image & handle public relations.", qual: "BA Mass Comm / BBA + MBA Marketing / PG in Advertising", salary: "₹3-8 LPA (Entry) → ₹12-30 LPA (Creative Director)", exams: "MICA Entrance, Symbiosis SET, XIC", growth: "stable", growthText: "Creative Careers", colleges: "MICA Ahmedabad, Mudra, Symbiosis, XIC" },
+                    { name: "Content Strategy / Copywriting", trending: true, highlight: false, summary: "Write compelling content for brands — website copy, ads, blogs & campaigns.", qual: "Any Graduate + Writing Portfolio + Certifications", salary: "₹3-8 LPA (Entry) → ₹12-25 LPA (Content Head/Freelance)", exams: "Portfolio-based hiring, HubSpot Content Cert", growth: "high", growthText: "Content is King", colleges: "Self-learning + Portfolio, MICA, Symbiosis" }
+                ]
+            },
+            {
+                icon: "fas fa-robot",
+                title: "Emerging Jobs & AI (2026+)",
+                desc: "The fastest-growing, high-paying skills and new-collar careers demanded by the modern tech economy.",
+                careers: [
+                    { name: "Artificial Intelligence Engineer", trending: true, highlight: true, summary: "Build AI systems — chatbots, recommendation engines, self-driving cars & more.", qual: "B.Tech CS/IT + M.Tech AI/ML or Online Specialization", salary: "₹8-20 LPA (Entry) → ₹30-70+ LPA (Senior/Lead)", exams: "JEE Main, GATE, GRE (for MS abroad)", growth: "high", growthText: "🔥 #1 Emerging Career", colleges: "IITs, IIITs, IISc + Coursera/Stanford Online" },
+                    { name: "Prompt Engineer", trending: true, highlight: true, summary: "Design & optimize prompts for AI models like ChatGPT & Gemini.", qual: "Any Technical/Creative degree + AI tools proficiency", salary: "₹5-15 LPA (Entry) → ₹20-50+ LPA (Senior)", exams: "No formal exam — skills-based hiring", growth: "high", growthText: "🔥 Brand New Role", colleges: "Self-learning, DeepLearning.AI, OpenAI Courses" },
+                    { name: "Machine Learning Specialist", trending: true, highlight: false, summary: "Develop algorithms that allow computers to learn from data & improve.", qual: "B.Tech CS + M.Tech ML/AI or Online Specialization", salary: "₹8-18 LPA (Entry) → ₹25-60+ LPA (Senior)", exams: "JEE Main, GATE, GRE", growth: "high", growthText: "Very High Demand", colleges: "IITs, IISc, CMU, Stanford (MS)" },
+                    { name: "Cloud Computing Architect", trending: true, highlight: false, summary: "Design & manage cloud infrastructure (AWS, Azure, GCP) for businesses.", qual: "B.Tech CS/IT + AWS/Azure/GCP Certifications", salary: "₹8-18 LPA (Entry) → ₹25-55 LPA (Architect)", exams: "AWS SAA, Azure AZ-305, GCP Professional Cert", growth: "high", growthText: "Every Company Moving to Cloud", colleges: "IITs, NITs + AWS/Azure/GCP Certifications" },
+                    { name: "Blockchain Developer", trending: false, highlight: false, summary: "Build decentralized apps (dApps), smart contracts & blockchain solutions.", qual: "B.Tech CS/IT + Blockchain Certifications", salary: "₹6-15 LPA (Entry) → ₹20-50 LPA (Senior)", exams: "No formal exam — skills & project-based", growth: "medium", growthText: "Web3 Growing", colleges: "Self-learning, IIT Kanpur (Online), Coursera" },
+                    { name: "Sustainability Expert / ESG", trending: true, highlight: false, summary: "Help companies meet environmental & social governance goals.", qual: "Any degree + MBA/PG in Sustainability/Environment", salary: "₹5-12 LPA (Entry) → ₹15-35 LPA (Head of ESG)", exams: "GMAT/CAT (for MBA), CFA ESG Certificate", growth: "high", growthText: "Global Priority", colleges: "TERI, IIM Lucknow, ISB, IIT Bombay" },
+                    { name: "Business Intelligence Analyst", trending: false, highlight: false, summary: "Turn business data into dashboards & insights for decision-making.", qual: "B.Tech/B.Com/BBA + Power BI/Tableau Certifications", salary: "₹5-12 LPA (Entry) → ₹18-35 LPA (Senior BI Lead)", exams: "No formal exam — Certification based", growth: "high", growthText: "Data-driven World", colleges: "Any degree + Tableau/Power BI/SQL skills" },
+                    { name: "Healthcare Tech Innovator", trending: true, highlight: false, summary: "Build health tech solutions — telemedicine, wearables, health AI.", qual: "B.Tech + Health Tech domain knowledge or MBA Health", salary: "₹6-15 LPA (Entry) → ₹20-45 LPA (Product Lead)", exams: "JEE, GATE, or MBA entrance", growth: "high", growthText: "Post-COVID Boom", colleges: "IITs, IIIT Delhi, IIM + Health Tech startups" },
+                    { name: "Data Fabric Architect", trending: false, highlight: false, summary: "Design unified data management architecture across hybrid/multi-cloud environments.", qual: "B.Tech CS/IT + 5+ years data engineering + Certifications", salary: "₹15-30 LPA (Entry) → ₹40-80+ LPA (Senior)", exams: "No formal exam — Experience based", growth: "high", growthText: "Enterprise Demand", colleges: "IITs + Experience + Cloud/Data Certifications" }
+                ]
+            },
+            {
+                icon: "fas fa-jet-fighter",
+                title: "Uniformed Services & Hospitality",
+                desc: "Serving the nation, managing global transport, or curating world-class guest experiences.",
+                careers: [
+                    { name: "Armed Forces (NDA/CDS)", trending: false, highlight: true, summary: "Serve in Indian Army, Navy or Air Force as a commissioned officer.", qual: "12th (NDA) or Graduate (CDS) + Training at IMA/OTA/AFA/INA", salary: "₹8-12 LPA (Lieutenant) → ₹18-30 LPA (Colonel+) + Benefits", exams: "NDA (after 12th), CDS (after graduation), AFCAT (Air Force)", growth: "stable", growthText: "Prestigious Career", colleges: "NDA Khadakwasla, IMA Dehradun, OTA Chennai" },
+                    { name: "Merchant Navy", trending: false, highlight: false, summary: "Work on commercial ships transporting goods & passengers across oceans.", qual: "B.Sc Nautical Science / DNS (Diploma) / Marine Engineering", salary: "₹6-12 LPA (Entry) → ₹20-50+ LPA (Captain)", exams: "IMU CET, Company-sponsored DNS, TMISAT", growth: "stable", growthText: "Tax-Free Income", colleges: "IMU, MERI, TS Chanakya, Tolani Maritime" },
+                    { name: "Commercial Pilot", trending: false, highlight: false, summary: "Fly commercial aircraft for airlines — domestic & international routes.", qual: "CPL (Commercial Pilot License) + 200+ flying hours + Type Rating", salary: "₹8-15 LPA (First Officer) → ₹30-80 LPA (Captain)", exams: "DGCA CPL Exams, Airline Selection", growth: "high", growthText: "Pilot Shortage in India", colleges: "IGRUA, CAE India, Indigo Cadet Program" },
+                    { name: "Hotel Management", trending: false, highlight: false, summary: "Manage hotels, restaurants & hospitality businesses worldwide.", qual: "BHM (Bachelor of Hotel Management — 4 years)", salary: "₹3-6 LPA (Entry) → ₹12-30 LPA (General Manager)", exams: "NCHMCT JEE, CUET, State HM Entrance", growth: "high", growthText: "Tourism Boom", colleges: "IHM Delhi/Mumbai, WGSHA Manipal, Christ" },
+                    { name: "Culinary Arts / Chef", trending: false, highlight: false, summary: "Master cooking techniques, manage kitchens & create culinary experiences.", qual: "Diploma/Degree in Culinary Arts (1-4 years)", salary: "₹2.5-6 LPA (Entry) → ₹10-30 LPA (Executive Chef)", exams: "NCHMCT JEE, Institute-specific entrance", growth: "medium", growthText: "Food Industry Growing", colleges: "IHM, Le Cordon Bleu, Culinary Academy of India" },
+                    { name: "Travel & Tourism Management", trending: false, highlight: false, summary: "Plan travel packages, manage tourism businesses & promote destinations.", qual: "BBA Tourism / BA Tourism (3 years) + Certifications", salary: "₹2.5-6 LPA (Entry) → ₹8-20 LPA (Manager/Own Agency)", exams: "University Entrance, IATA Certification", growth: "high", growthText: "Post-COVID Recovery", colleges: "IITTM, Christ, Amity, IGNOU" },
+                    { name: "Event Management", trending: false, highlight: false, summary: "Plan & execute events — weddings, corporate events, concerts & conferences.", qual: "BBA/BA + Diploma/MBA in Event Management", salary: "₹3-7 LPA (Entry) → ₹10-25 LPA (Senior/Own Company)", exams: "Institute Entrance, Portfolio-based", growth: "high", growthText: "Wedding & Corporate Boom", colleges: "NAEMD, EMDI, Symbiosis, Pearl Academy" },
+                    { name: "Aviation Operations", trending: false, highlight: false, summary: "Manage airport operations, airline ground services & aviation logistics.", qual: "BBA Aviation / MBA Aviation Management", salary: "₹3-7 LPA (Entry) → ₹12-25 LPA (Airport Manager)", exams: "University Entrance, Airline Hiring", growth: "high", growthText: "New Airports Opening", colleges: "IIAM, Rajiv Gandhi Aviation Univ, UPES" }
+                ]
+            }
+        ,
+{
+    icon: "fas fa-seedling",
+    title: "Agriculture & Food Sciences",
+    desc: "Careers in farming technology, food processing, horticulture, dairy science, and environmental sustainability.",
+    careers: [
+        { name: "Agricultural Scientist", trending: false, highlight: false, summary: "Research crop improvement, soil health & sustainable farming methods.", qual: "B.Sc Agriculture (4 years) → M.Sc → PhD", salary: "₹4-8 LPA (Entry) → ₹12-25 LPA (Senior/Govt Scientist)", exams: "ICAR AIEEA, NEET UG, State Agri CETs", growth: "medium", growthText: "Essential Sector", colleges: "IARI Delhi, TNAU, PAU Ludhiana, GBPUAT Pantnagar" },
+        { name: "Food Technologist", trending: true, highlight: true, summary: "Develop new food products, ensure food safety & improve processing methods.", qual: "B.Tech Food Technology (4 years)", salary: "₹4-10 LPA (Entry) → ₹12-28 LPA (Senior/R&D Head)", exams: "JEE Main, ICAR AIEEA, State CETs", growth: "high", growthText: "FMCG Boom", colleges: "CFTRI Mysuru, IIT Kharagpur, NIFTEM, NDRI Karnal" },
+        { name: "Horticulturist", trending: false, highlight: false, summary: "Cultivate fruits, vegetables, flowers & manage gardens and nurseries.", qual: "B.Sc Horticulture (4 years)", salary: "₹3-7 LPA (Entry) → ₹10-20 LPA (Senior)", exams: "ICAR AIEEA, State Agri CET", growth: "medium", growthText: "Organic Farming Growth", colleges: "IARI Delhi, Dr YSRHU, UHS Bagalkot, AAU Jorhat" },
+        { name: "Dairy Technologist", trending: false, highlight: false, summary: "Develop dairy products, manage dairy plants & ensure milk quality.", qual: "B.Tech Dairy Technology (4 years)", salary: "₹3-8 LPA (Entry) → ₹10-22 LPA (Senior/Plant Manager)", exams: "ICAR AIEEA, JEE Main, State CETs", growth: "medium", growthText: "India's Dairy Sector", colleges: "NDRI Karnal, SMC College Gujarat, AAU Anand" },
+        { name: "Environmental Scientist", trending: true, highlight: true, summary: "Study environmental problems, develop solutions for pollution & climate change.", qual: "B.Sc Environmental Science → M.Sc → PhD", salary: "₹4-10 LPA (Entry) → ₹12-30 LPA (Senior Consultant)", exams: "ICAR AIEEA, IIT JAM, GATE, CSIR NET", growth: "high", growthText: "Climate Action Priority", colleges: "IISc, JNU, FRI Dehradun, WII Dehradun" },
+        { name: "Sericulturist / Apiculturist", trending: false, highlight: false, summary: "Manage silk production (sericulture) or bee-keeping (apiculture) enterprises.", qual: "B.Sc Sericulture / Agriculture (4 years)", salary: "₹3-6 LPA (Entry) → ₹8-15 LPA (Senior/Own Enterprise)", exams: "ICAR AIEEA, University Entrance", growth: "medium", growthText: "Niche but Growing", colleges: "UAS Bangalore, CSRTI Mysore, AAU Jorhat" },
+        { name: "Forestry Officer", trending: false, highlight: false, summary: "Manage forests, wildlife conservation & timber resources for the government.", qual: "B.Sc Forestry (4 years) + IFS/State Forest Service", salary: "₹5-10 LPA (Entry) → ₹15-30 LPA (IFS Officer)", exams: "ICAR AIEEA, UPSC IFS, State Forest Service", growth: "stable", growthText: "Conservation Careers", colleges: "FRI Dehradun, IGNFA, AAU Jorhat, TNAU" }
+    ]
+},
+{
+    icon: "fas fa-drafting-compass",
+    title: "Architecture & Urban Planning",
+    desc: "Design buildings, cities, landscapes & sustainable spaces that shape how people live and work.",
+    careers: [
+        { name: "Architect (B.Arch)", trending: false, highlight: false, summary: "Design buildings, residential complexes, commercial spaces & public infrastructure.", qual: "B.Arch (5 years) + Council of Architecture Registration", salary: "₹4-10 LPA (Entry) → ₹15-40 LPA (Senior/Own Firm)", exams: "NATA, JEE Main Paper 2A, AAT", growth: "medium", growthText: "Real Estate Growth", colleges: "SPA Delhi, IIT Kharagpur, IIT Roorkee, CEPT Ahmedabad" },
+        { name: "Urban / Town Planner", trending: true, highlight: true, summary: "Plan cities, transportation systems & sustainable urban development projects.", qual: "B.Plan (4 years) or B.Tech Planning", salary: "₹5-12 LPA (Entry) → ₹15-35 LPA (Senior Planner)", exams: "JEE Main Paper 2B, GATE", growth: "high", growthText: "Smart Cities Mission", colleges: "SPA Delhi, SPA Bhopal, IIT Kharagpur, CEPT" },
+        { name: "Interior Designer", trending: false, highlight: false, summary: "Design functional & aesthetic interior spaces for homes, offices & commercial areas.", qual: "B.Des Interior Design / BID (4 years)", salary: "₹3-8 LPA (Entry) → ₹12-30 LPA (Senior/Own Firm)", exams: "NID DAT, NIFT GAT, UCEED, NATA", growth: "high", growthText: "Real Estate Driven", colleges: "NID, NIFT, CEPT, JJ School of Art Mumbai" },
+        { name: "Landscape Architect", trending: false, highlight: false, summary: "Design outdoor spaces — parks, gardens, campuses & public green areas.", qual: "B.Arch + M.Arch (Landscape) or B.Plan", salary: "₹4-10 LPA (Entry) → ₹12-25 LPA (Senior)", exams: "NATA, JEE Main Paper 2A", growth: "medium", growthText: "Green Infrastructure", colleges: "SPA Delhi, CEPT Ahmedabad, RV College Bangalore" },
+        { name: "Structural Engineer", trending: false, highlight: false, summary: "Ensure buildings & bridges are structurally safe by designing load-bearing systems.", qual: "B.Tech Civil Engineering (4 years) + M.Tech Structural", salary: "₹4-10 LPA (Entry) → ₹15-30 LPA (Senior)", exams: "JEE Main, JEE Advanced, GATE", growth: "stable", growthText: "Infrastructure Boom", colleges: "IITs, NITs, BITS Pilani, DTU Delhi" }
+    ]
+},
+{
+    icon: "fas fa-laptop-code",
+    title: "Computer Applications (BCA/B.Sc CS)",
+    desc: "Software development, web design, app creation & IT careers accessible from any stream after 12th — not just engineering.",
+    careers: [
+        { name: "Software Developer (BCA Route)", trending: true, highlight: true, summary: "Build software applications, websites & mobile apps without a B.Tech degree.", qual: "BCA (3 years) + MCA or Certifications", salary: "₹3-8 LPA (Entry) → ₹12-30 LPA (Senior)", exams: "CUET-UG, Symbiosis SET, Christ CUET, IPU CET", growth: "high", growthText: "Massive IT Demand", colleges: "Christ University, Symbiosis, Manipal, IPU Delhi" },
+        { name: "Web Developer / Full Stack", trending: true, highlight: false, summary: "Build websites & web applications using HTML, CSS, JavaScript, React, Node.js.", qual: "BCA/B.Sc CS + Full Stack Certifications", salary: "₹3-8 LPA (Entry) → ₹12-25 LPA (Senior)", exams: "CUET-UG, University Entrance, Self-learning", growth: "high", growthText: "Every Business Needs", colleges: "Any BCA college + Self-learning (FreeCodeCamp, Udemy)" },
+        { name: "Mobile App Developer", trending: true, highlight: false, summary: "Build Android & iOS apps using Flutter, React Native, Kotlin or Swift.", qual: "BCA/B.Sc CS/IT + App Dev Certifications", salary: "₹4-10 LPA (Entry) → ₹15-35 LPA (Senior)", exams: "CUET-UG, University Entrance", growth: "high", growthText: "App Economy Growing", colleges: "Any BCA/B.Sc CS college + Google/Meta Certifications" },
+        { name: "Database Administrator (DBA)", trending: false, highlight: false, summary: "Manage, secure & optimize databases that store critical business data.", qual: "BCA/B.Sc CS + Oracle/SQL Certifications", salary: "₹4-10 LPA (Entry) → ₹12-28 LPA (Senior DBA)", exams: "CUET-UG, Oracle Certifications", growth: "stable", growthText: "Data is Everything", colleges: "BCA from any good university + Oracle/AWS Certifications" },
+        { name: "Network & System Administrator", trending: false, highlight: false, summary: "Manage computer networks, servers & IT infrastructure for organizations.", qual: "BCA/B.Sc IT + CCNA/CompTIA Certifications", salary: "₹3-8 LPA (Entry) → ₹12-25 LPA (Senior)", exams: "CCNA, CompTIA Network+, CUET-UG", growth: "stable", growthText: "Every Company Needs IT", colleges: "Any BCA/B.Sc IT + Cisco/CompTIA Certifications" },
+        { name: "Game Developer", trending: true, highlight: true, summary: "Create video games for mobile, PC & consoles using Unity, Unreal Engine.", qual: "BCA/B.Sc CS + Game Dev specialization", salary: "₹4-10 LPA (Entry) → ₹15-35 LPA (Lead Developer)", exams: "Portfolio-based + University Entrance", growth: "high", growthText: "🔥 Gaming Industry Boom", colleges: "MAAC, Frameboxx, Unity Certified, Self-learning" }
+    ]
+},
+{
+    icon: "fas fa-newspaper",
+    title: "Mass Communication & Media",
+    desc: "Journalism, advertising, public relations, filmmaking, digital content creation & modern media careers.",
+    careers: [
+        { name: "Journalist / Reporter", trending: false, highlight: false, summary: "Report news, investigate stories & inform the public through print, TV or digital media.", qual: "BA Journalism / BJMC (3 years)", salary: "₹3-7 LPA (Entry) → ₹10-25 LPA (Senior Editor)", exams: "CUET-UG, IIMC Entrance, Symbiosis SET, IPU CET", growth: "medium", growthText: "Evolving to Digital", colleges: "IIMC Delhi, Symbiosis SCMC, ACJ Chennai, XIC Mumbai" },
+        { name: "Public Relations (PR) Manager", trending: false, highlight: false, summary: "Manage brand reputation, media relations & corporate communications.", qual: "BJMC / BA Mass Comm + MBA Marketing", salary: "₹4-8 LPA (Entry) → ₹12-30 LPA (PR Director)", exams: "CUET-UG, SET, University Entrance", growth: "stable", growthText: "Brand Image Matters", colleges: "Symbiosis, MICA, IIMC, St Xavier's Mumbai" },
+        { name: "Video Editor / Content Creator", trending: true, highlight: true, summary: "Create, edit & produce video content for YouTube, OTT platforms & social media.", qual: "BJMC / BA Media + Video editing skills", salary: "₹3-8 LPA (Entry) → ₹12-30 LPA (Senior/Freelance)", exams: "Portfolio-based, University Entrance", growth: "high", growthText: "🔥 Creator Economy", colleges: "FTII Pune, Whistling Woods, SRFTI Kolkata, Self-learning" },
+        { name: "Advertising Creative Director", trending: false, highlight: false, summary: "Conceptualize ad campaigns, lead creative teams & build brand stories.", qual: "BJMC / B.Des + MBA Marketing / PG in Advertising", salary: "₹4-10 LPA (Entry) → ₹15-40 LPA (Creative Director)", exams: "MICA Entrance, SET, University Entrance", growth: "stable", growthText: "Ad Industry Evolving", colleges: "MICA Ahmedabad, Mudra, Symbiosis, NIFT" },
+        { name: "Radio Jockey (RJ) / Podcast Host", trending: true, highlight: false, summary: "Host radio shows, podcasts & audio content that entertains & informs audiences.", qual: "Any Graduate + Communication skills + Voice training", salary: "₹2-6 LPA (Entry) → ₹8-25 LPA (Popular RJ)", exams: "Radio station auditions, Voice demos", growth: "medium", growthText: "Podcasting Growing", colleges: "IIMC, NRAI School of Mass Comm + Self-built portfolio" },
+        { name: "Social Media Manager", trending: true, highlight: true, summary: "Manage brand presence on Instagram, LinkedIn, X, Facebook & create viral content.", qual: "BJMC / BBA + Digital Marketing Certifications", salary: "₹3-8 LPA (Entry) → ₹12-25 LPA (Head of Social)", exams: "Meta Blueprint, Google Certs, Portfolio-based", growth: "high", growthText: "Every Brand Needs One", colleges: "Any + Meta Blueprint, HubSpot, Google Certifications" }
+    ]
+},
+{
+    icon: "fas fa-theater-masks",
+    title: "Performing Arts & Liberal Studies",
+    desc: "Acting, music, dance, theatre, and interdisciplinary liberal arts education combining humanities, sciences & arts.",
+    careers: [
+        { name: "Actor / Theatre Artist", trending: false, highlight: false, summary: "Perform in films, TV shows, web series, theatre & advertisements.", qual: "BA Theatre Arts / Acting Diploma (3-4 years)", salary: "₹2-8 LPA (Entry) → ₹15-50+ LPA (Established)", exams: "FTII JET, NSD Entrance, Auditions", growth: "medium", growthText: "OTT Content Boom", colleges: "NSD Delhi, FTII Pune, Whistling Woods, Barry John" },
+        { name: "Musician / Singer", trending: false, highlight: false, summary: "Perform, compose & produce music for films, albums, live shows & digital platforms.", qual: "BA Music / B.Music (3-4 years) or Self-taught", salary: "₹2-6 LPA (Entry) → ₹10-50+ LPA (Established)", exams: "BHU UET, University Auditions, Skill-based", growth: "medium", growthText: "Streaming Platforms", colleges: "BHU, Delhi University, KM Conservatory Chennai" },
+        { name: "Choreographer / Dance Artist", trending: false, highlight: false, summary: "Create dance routines for films, TV shows, events & teach dance professionally.", qual: "BA Dance / BPA / Diploma + Skill", salary: "₹2-6 LPA (Entry) → ₹10-30+ LPA (Established)", exams: "Skill-based auditions, University Entrance", growth: "medium", growthText: "Entertainment Industry", colleges: "Kerala Kalamandalam, BHU, Rabindra Bharati, NSD" },
+        { name: "Liberal Arts Graduate", trending: true, highlight: true, summary: "Multidisciplinary education combining humanities, sciences & arts — prepares for diverse careers.", qual: "BA/BBA Liberal Arts (3-4 years)", salary: "₹4-10 LPA (Entry) → ₹12-30 LPA (Senior/Various fields)", exams: "Ashoka AAT, FLAME FEAT, SET, CUET-UG", growth: "high", growthText: "🔥 Growing Demand", colleges: "Ashoka, FLAME Pune, Symbiosis SLA, Krea, Shiv Nadar" },
+        { name: "Sports Manager / Coach", trending: true, highlight: false, summary: "Manage sports teams, events, athlete development & sports business operations.", qual: "BBA Sports Management / BPES (3-4 years)", salary: "₹3-8 LPA (Entry) → ₹12-30 LPA (Director/Head Coach)", exams: "SMAT-UG, CUET-UG, NSU Entrance", growth: "high", growthText: "IPL/Sports Economy", colleges: "IISM Mumbai, NSU Manipur, Symbiosis SSSS, LNIPE Gwalior" }
+    ]
+},
+{
+    icon: "fas fa-flask",
+    title: "Pure Sciences & Research",
+    desc: "Physics, Chemistry, Mathematics, Biology & interdisciplinary research at top institutions like IISc, IISERs & IITs.",
+    careers: [
+        { name: "Research Scientist (Physics/Chemistry)", trending: false, highlight: false, summary: "Conduct fundamental research in physics, chemistry or materials science at top labs.", qual: "B.Sc → M.Sc → PhD (IISc/IISERs/IITs)", salary: "₹5-12 LPA (JRF/SRF) → ₹15-35 LPA (Scientist/Professor)", exams: "IIT JAM, CSIR NET, GATE, JEST, KVPY", growth: "stable", growthText: "Academic & R&D", colleges: "IISc, IISERs, IITs, TIFR, IACS Kolkata" },
+        { name: "Mathematician / Statistician", trending: true, highlight: true, summary: "Apply mathematical models & statistics to solve real-world problems in finance, AI & research.", qual: "B.Sc/B.Stat (3-4 years) → M.Sc/M.Stat → PhD", salary: "₹5-12 LPA (Entry) → ₹15-40 LPA (Senior/Industry)", exams: "ISI Admission Test, CMI Entrance, IIT JAM", growth: "high", growthText: "Data & AI Need Math", colleges: "ISI Kolkata, CMI Chennai, IISc, IITs, IISERs" },
+        { name: "Microbiologist", trending: true, highlight: false, summary: "Study microorganisms — bacteria, viruses, fungi — for healthcare, food & environmental applications.", qual: "B.Sc Microbiology → M.Sc → PhD", salary: "₹3-8 LPA (Entry) → ₹12-25 LPA (Senior Researcher)", exams: "CSIR NET, GATE, IIT JAM, University Entrance", growth: "high", growthText: "Post-COVID Importance", colleges: "IISc, JNU, Delhi University, Pune University" },
+        { name: "Forensic Scientist", trending: false, highlight: false, summary: "Analyze crime scene evidence using scientific methods to assist law enforcement.", qual: "B.Sc Forensic Science (3 years) → M.Sc", salary: "₹3-7 LPA (Entry) → ₹10-22 LPA (Senior/Govt)", exams: "University Entrance, CUET-UG", growth: "medium", growthText: "Crime Investigation Demand", colleges: "LNJN NICFS Delhi, Gujarat Forensic Sciences Univ, Amity" },
+        { name: "Geologist / Geophysicist", trending: false, highlight: false, summary: "Study earth's structure, minerals, earthquakes & find natural resources like oil, gas & water.", qual: "B.Sc Geology (3 years) → M.Sc → PhD", salary: "₹4-10 LPA (Entry) → ₹12-30 LPA (Senior/ONGC)", exams: "IIT JAM, GATE, CSIR NET, UPSC Geologist", growth: "medium", growthText: "Oil/Mining/Disaster Mgmt", colleges: "IIT Bombay, BHU, IISc, ISM Dhanbad" },
+        { name: "Nutritionist / Dietitian", trending: true, highlight: false, summary: "Plan diets, manage nutrition for patients & promote healthy eating habits.", qual: "B.Sc Food & Nutrition / Home Science (3-4 years)", salary: "₹3-7 LPA (Entry) → ₹10-22 LPA (Senior/Own Practice)", exams: "CUET-UG, University Entrance", growth: "high", growthText: "Health Awareness Growing", colleges: "Lady Irwin College Delhi, SNDT Mumbai, NIFTEM" }
+    ]
+},
+{
+    icon: "fas fa-paw",
+    title: "Veterinary & Fishery Sciences",
+    desc: "Animal healthcare, livestock management, fishery science & wildlife conservation careers.",
+    careers: [
+        { name: "Veterinary Doctor (BVSc)", trending: false, highlight: false, summary: "Diagnose & treat diseases in animals, perform surgeries & ensure animal welfare.", qual: "BVSc & AH (5.5 years)", salary: "₹4-10 LPA (Entry) → ₹12-25 LPA (Senior/Govt Vet)", exams: "NEET UG, State Veterinary CET", growth: "stable", growthText: "Always Needed", colleges: "IVRI Bareilly, TANUVAS Chennai, GADVASU Ludhiana, LUVAS Hisar" },
+        { name: "Fishery Scientist", trending: false, highlight: false, summary: "Manage fish farming, aquaculture & marine resource development.", qual: "BFSc (4 years)", salary: "₹3-8 LPA (Entry) → ₹10-20 LPA (Senior/Govt Scientist)", exams: "ICAR AIEEA, State Fishery CET", growth: "medium", growthText: "Blue Economy Push", colleges: "CIFE Mumbai, KUFOS Kerala, WBUAFS Kolkata" },
+        { name: "Animal Nutritionist", trending: false, highlight: false, summary: "Develop feed formulations & nutrition plans for livestock, poultry & companion animals.", qual: "BVSc / B.Sc Animal Husbandry → M.Sc", salary: "₹3-7 LPA (Entry) → ₹10-20 LPA (Senior)", exams: "NEET UG, ICAR AIEEA", growth: "medium", growthText: "Dairy & Poultry Industry", colleges: "IVRI, NDRI Karnal, TANUVAS, GADVASU" },
+        { name: "Wildlife Conservationist", trending: true, highlight: true, summary: "Protect endangered species, manage wildlife reserves & study animal behavior.", qual: "B.Sc Zoology/Forestry → M.Sc Wildlife → PhD", salary: "₹3-8 LPA (Entry) → ₹10-25 LPA (Senior/IFS)", exams: "University Entrance, UPSC IFS, WII Entrance", growth: "high", growthText: "Conservation Priority", colleges: "WII Dehradun, BNHS, IISc, FRI Dehradun" }
+    ]
+},
+{
+    icon: "fas fa-hands-holding-child",
+    title: "Rehabilitation & Special Education",
+    desc: "Speech therapy, prosthetics, special education & helping people with disabilities lead independent lives.",
+    careers: [
+        { name: "Audiologist & Speech Therapist (BASLP)", trending: true, highlight: true, summary: "Diagnose & treat hearing, speech & language disorders in children and adults.", qual: "BASLP (4 years) + RCI Registration", salary: "₹3-8 LPA (Entry) → ₹12-25 LPA (Senior/Own Clinic)", exams: "AIISH Entrance, IPU PARA-CET, University Entrance", growth: "high", growthText: "High Demand, Low Supply", colleges: "AIISH Mysore, Ali Yavar Jung Mumbai, CMC Vellore, MAHE Manipal" },
+        { name: "Prosthetist & Orthotist", trending: false, highlight: false, summary: "Design & fit artificial limbs (prosthetics) and braces (orthotics) for people with disabilities.", qual: "BPO - Bachelor in Prosthetics & Orthotics (4.5 years)", salary: "₹3-7 LPA (Entry) → ₹10-20 LPA (Senior)", exams: "SVNIRTAR CET, University Entrance, 12th Merit", growth: "medium", growthText: "Niche but Essential", colleges: "SVNIRTAR Cuttack, PDUNIPPD Delhi, CMC Vellore" },
+        { name: "Special Educator", trending: false, highlight: false, summary: "Teach children with learning disabilities, autism, ADHD & other special needs.", qual: "BA/B.Sc + B.Ed Special Education (4 years integrated)", salary: "₹3-6 LPA (Entry) → ₹8-18 LPA (Senior/Coordinator)", exams: "RCI Registration, University Entrance", growth: "high", growthText: "Inclusive Education Push", colleges: "IITE Gujarat, Amity AIRS, NIEPMD Chennai" },
+        { name: "Rehabilitation Counselor", trending: false, highlight: false, summary: "Help people with physical, mental or developmental disabilities return to independent living.", qual: "BRSc (3 years) / BOT + Masters in Rehabilitation", salary: "₹3-7 LPA (Entry) → ₹10-20 LPA (Senior)", exams: "University Entrance, NIEPMD NET", growth: "medium", growthText: "Growing Awareness", colleges: "SVNIRTAR Cuttack, NIEPMD Chennai, DSMRU Lucknow" }
+    ]
+}];
+
+        // ===== RENDER CAREER LIBRARY =====
+        function renderCareerLibrary() {
+            const container = document.getElementById('careerLibrary');
+            container.innerHTML = '';
+
+            careerLibraryData.forEach(cluster => {
+                let careersHTML = '';
+                cluster.careers.forEach((career, idx) => {
+                    const uniqueId = `career-${cluster.title.replace(/[^a-zA-Z]/g, '')}-${idx}`;
+                    careersHTML += `
+                        <div class="career-item ${career.highlight ? 'highlight' : ''}" id="${uniqueId}" onclick="toggleCareer('${uniqueId}')">
+                            <div class="career-item-header">
+                                <h4>${career.name} ${career.trending ? '<span class="trending">🔥 Trending</span>' : ''}</h4>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="career-item-summary">${career.summary}</div>
+                            <div class="career-details">
+                                <div class="career-details-inner">
+                                    <div class="detail-grid">
+                                        <div class="detail-item">
+                                            <i class="fas fa-graduation-cap"></i>
+                                            <div><strong>Qualification</strong><span>${career.qual}</span></div>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-indian-rupee-sign"></i>
+                                            <div><strong>Salary Range</strong><span class="salary-badge">${career.salary}</span></div>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-file-pen"></i>
+                                            <div><strong>Key Exams</strong><span>${career.exams}</span></div>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-building-columns"></i>
+                                            <div><strong>Top Colleges</strong><span>${career.colleges}</span></div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                                        <span class="growth-badge growth-${career.growth}"><i class="fas fa-arrow-trend-up"></i> ${career.growthText}</span>
+                                        <div class="detail-cta">
+                                            <a href="https://psychometrics.ischs.in/annweshan" target="_blank">
+                                                <i class="fas fa-clipboard-check"></i> Check My Fit
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                container.innerHTML += `
+                    <div class="library-card">
+                        <div class="cluster-header">
+                            <div class="cluster-icon"><i class="${cluster.icon}"></i></div>
+                            <h3>${cluster.title}</h3>
+                        </div>
+                        <p class="cluster-desc">${cluster.desc}</p>
+                        <div class="careers-grid">${careersHTML}</div>
+                        <a href="https://psychometrics.ischs.in/annweshan" target="_blank">Find your best-fit pathway in this cluster &rarr;</a>
+                    </div>
+                `;
+            });
+        }
+
+        function toggleCareer(id) {
+            const el = document.getElementById(id);
+            el.classList.toggle('open');
+        }
+
+        // Initialize library on page load
+        renderCareerLibrary();
+
+        // ===== QUIZ LOGIC (Same as before) =====
+        const questions = [
+            { text: "When you have free time, you most enjoy:", options: [{text: "Fixing things or working outdoors", type: "R"}, {text: "Reading about science/technology", type: "I"}, {text: "Painting, writing, playing music", type: "A"}, {text: "Helping friends, organizing events", type: "S"}] },
+            { text: "Which workplace environment sounds best?", options: [{text: "Fast-paced corporate office", type: "E"}, {text: "Structured office with clear rules", type: "C"}, {text: "Laboratory or research facility", type: "I"}, {text: "Open studio or creative agency", type: "A"}] },
+            { text: "How do you prefer to solve a problem?", options: [{text: "Look at facts and follow procedures", type: "C"}, {text: "Discuss it to find consensus", type: "S"}, {text: "Use hands-on practical tools", type: "R"}, {text: "Persuade others to follow my strategy", type: "E"}] },
+            { text: "You prefer reading/watching documentaries about:", options: [{text: "Machines, nature, wildlife", type: "R"}, {text: "Business, famous leaders, politics", type: "E"}, {text: "Psychology, teaching, human rights", type: "S"}, {text: "Accounting, organizing systems", type: "C"}] },
+            { text: "People describe you as:", options: [{text: "Analytical and logical", type: "I"}, {text: "Imaginative and original", type: "A"}, {text: "Practical and realistic", type: "R"}, {text: "Ambitious and persuasive", type: "E"}] },
+            { text: "If learning something new, you'd choose:", options: [{text: "Programming language or science", type: "I"}, {text: "Woodworking or fixing an engine", type: "R"}, {text: "Spreadsheet functions or bookkeeping", type: "C"}, {text: "Public speaking or marketing", type: "E"}] },
+            { text: "In a group project, your role is:", options: [{text: "Mediator ensuring everyone gets along", type: "S"}, {text: "Organizer tracking deadlines", type: "C"}, {text: "Visionary with the creative concept", type: "A"}, {text: "Researcher finding detailed information", type: "I"}] },
+            { text: "Tasks you find satisfying:", options: [{text: "Clear instructions and predictable outcomes", type: "C"}, {text: "Influencing or negotiating", type: "E"}, {text: "Expressing individuality", type: "A"}, {text: "Directly helping someone improve", type: "S"}] },
+            { text: "Ideal reward for a job well done:", options: [{text: "Bonus, promotion, recognition", type: "E"}, {text: "Solving a puzzle nobody else could", type: "I"}, {text: "Seeing a physical product I built", type: "R"}, {text: "Making a genuine difference in someone's day", type: "S"}] },
+            { text: "Subjects you enjoy most:", options: [{text: "Math, accounting, computer apps", type: "C"}, {text: "Art, drama, music, writing", type: "A"}, {text: "Biology, chemistry, physics", type: "I"}, {text: "Physical education, shop class", type: "R"}] },
+            { text: "When planning a trip, you:", options: [{text: "Create detailed itinerary and budget", type: "C"}, {text: "Research history and culture", type: "I"}, {text: "Plan social activities", type: "S"}, {text: "Pitch the destination to everyone", type: "E"}] },
+            { text: "I feel successful when I:", options: [{text: "See tangible results of physical labor", type: "R"}, {text: "Create something beautiful", type: "A"}, {text: "Lead a team to achieve a big goal", type: "E"}, {text: "Balance a budget or organize a system", type: "C"}] },
+            { text: "When dealing with data, you prefer:", options: [{text: "Analyzing to uncover hidden trends", type: "I"}, {text: "Organizing neatly into spreadsheets", type: "C"}, {text: "Persuading a client or winning a deal", type: "E"}, {text: "Understanding how to better serve a community", type: "S"}] },
+            { text: "A nightmare for you is:", options: [{text: "Repetitive paperwork all day", type: "R"}, {text: "Strict rules with no creativity", type: "A"}, {text: "Working alone with no interaction", type: "S"}, {text: "No clear instructions and total chaos", type: "C"}] },
+            { text: "You want to be remembered for:", options: [{text: "Deep knowledge and discoveries", type: "I"}, {text: "Businesses built and leadership", type: "E"}, {text: "People mentored or supported", type: "S"}, {text: "Artistic masterpieces created", type: "A"}] }
+        ];
+
+        const profiles = {
+            "R": { name: "The Doer (Realistic)", desc: "You are practical, hands-on, and enjoy working with tools, machinery, plants, or animals.", careers: ["Mechanical Engineer", "Commercial Pilot", "Armed Forces (NDA)", "Aviation Operations", "Robotics Technician"], strengths: ["Practical problem solving", "Physical coordination", "Mechanical aptitude"], education: "Engineering (B.Tech), Commercial Pilot Training, NDA, Technical Certifications." },
+            "I": { name: "The Thinker (Investigative)", desc: "You are analytical, intellectual, and scientific. You enjoy researching and solving complex problems.", careers: ["Data Scientist", "Medical Researcher (MBBS/MD)", "AI Engineer", "Actuarial Science", "Astrophysicist"], strengths: ["Critical thinking", "Data analysis", "Curiosity"], education: "Sciences (B.Sc/M.Sc), Medicine (MBBS), Computer Science, Actuarial Studies." },
+            "A": { name: "The Creator (Artistic)", desc: "You are creative, expressive, and independent. You thrive in unstructured environments.", careers: ["UX/UI Designer", "Filmmaker / Animator", "Fashion Designer", "Architect (B.Arch)", "Content Strategist"], strengths: ["Innovation", "Communication", "Originality"], education: "Design (B.Des), Fine Arts, Architecture, Mass Media & Communication." },
+            "S": { name: "The Helper (Social)", desc: "You are empathetic, patient, and cooperative. You find fulfillment in teaching and supporting others.", careers: ["Psychologist / Counselor", "Healthcare Professional", "HR Manager", "Educator", "Civil Services (UPSC)"], strengths: ["Empathy", "Active listening", "Teamwork"], education: "Psychology (BA/MA), Allied Health Sciences, HR Management, Education." },
+            "E": { name: "The Persuader (Enterprising)", desc: "You are ambitious, energetic, and confident. You enjoy leading teams and managing projects.", careers: ["Corporate Lawyer (BA LLB)", "Investment Banker", "Digital Marketing Director", "Business Executive", "Hotel Management"], strengths: ["Leadership", "Public speaking", "Negotiation"], education: "Business Administration (BBA/MBA), Law (LLB), Economics, Hotel Management." },
+            "C": { name: "The Organizer (Conventional)", desc: "You are detail-oriented, organized, and reliable. You prefer structured environments.", careers: ["Chartered Accountant (CA)", "Company Secretary (CS)", "Financial Analyst", "Medical Coder", "Operations Manager"], strengths: ["Attention to detail", "Organization", "Efficiency"], education: "Commerce (B.Com/M.Com), CA/CS Professional Courses, Finance, Logistics." }
+        };
+
+        let currentQuestion = 0;
+        let answers = new Array(15).fill(null);
+        let chartInstance = null;
+
+        const introSection = document.getElementById('intro-section');
+        const librarySection = document.getElementById('career-library-section');
+        const quizSection = document.getElementById('quiz-section');
+        const resultsSection = document.getElementById('results-section');
+        const questionText = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options-container');
+        const btnNext = document.getElementById('btn-next');
+        const btnPrev = document.getElementById('btn-prev');
+        const progressFill = document.getElementById('progress-bar');
+        const progressPercent = document.getElementById('progress-percent');
+        const questionCounter = document.getElementById('question-counter');
+
+        function startQuiz() {
+            introSection.style.display = 'none';
+            librarySection.style.display = 'none';
+            quizSection.style.display = 'block';
+            window.scrollTo(0, 0);
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const q = questions[currentQuestion];
+            questionText.innerText = q.text;
+            optionsContainer.innerHTML = '';
+            const percent = Math.round(((currentQuestion) / questions.length) * 100);
+            progressFill.style.width = percent + '%';
+            progressPercent.innerText = percent + '%';
+            questionCounter.innerText = `Question ${currentQuestion + 1} of ${questions.length}`;
+            q.options.forEach((opt, index) => {
+                const btn = document.createElement('button');
+                btn.className = `option-btn ${answers[currentQuestion] === opt.type ? 'selected' : ''}`;
+                btn.innerHTML = `<span style="font-weight:bold; color:var(--primary);">${String.fromCharCode(65 + index)}.</span> ${opt.text}`;
+                btn.onclick = () => selectOption(opt.type, btn);
+                optionsContainer.appendChild(btn);
+            });
+            btnPrev.disabled = currentQuestion === 0;
+            btnNext.disabled = answers[currentQuestion] === null;
+            btnNext.innerHTML = currentQuestion === questions.length - 1 ? 'See Results <i class="fas fa-check"></i>' : 'Next <i class="fas fa-arrow-right"></i>';
+        }
+
+        function selectOption(type, btnElement) {
+            answers[currentQuestion] = type;
+            Array.from(optionsContainer.children).forEach(child => child.classList.remove('selected'));
+            btnElement.classList.add('selected');
+            btnNext.disabled = false;
+            if (currentQuestion < questions.length - 1) { setTimeout(() => { nextQuestion(); }, 400); }
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) { currentQuestion++; renderQuestion(); }
+            else { showResults(); }
+        }
+
+        function prevQuestion() {
+            if (currentQuestion > 0) { currentQuestion--; renderQuestion(); }
+        }
+
+        function showResults() {
+            quizSection.style.display = 'none';
+            resultsSection.style.display = 'block';
+            librarySection.style.display = 'block';
+            librarySection.style.marginTop = '4rem';
+            window.scrollTo(0, 0);
+            const scores = { R: 0, I: 0, A: 0, S: 0, E: 0, C: 0 };
+            answers.forEach(ans => { if (ans) scores[ans]++; });
+            let maxType = 'R'; let maxVal = -1;
+            for (const [type, val] of Object.entries(scores)) { if (val > maxVal) { maxVal = val; maxType = type; } }
+            const profile = profiles[maxType];
+            document.getElementById('result-title').innerText = profile.name;
+            document.getElementById('result-badge').innerText = `Primary Type: ${maxType}`;
+            document.getElementById('result-desc').innerText = profile.desc;
+            document.getElementById('result-careers').innerHTML = profile.careers.map(c => `<li>${c}</li>`).join('');
+            document.getElementById('result-strengths').innerHTML = profile.strengths.map(s => `<li>${s}</li>`).join('');
+            document.getElementById('result-education').innerText = profile.education;
+            renderChart(scores);
+            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#1e3a8a', '#d97706', '#fbbf24'] });
+        }
+
+        function renderChart(scores) {
+            const ctx = document.getElementById('resultsChart').getContext('2d');
+            if (chartInstance) { chartInstance.destroy(); }
+            chartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Realistic', 'Investigative', 'Artistic', 'Social', 'Enterprising', 'Conventional'],
+                    datasets: [{ label: 'Your Score', data: [scores.R, scores.I, scores.A, scores.S, scores.E, scores.C],
+                        backgroundColor: ['rgba(30,58,138,0.7)', 'rgba(30,58,138,0.7)', 'rgba(217,119,6,0.8)', 'rgba(30,58,138,0.7)', 'rgba(30,58,138,0.7)', 'rgba(30,58,138,0.7)'],
+                        borderColor: '#1e3a8a', borderWidth: 1, borderRadius: 4 }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, max: 10, ticks: { stepSize: 1 } } }, plugins: { legend: { display: false } } }
+            });
+        }
+
+        function shareWhatsApp() {
+            const maxType = document.getElementById('result-title').innerText;
+            const text = `I just took the Annweshan Career Discovery Quiz and got: *${maxType}*! %0A%0ATake the professional assessment: https://psychometrics.ischs.in/annweshan`;
+            window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+        }
+    </script>
+
+</body>
+</html>
